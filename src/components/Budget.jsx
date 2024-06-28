@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
-import "../styles/budget.css";
+import styles from "../styles/budget.module.css";
 
 export default function Budget({ income, budget, incomeChange }) {
   return (
-    <div className={"budget"}>
+    <section className={styles["budget"]}>
       <h2>Budget</h2>
       <input
+        className={styles["budget-input"]}
         type="number"
         onChange={(e) => incomeChange(Number(e.target.value))}
         placeholder="Income"
@@ -18,7 +19,7 @@ export default function Budget({ income, budget, incomeChange }) {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 

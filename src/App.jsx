@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Budget from "./components/Budget.jsx";
+import Prediction from "./components/Prediction.jsx";
 
 function App() {
   const [income, setIncome] = useState(0);
@@ -21,7 +22,7 @@ function App() {
         incomeChange={handleIncomeChange}
       />
 
-      <div></div>
+      <Prediction investment={income * (budget[1].proportion / 100)} />
       <div></div>
       <div></div>
     </div>

@@ -1,0 +1,51 @@
+.budget {
+  border: 1px solid red;
+  box-sizing: border-box;
+  padding: 10px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.budget-input {
+  width: 33%;
+  padding: 10px;
+  border-radius: 1rem;
+  text-align: center;
+  border: 2px solid rebeccapurple;
+  transition: all 200ms;
+  font-size: 1rem;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 10px rebeccapurple;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+ul {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
