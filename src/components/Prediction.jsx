@@ -21,7 +21,9 @@ export default function Prediction({ investment }) {
               <input type="number" min={0} />
             </span>
             <span>
-              <label htmlFor="invenstment-growth">Investment Growth</label>
+              <label htmlFor="invenstment-growth">
+                Yearly Investment Growth
+              </label>
               <input type="number" min={0} />
             </span>
             <button>Calculate</button>

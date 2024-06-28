@@ -2,13 +2,21 @@
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     border:1px solid red;
-
+    min-width: 400px;
     & div{
         display: flex;
         flex-flow: row wrap;
         gap:1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .prediction{
+        & div{
+            flex-direction: column;
+        }
     }
 }
 
@@ -19,7 +27,9 @@
     justify-content: center;
     align-items: center;
     border:1px solid green;
+    min-width: 250px;
 }
+
 .form-prediction{
     display: flex;
     flex-direction: column;
