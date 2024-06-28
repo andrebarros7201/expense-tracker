@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Budget from "./components/Budget.jsx";
 import Prediction from "./components/Prediction.jsx";
 
@@ -10,6 +10,21 @@ function App() {
     { name: "Investments", proportion: 20, detail: [] },
     { name: "Other", proportion: 30, detail: [] },
   ]);
+
+  const [investment, setInvestment] = useState({
+    years: 0,
+    initialInvestment: 0,
+    monthlyContribution: 0,
+    yearlyGrowth: 0,
+  });
+
+  useEffect(() => {
+    console.log(investment);
+  }, [investment]);
+
+  const handlePredictionFormChange = (field, value) => {
+    setInvestment({ ...investment, [field]: value });
+  };
 
   const handleIncomeChange = (value) => {
     setIncome(value);
@@ -22,7 +37,10 @@ function App() {
         incomeChange={handleIncomeChange}
       />
 
-      <Prediction investment={income * (budget[1].proportion / 100)} />
+      <Prediction
+        investment={income * (budget[1].proportion / 100)}
+        handlePredictionFormChange={handlePredictionFormChange}
+      />
       <div></div>
       <div></div>
     </div>
