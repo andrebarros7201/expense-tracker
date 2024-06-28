@@ -4,7 +4,7 @@ import styles from "../styles/budget.module.css";
 export default function Budget({ income, budget, incomeChange }) {
   return (
     <section className={styles["budget"]}>
-      <h2>Budget</h2>
+      <h2>Monthly Budget</h2>
       <input
         className={styles["budget-input"]}
         type="number"
@@ -15,7 +15,8 @@ export default function Budget({ income, budget, incomeChange }) {
       <ul>
         {budget.map((budget) => (
           <li key={budget.name}>
-            {budget.name}: {income * (budget.proportion / 100)} €
+            ({budget.proportion}%) {budget.name}:{" "}
+            {income * (budget.proportion / 100)} €
           </li>
         ))}
       </ul>
