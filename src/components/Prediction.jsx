@@ -1,7 +1,12 @@
 import styles from "../styles/prediction.module.css";
 import PropTypes from "prop-types";
 
-export default function Prediction({ investment, handlePredictionFormChange }) {
+export default function Prediction({
+  investment,
+  handlePredictionFormChange,
+  investmentGrowth,
+  handleInvestmentGrowth,
+}) {
   return (
     <section className={styles["prediction"]}>
       <h2>Investment Prediction</h2>
@@ -15,7 +20,7 @@ export default function Prediction({ investment, handlePredictionFormChange }) {
                 min={0}
                 max={100}
                 onChange={(e) =>
-                  handlePredictionFormChange("years", Number(e.target.value))
+                  handlePredictionFormChange("years", parseInt(e.target.value))
                 }
               />
             </span>
@@ -27,7 +32,7 @@ export default function Prediction({ investment, handlePredictionFormChange }) {
                 onChange={(e) =>
                   handlePredictionFormChange(
                     "initialInvestment",
-                    parseFloat(e.target.value).toFixed(2)
+                    Number(e.target.value),
                   )
                 }
               />
@@ -40,7 +45,7 @@ export default function Prediction({ investment, handlePredictionFormChange }) {
                 onChange={(e) =>
                   handlePredictionFormChange(
                     "monthlyContribution",
-                    parseFloat(e.target.value).toFixed(2)
+                    Number(e.target.value),
                   )
                 }
               />
@@ -55,17 +60,24 @@ export default function Prediction({ investment, handlePredictionFormChange }) {
                 onChange={(e) =>
                   handlePredictionFormChange(
                     "yearlyGrowth",
-                    Number(e.target.value)
+                    Number(e.target.value),
                   )
                 }
               />
             </span>
-            <button>Calculate</button>
+            <button onClick={(e) => handleInvestmentGrowth(e)}>
+              Calculate
+            </button>
           </form>
         </div>
 
         <div className={styles["right"]}>
-          <h3>Value For Investments: {investment} €</h3>
+          <h3>Investment Growth</h3>
+          {investmentGrowth.map((item) => (
+            <p key={item.year}>
+              {item.year}: {parseFloat(item.value).toFixed(2)} €
+            </p>
+          ))}
         </div>
       </div>
     </section>
