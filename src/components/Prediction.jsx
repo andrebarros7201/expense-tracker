@@ -2,7 +2,6 @@ import styles from "../styles/prediction.module.css";
 import PropTypes from "prop-types";
 
 export default function Prediction({
-  investment,
   handlePredictionFormChange,
   investmentGrowth,
   handleInvestmentGrowth,
@@ -85,6 +84,7 @@ export default function Prediction({
 }
 
 Prediction.propTypes = {
-  investment: PropTypes.number,
   handlePredictionFormChange: PropTypes.func,
+  investmentGrowth: PropTypes.array,
+  handleInvestmentGrowth: PropTypes.func,
 };

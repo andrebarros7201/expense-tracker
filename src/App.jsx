@@ -83,13 +83,10 @@ function App() {
       />
 
       <Prediction
-        investment={income * (budget[1].proportion / 100)}
         handlePredictionFormChange={handlePredictionFormChange}
         investmentGrowth={investmentGrowth}
         handleInvestmentGrowth={handleCalculateGrowth}
       />
-      <div></div>
-      <div></div>
     </div>
   );
 }
