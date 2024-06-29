@@ -3,9 +3,11 @@
     grid-row: 2 / 3;
     display: flex;
     flex-flow: column wrap;
-    border:1px solid red;
     min-width: 400px;
-    & div{
+    background-color: #2B4570;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #2B4570;
+    & > div{
         display: flex;
         flex-flow: row wrap;
         gap:1rem;
@@ -26,7 +28,6 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    border:1px solid green;
     min-width: 250px;
 }
 
@@ -50,13 +51,13 @@
             padding: 10px;
             border-radius: 1rem;
             text-align: center;
-            border: 2px solid rebeccapurple;
+            border: 2px solid #2B4570;
             transition: all 200ms;
             font-size: 1rem;
 
             &:focus {
                 outline: none;
-                box-shadow: 0 0 10px rebeccapurple;
+                box-shadow: 0 0 10px white;
             }
 
             /* Chrome, Safari, Edge, Opera */
@@ -78,17 +79,34 @@
     }
 
     & button{
-        background-color: rebeccapurple;
+        background-color: #2B4570;
         color:white;
-        border: none;
+        border: 2px solid white ;
         padding: 1rem;
         width: 50%;
         border-radius: 1rem;
         transition: all 200ms;
+        font-size:1rem;
 
         &:hover{
             cursor: pointer;
-            box-shadow: 0 0 10px rebeccapurple;
+            box-shadow: 0 0 10px white;
         }
     }
+}
+
+.right{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    & > div{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        overflow: auto;
+        width: 100%;
+    }
+
 }

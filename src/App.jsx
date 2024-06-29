@@ -12,7 +12,7 @@ function App() {
 
   const [income, setIncome] = useState(0);
   const [budget, setBudget] = useState(initialBudget);
-  const [investmentGrowth, setInvestmentGrowth] = useState([]);
+  const [investmentGrowth, setInvestmentGrowth] = useState(null);
 
   const [investment, setInvestment] = useState({
     years: 0,
@@ -83,6 +83,7 @@ function App() {
       />
 
       <Prediction
+        investment={investment}
         handlePredictionFormChange={handlePredictionFormChange}
         investmentGrowth={investmentGrowth}
         handleInvestmentGrowth={handleCalculateGrowth}

@@ -5,6 +5,7 @@ export default function Prediction({
   handlePredictionFormChange,
   investmentGrowth,
   handleInvestmentGrowth,
+  investment,
 }) {
   return (
     <section className={styles["prediction"]}>
@@ -72,11 +73,44 @@ export default function Prediction({
 
         <div className={styles["right"]}>
           <h3>Investment Growth</h3>
-          {investmentGrowth.map((item) => (
-            <p key={item.year}>
-              {item.year}: {parseFloat(item.value).toFixed(2)} €
-            </p>
-          ))}
+
+          {investmentGrowth && (
+            <div>
+              <p>
+                Initial Investment{" "}
+                {parseFloat(investment.initialInvestment)
+                  .toFixed(2)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+                €
+              </p>
+              <p>
+                Total Investment:{" "}
+                {parseFloat(
+                  investment.monthlyContribution * 12 * investment.years,
+                )
+                  .toFixed(2)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+                €
+              </p>
+              <p>
+                Growth:{" "}
+                {parseFloat(
+                  investmentGrowth[investmentGrowth.length - 1].value -
+                    investment.monthlyContribution * 12 * investment.years,
+                )
+                  .toFixed(2)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+                €
+              </p>
+              <p>
+                Final Year{" "}
+                {parseFloat(investmentGrowth[investmentGrowth.length - 1].value)
+                  .toFixed(2)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+                €
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -87,4 +121,5 @@ Prediction.propTypes = {
   handlePredictionFormChange: PropTypes.func,
   investmentGrowth: PropTypes.array,
   handleInvestmentGrowth: PropTypes.func,
+  investment: PropTypes.object,
 };
