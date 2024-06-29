@@ -27,7 +27,7 @@ export default function Prediction({ investment, handlePredictionFormChange }) {
                 onChange={(e) =>
                   handlePredictionFormChange(
                     "initialInvestment",
-                    parseFloat(e.target.value).toFixed(2),
+                    parseFloat(e.target.value).toFixed(2)
                   )
                 }
               />
@@ -40,13 +40,13 @@ export default function Prediction({ investment, handlePredictionFormChange }) {
                 onChange={(e) =>
                   handlePredictionFormChange(
                     "monthlyContribution",
-                    parseFloat(e.target.value).toFixed(2),
+                    parseFloat(e.target.value).toFixed(2)
                   )
                 }
               />
             </span>
             <span>
-              <label htmlFor="invenstment-growth">
+              <label htmlFor="investment-growth">
                 Yearly Investment Growth
               </label>
               <input
@@ -55,7 +55,7 @@ export default function Prediction({ investment, handlePredictionFormChange }) {
                 onChange={(e) =>
                   handlePredictionFormChange(
                     "yearlyGrowth",
-                    Number(e.target.value),
+                    Number(e.target.value)
                   )
                 }
               />
@@ -74,4 +74,5 @@ export default function Prediction({ investment, handlePredictionFormChange }) {
 
 Prediction.propTypes = {
   investment: PropTypes.number,
+  handlePredictionFormChange: PropTypes.func,
 };

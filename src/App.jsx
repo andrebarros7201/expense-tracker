@@ -4,12 +4,14 @@ import Budget from "./components/Budget.jsx";
 import Prediction from "./components/Prediction.jsx";
 
 function App() {
-  const [income, setIncome] = useState(0);
-  const [budget, setBudget] = useState([
+  const initialBudget = [
     { name: "Expenses", proportion: 50, detail: [] },
     { name: "Investments", proportion: 20, detail: [] },
     { name: "Other", proportion: 30, detail: [] },
-  ]);
+  ];
+
+  const [income, setIncome] = useState(0);
+  const [budget, setBudget] = useState(initialBudget);
 
   const [investment, setInvestment] = useState({
     years: 0,
