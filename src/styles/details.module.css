@@ -4,4 +4,17 @@ main{
     box-shadow: 0 0 10px white;
     grid-column: 2/3;
     grid-row: 1/3;
+    display: flex;
+    flex-flow: column nowrap;
+    color: #242424;
 }
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 20px #242424;
+    padding: 1.5rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
