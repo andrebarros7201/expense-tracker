@@ -90,7 +90,7 @@ export default function Prediction({ investment, handleCalculateGrowth }) {
           {investment.growth && (
             <div>
               <p>
-                Initial Investment{" "}
+                Initial Investment:{" "}
                 {parseFloat(investment.initialInvestment)
                   .toFixed(2)
                   .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
