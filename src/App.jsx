@@ -34,7 +34,8 @@ function App() {
       e.preventDefault();
       const growth = calculateInvestmentGrowth(values);
       const newTotalContribution =
-        values.monthlyContribution * 12 * values.years;
+        values.monthlyContribution * 12 * values.years +
+        values.initialInvestment;
       const newTotalGrowth =
         growth[growth.length - 1].value - newTotalContribution;
 
