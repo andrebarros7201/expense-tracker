@@ -12,27 +12,48 @@ function App() {
 
   const [income, setIncome] = useState(0);
   const [budget, setBudget] = useState(initialBudget);
-  const [investmentGrowth, setInvestmentGrowth] = useState(null);
 
   const [investment, setInvestment] = useState({
     years: 0,
     initialInvestment: 0,
     monthlyContribution: 0,
     yearlyGrowth: 0,
+    growth: [],
+    finalYear: 0,
+    totalGrowth: 0,
+    totalContribution: 0,
   });
 
   useEffect(() => {
     console.log(investment);
   }, [investment]);
 
-  const handleCalculateGrowth = (e) => {
-    e.preventDefault();
-    setInvestmentGrowth(calculateInvestmentGrowth(investment));
-  };
+  const handleCalculateGrowth = useCallback(
+    (values, e) => {
+      e.preventDefault();
+      const growth = calculateInvestmentGrowth(values);
 
-  const handlePredictionFormChange = (field, value) => {
-    setInvestment({ ...investment, [field]: value });
-  };
+      setInvestment((prevState) => {
+        const newTotalContribution =
+          values.monthlyContribution * 12 * values.years;
+        const newTotalGrowth =
+          growth[growth.length - 1].value - newTotalContribution;
+
+        return {
+          ...prevState,
+          years: values.years,
+          initialInvestment: values.initialInvestment,
+          monthlyContribution: values.monthlyContribution,
+          yearlyGrowth: values.yearlyGrowth,
+          growth: growth,
+          finalYear: growth[growth.length - 1].value,
+          totalGrowth: newTotalGrowth,
+          totalContribution: newTotalContribution,
+        };
+      });
+    },
+    [setInvestment],
+  );
 
   const handleIncomeChange = (value) => {
     setIncome(value);
@@ -51,19 +72,22 @@ function App() {
 
       for (let k = 0; k < 12; k++) {
         if (i === 0 && k === 0) {
-          investmentGrowth[i].months[k] =
+          investmentGrowth[i].months[k] = parseFloat(
             investment.initialInvestment *
-            (1 + investment.yearlyGrowth / 12 / 100);
+              (1 + investment.yearlyGrowth / 12 / 100),
+          ).toFixed(2);
         } else if (k === 0) {
-          investmentGrowth[i].months[k] =
+          investmentGrowth[i].months[k] = parseFloat(
             investmentGrowth[i - 1].months[11] *
               (1 + investment.yearlyGrowth / 12 / 100) +
-            investment.monthlyContribution;
+              investment.monthlyContribution,
+          ).toFixed(2);
         } else {
-          investmentGrowth[i].months[k] =
+          investmentGrowth[i].months[k] = parseFloat(
             investmentGrowth[i].months[k - 1] *
               (1 + investment.yearlyGrowth / 12 / 100) +
-            investment.monthlyContribution;
+              investment.monthlyContribution,
+          ).toFixed(2);
         }
       }
 
@@ -84,9 +108,7 @@ function App() {
 
       <Prediction
         investment={investment}
-        handlePredictionFormChange={handlePredictionFormChange}
-        investmentGrowth={investmentGrowth}
-        handleInvestmentGrowth={handleCalculateGrowth}
+        handleCalculateGrowth={handleCalculateGrowth}
       />
     </div>
   );

@@ -1,18 +1,33 @@
 import styles from "../styles/prediction.module.css";
 import PropTypes from "prop-types";
+import { useState } from "react";
 
-export default function Prediction({
-  handlePredictionFormChange,
-  investmentGrowth,
-  handleInvestmentGrowth,
-  investment,
-}) {
+export default function Prediction({ investment, handleCalculateGrowth }) {
+  const [values, setValues] = useState({
+    years: 0,
+    initialInvestment: 0,
+    monthlyContribution: 0,
+    yearlyGrowth: 0,
+  });
+
+  const handlePredictionFormChange = (field, value) => {
+    setValues({ ...values, [field]: value });
+  };
+
+  const handleSubmitForm = (values, e) => {
+    handleCalculateGrowth(values, e);
+  };
+
+  //TODO crate a function in here to store the form values and then send the values to the App.jsx
   return (
     <section className={styles["prediction"]}>
       <h2>Investment Prediction</h2>
       <div>
         <div className={styles["left"]}>
-          <form className={styles["form-prediction"]}>
+          <form
+            className={styles["form-prediction"]}
+            onSubmit={(e) => handleSubmitForm(values, e)}
+          >
             <span>
               <label htmlFor="years">Years of Investment</label>
               <input
@@ -65,16 +80,14 @@ export default function Prediction({
                 }
               />
             </span>
-            <button onClick={(e) => handleInvestmentGrowth(e)}>
-              Calculate
-            </button>
+            <button type={"submit"}>Calculate</button>
           </form>
         </div>
 
         <div className={styles["right"]}>
           <h3>Investment Growth</h3>
 
-          {investmentGrowth && (
+          {investment.growth && (
             <div>
               <p>
                 Initial Investment{" "}
@@ -85,26 +98,21 @@ export default function Prediction({
               </p>
               <p>
                 Total Investment:{" "}
-                {parseFloat(
-                  investment.monthlyContribution * 12 * investment.years,
-                )
+                {parseFloat(investment.totalContribution)
                   .toFixed(2)
                   .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
                 €
               </p>
               <p>
                 Growth:{" "}
-                {parseFloat(
-                  investmentGrowth[investmentGrowth.length - 1].value -
-                    investment.monthlyContribution * 12 * investment.years,
-                )
+                {parseFloat(investment.totalGrowth)
                   .toFixed(2)
                   .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
                 €
               </p>
               <p>
-                Final Year{" "}
-                {parseFloat(investmentGrowth[investmentGrowth.length - 1].value)
+                Final Year:{" "}
+                {parseFloat(investment.finalYear)
                   .toFixed(2)
                   .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
                 €
@@ -118,8 +126,6 @@ export default function Prediction({
 }
 
 Prediction.propTypes = {
-  handlePredictionFormChange: PropTypes.func,
-  investmentGrowth: PropTypes.array,
-  handleInvestmentGrowth: PropTypes.func,
+  handleCalculateGrowth: PropTypes.func,
   investment: PropTypes.object,
 };
