@@ -2,6 +2,7 @@ import "./App.css";
 import { useCallback, useEffect, useState } from "react";
 import Budget from "./components/Budget.jsx";
 import Prediction from "./components/Prediction.jsx";
+import Details from "./components/Details.jsx";
 
 function App() {
   const initialBudget = [
@@ -107,6 +108,7 @@ function App() {
         investment={investment}
         handleCalculateGrowth={handleCalculateGrowth}
       />
+      <Details />
     </div>
   );
 }

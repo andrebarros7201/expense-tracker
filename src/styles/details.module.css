@@ -1,0 +1,7 @@
+main{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px white;
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
