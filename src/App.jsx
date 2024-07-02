@@ -32,25 +32,22 @@ function App() {
     (values, e) => {
       e.preventDefault();
       const growth = calculateInvestmentGrowth(values);
+      const newTotalContribution =
+        values.monthlyContribution * 12 * values.years;
+      const newTotalGrowth =
+        growth[growth.length - 1].value - newTotalContribution;
 
-      setInvestment((prevState) => {
-        const newTotalContribution =
-          values.monthlyContribution * 12 * values.years;
-        const newTotalGrowth =
-          growth[growth.length - 1].value - newTotalContribution;
-
-        return {
-          ...prevState,
-          years: values.years,
-          initialInvestment: values.initialInvestment,
-          monthlyContribution: values.monthlyContribution,
-          yearlyGrowth: values.yearlyGrowth,
-          growth: growth,
-          finalYear: growth[growth.length - 1].value,
-          totalGrowth: newTotalGrowth,
-          totalContribution: newTotalContribution,
-        };
-      });
+      setInvestment((prevState) => ({
+        ...prevState,
+        years: values.years,
+        initialInvestment: values.initialInvestment,
+        monthlyContribution: values.monthlyContribution,
+        yearlyGrowth: values.yearlyGrowth,
+        growth: growth,
+        finalYear: growth[growth.length - 1].value,
+        totalGrowth: newTotalGrowth,
+        totalContribution: newTotalContribution,
+      }));
     },
     [setInvestment],
   );
