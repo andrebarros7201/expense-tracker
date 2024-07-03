@@ -20,6 +20,7 @@ body {
   grid-template-rows: 1fr 2fr;
   gap: 1rem;
   padding: 1rem;
+  overflow-x: hidden;
 }
 
 @media (max-width: 1000px) {
