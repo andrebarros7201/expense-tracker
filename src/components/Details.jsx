@@ -1,4 +1,5 @@
 import styles from "../styles/details.module.css";
+import { Outlet } from "react-router-dom";
 
 export default function Details() {
   return (
@@ -6,7 +7,7 @@ export default function Details() {
       <nav>
         <a>Table</a>
       </nav>
-      <div></div>
+      <Outlet />
     </main>
   );
 }

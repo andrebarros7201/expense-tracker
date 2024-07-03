@@ -4,20 +4,35 @@
   box-sizing: border-box;
 }
 
-body{
-  padding:0;
-  margin:0;
+body {
+  padding: 0;
+  margin: 0;
   width: 100vw;
   height: 100vh;
 }
 
-.app{
-  width:100vw;
-  height:100vh;
+.app {
+  width: 100vw;
+  height: 100vh;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 2fr;
-  gap:1rem;
+  gap: 1rem;
   padding: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .app {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    & > * {
+      width: 100%;
+    }
+  }
 }
