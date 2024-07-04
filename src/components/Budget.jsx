@@ -1,14 +1,17 @@
 import PropTypes from "prop-types";
 import styles from "../styles/budget.module.css";
+import { useContext } from "react";
+import { AppContext } from "../App.jsx";
 
-export default function Budget({ income, budget, incomeChange }) {
+export default function Budget() {
+  const { income, budget, handleIncomeChange } = useContext(AppContext);
   return (
     <section className={styles["budget"]}>
       <h2>Monthly Budget</h2>
       <input
         className={styles["budget-input"]}
         type="number"
-        onChange={(e) => incomeChange(Number(e.target.value))}
+        onChange={(e) => handleIncomeChange(Number(e.target.value))}
         placeholder="Income"
       />
       <h3>Distribution</h3>
@@ -26,6 +29,6 @@ export default function Budget({ income, budget, incomeChange }) {
 
 Budget.propTypes = {
   income: PropTypes.number,
-  budget: PropTypes.array.isRequired,
-  incomeChange: PropTypes.func.isRequired,
+  budget: PropTypes.array,
+  handleIncoming: PropTypes.func,
 };

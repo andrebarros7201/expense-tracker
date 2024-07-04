@@ -1,8 +1,10 @@
 import "./App.css";
-import { useCallback, useEffect, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import Budget from "./components/Budget.jsx";
 import Prediction from "./components/Prediction.jsx";
 import Details from "./components/Details.jsx";
+
+export const AppContext = createContext(null);
 
 function App() {
   const initialBudget = [
@@ -90,7 +92,6 @@ function App() {
         }
       }
 
-      // At the end of each year, set the year's value to the last month's value
       investmentGrowth[i].value = investmentGrowth[i].months[11];
     }
 
@@ -99,17 +100,19 @@ function App() {
 
   return (
     <div className={"app"}>
-      <Budget
-        income={income}
-        budget={budget}
-        incomeChange={handleIncomeChange}
-      />
-
-      <Prediction
-        investment={investment}
-        handleCalculateGrowth={handleCalculateGrowth}
-      />
-      <Details />
+      <AppContext.Provider
+        value={{
+          income,
+          budget,
+          handleIncomeChange,
+          investment,
+          handleCalculateGrowth,
+        }}
+      >
+        <Budget />
+        <Prediction />
+        <Details />
+      </AppContext.Provider>
     </div>
   );
 }

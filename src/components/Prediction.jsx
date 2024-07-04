@@ -1,8 +1,11 @@
 import styles from "../styles/prediction.module.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../App.jsx";
 
-export default function Prediction({ investment, handleCalculateGrowth }) {
+export default function Prediction() {
+  const { investment, handleCalculateGrowth } = useContext(AppContext);
+
   const [values, setValues] = useState({
     years: 0,
     initialInvestment: 0,
@@ -18,7 +21,6 @@ export default function Prediction({ investment, handleCalculateGrowth }) {
     handleCalculateGrowth(values, e);
   };
 
-  //TODO crate a function in here to store the form values and then send the values to the App.jsx
   return (
     <section className={styles["prediction"]}>
       <h2>Investment Prediction</h2>
