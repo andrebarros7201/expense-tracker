@@ -1,0 +1,22 @@
+.table {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  overflow: auto;
+  padding-top: 1.5rem;
+  box-sizing: border-box;
+}
+
+.table-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  height: min-content;
+  border-radius: 1rem;
+
+  &:nth-child(even) {
+    background-color: #242424;
+    color: white;
+  }
+}
