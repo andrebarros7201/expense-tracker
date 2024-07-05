@@ -9,7 +9,7 @@
 
 .table-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
   height: min-content;
@@ -18,5 +18,31 @@
   &:nth-child(even) {
     background-color: #242424;
     color: white;
+  }
+}
+
+.table-item-head {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.table-item-details {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-height: 400px;
+
+  & > * {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
   }
 }

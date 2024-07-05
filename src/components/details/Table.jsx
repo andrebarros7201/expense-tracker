@@ -10,17 +10,19 @@ function TableItem({ item }) {
   };
   return (
     <div className={styles["table-item"]}>
-      <div>
+      <div className={styles["table-item-head"]}>
         <p>Year: {item.year}</p>
         <p>Final Value: {item.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €</p>
-        <button onClick={toggleDetails}>Show Details</button>
+        <button onClick={toggleDetails}>
+          {detailsOpen ? "Close" : "Open"} Details
+        </button>
       </div>
       {detailsOpen && (
-        <div>
+        <div className={styles["table-item-details"]}>
           {item.months.map((item) => (
             <div key={item.month}>
-              {item.month}
-              {item.value}
+              <p>{item.month}:</p>{" "}
+              <p>{item.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €</p>
             </div>
           ))}
         </div>
