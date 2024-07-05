@@ -8,6 +8,7 @@ main {
   flex-flow: column nowrap;
   color: #242424;
   overflow: auto;
+  min-height: 700px;
 }
 
 nav {
