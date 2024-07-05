@@ -5,19 +5,43 @@
   overflow: auto;
   padding-top: 1.5rem;
   box-sizing: border-box;
+  min-width: fit-content;
 }
 
 .table-item {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 100%;
+  width: 90%;
   height: min-content;
   border-radius: 1rem;
+  padding: 1rem;
 
   &:nth-child(even) {
     background-color: #242424;
     color: white;
+    transition: all 200ms;
+
+    button {
+      background-color: white;
+      color: #242424;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 10px white;
+      }
+    }
+  }
+
+  & button {
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 10px #242424;
+    }
   }
 }
 
