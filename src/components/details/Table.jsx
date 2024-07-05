@@ -1,5 +1,5 @@
 import { AppContext } from "../../App.jsx";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import styles from "../../styles/table.module.css";
 
 function TableItem({ item }) {
@@ -14,9 +14,6 @@ function TableItem({ item }) {
 export default function Table() {
   const { investment } = useContext(AppContext);
 
-  useEffect(() => {
-    console.log(investment.growth);
-  }, [investment]);
   return (
     <div>
       <div className={styles["table"]}>
