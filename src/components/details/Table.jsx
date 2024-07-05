@@ -17,10 +17,10 @@ function TableItem({ item }) {
       </div>
       {detailsOpen && (
         <div>
-          {item.months.map((month, index) => (
-            <div key={index}>
-              {index}
-              {month}
+          {item.months.map((item) => (
+            <div key={item.month}>
+              {item.month}
+              {item.value}
             </div>
           ))}
         </div>
