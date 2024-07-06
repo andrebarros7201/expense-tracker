@@ -6,6 +6,7 @@ export default function DetailsNav() {
     <nav className={styles["details-nav"]}>
       <Link to="/">Table</Link>
       <Link to="/chart">Chart</Link>
+      <Link to="/fire">FIRE</Link>
     </nav>
   );
 }
