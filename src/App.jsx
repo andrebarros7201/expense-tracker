@@ -1,5 +1,5 @@
 import "./App.css";
-import { createContext, useCallback, useEffect, useState } from "react";
+import { createContext, useCallback, useState } from "react";
 import Budget from "./components/Budget.jsx";
 import Prediction from "./components/Prediction.jsx";
 import Details from "./components/Details.jsx";
@@ -25,36 +25,44 @@ function App() {
     finalYear: 0,
     totalGrowth: 0,
     totalContribution: 0,
+    fireFourPercent: 0,
+    fireMonthlyIncome: 0,
   });
 
-  useEffect(() => {
-    console.log(investment);
-  }, [investment]);
+  const handleCalculateGrowth = useCallback((values, e) => {
+    e.preventDefault();
 
-  const handleCalculateGrowth = useCallback(
-    (values, e) => {
-      e.preventDefault();
-      const growth = calculateInvestmentGrowth(values);
+    // Calculate growth and contributions
+    const growth = calculateInvestmentGrowth(values);
+
+    // Set the new investment state
+    setInvestment((prevState) => {
       const newTotalContribution =
         values.monthlyContribution * 12 * values.years +
         values.initialInvestment;
       const newTotalGrowth =
         growth[growth.length - 1].value - newTotalContribution;
 
-      setInvestment((prevState) => ({
+      // Final value for the investment after growth
+      const finalYearValue = growth[growth.length - 1].value;
+      const newFireFourPercent = finalYearValue * 0.04;
+      const newFireMonthlyIncome = newFireFourPercent / 12;
+
+      return {
         ...prevState,
         years: values.years,
         initialInvestment: values.initialInvestment,
         monthlyContribution: values.monthlyContribution,
         yearlyGrowth: values.yearlyGrowth,
         growth: growth,
-        finalYear: growth[growth.length - 1].value,
+        finalYear: finalYearValue,
         totalGrowth: newTotalGrowth,
         totalContribution: newTotalContribution,
-      }));
-    },
-    [setInvestment],
-  );
+        fireFourPercent: newFireFourPercent,
+        fireMonthlyIncome: newFireMonthlyIncome,
+      };
+    });
+  }, []);
 
   const handleIncomeChange = (value) => {
     setIncome(value);
