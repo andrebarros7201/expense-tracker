@@ -17,9 +17,9 @@ const routes = [
         element: <Chart />,
       },
       {
-        path:"fire",
-        element:<Fire/>
-      }
+        path: "fire",
+        element: <Fire />,
+      },
     ],
   },
 ];
