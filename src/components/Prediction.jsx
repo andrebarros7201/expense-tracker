@@ -119,6 +119,20 @@ export default function Prediction() {
                   .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
                 €
               </p>
+              <p>
+                4%:{" "}
+                {parseFloat(investment.fireFourPercent)
+                  .toFixed(2)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+                €
+              </p>
+              <p>
+                FIRE Income:{" "}
+                {investment.fireMonthlyIncome
+                  .toFixed(2)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+                €
+              </p>
             </div>
           )}
         </div>
