@@ -3,7 +3,6 @@
   grid-row: 2 / 3;
   display: flex;
   flex-flow: column nowrap;
-  min-width: 400px;
   background-color: #2b4570;
   border-radius: 1rem;
   box-shadow: 0 0 10px #2b4570;
