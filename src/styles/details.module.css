@@ -7,6 +7,6 @@ main {
   display: flex;
   flex-flow: column nowrap;
   color: #242424;
-  overflow: auto;
+  overflow-y: scroll;
   min-height: 700px;
 }
