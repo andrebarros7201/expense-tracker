@@ -95,7 +95,7 @@ function App() {
       for (let k = 0; k < 12; k++) {
         if (i === 0 && k === 0) {
           investmentGrowth[i].months[k].value = parseFloat(
-            investment.initialInvestment *
+            (investment.monthlyContribution + investment.initialInvestment) *
               (1 + investment.yearlyGrowth / 12 / 100),
           ).toFixed(2);
         } else if (k === 0) {
