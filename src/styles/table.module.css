@@ -14,29 +14,19 @@
   justify-content: space-evenly;
   width: 90%;
   height: min-content;
-  border-radius: 1rem;
   padding: 1rem;
 
-  &:nth-child(even) {
-    background-color: #242424;
-    color: white;
-    transition: all 200ms;
-
-    button {
-      background-color: white;
-      color: #242424;
-
-      &:hover {
-        cursor: pointer;
-        box-shadow: 0 0 10px white;
-      }
-    }
+  &:not(:last-child) {
+    border-bottom: 1px solid #242424;
   }
 
   & button {
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 0.4rem;
     font-size: 1rem;
+    background-color: white;
+    color: #242424;
+    border: 1px solid #242424;
+    transition: 0.2s ease-in-out;
 
     &:hover {
       cursor: pointer;

@@ -10,12 +10,3 @@ main {
   overflow: auto;
   min-height: 700px;
 }
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 5px 20px #242424;
-  padding: 1.5rem;
-  border-radius: 1rem 1rem 0 0;
-}
