@@ -74,7 +74,7 @@ function App() {
     for (let i = 0; i < investment.years; i++) {
       // Initialize the year's data
       investmentGrowth[i] = {
-        year: 2024 + i,
+        year: new Date().getFullYear() + i,
         value: 0,
         months: [
           { month: "January", value: null },
