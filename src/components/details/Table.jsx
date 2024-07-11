@@ -9,8 +9,8 @@ function TableItem({ item, previousItem }) {
     setDetailsOpen(!detailsOpen);
   };
   return (
-    <div className={styles["table-item"]}>
-      <div className={styles["table-item-head"]} data-testid="table-item">
+    <div className={styles["table-item"]} data-testid="table-item">
+      <div className={styles["table-item-head"]}>
         <p>Year: {item.year}</p>
         <p>
           Final Value: {String(item.value).replace(/\B(?=(\d{3})+(?!\d))/g)} €{" "}
