@@ -53,7 +53,7 @@ export default function Table() {
   return (
     <div>
       <div className={styles["table"]}>
-        {investment.growth.map((item, index) => {
+        {investment.growth.map((item) => {
           const element = (
             <TableItem
               item={item}
