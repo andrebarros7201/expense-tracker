@@ -13,15 +13,15 @@ describe("calculateInvestmentGrowth", () => {
     years,
   });
 
-  it("check if array length is equal to years", () => {
+  it("array length is equal to years", () => {
     expect(result.length).toBe(years);
   });
 
-  it("check if first month is January", () => {
+  it("first month is January", () => {
     expect(result[0].months[0].month).toBe("January");
   });
 
-  it("check if current year is correct", () => {
+  it("current year is correct", () => {
     expect(result[0].year).toBe(new Date().getFullYear());
   });
 });
