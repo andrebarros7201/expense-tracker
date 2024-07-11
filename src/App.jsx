@@ -68,10 +68,15 @@ function App() {
     setIncome(value);
   };
 
-  const calculateInvestmentGrowth = (investment) => {
+  const calculateInvestmentGrowth = ({
+    initialInvestment,
+    monthlyContribution,
+    yearlyGrowth,
+    years,
+  }) => {
     let investmentGrowth = [];
 
-    for (let i = 0; i < investment.years; i++) {
+    for (let i = 0; i < years; i++) {
       // Initialize the year's data
       investmentGrowth[i] = {
         year: new Date().getFullYear() + i,
@@ -95,20 +100,18 @@ function App() {
       for (let k = 0; k < 12; k++) {
         if (i === 0 && k === 0) {
           investmentGrowth[i].months[k].value = parseFloat(
-            (investment.monthlyContribution + investment.initialInvestment) *
-              (1 + investment.yearlyGrowth / 12 / 100),
+            (monthlyContribution + initialInvestment) *
+              (1 + yearlyGrowth / 12 / 100),
           ).toFixed(2);
         } else if (k === 0) {
           investmentGrowth[i].months[k].value = parseFloat(
-            investmentGrowth[i - 1].months[11].value *
-              (1 + investment.yearlyGrowth / 12 / 100) +
-              investment.monthlyContribution,
+            (investmentGrowth[i - 1].value + monthlyContribution) *
+              (1 + yearlyGrowth / 12 / 100),
           ).toFixed(2);
         } else {
           investmentGrowth[i].months[k].value = parseFloat(
-            investmentGrowth[i].months[k - 1].value *
-              (1 + investment.yearlyGrowth / 12 / 100) +
-              investment.monthlyContribution,
+            (investmentGrowth[i].months[k - 1].value + monthlyContribution) *
+              (1 + yearlyGrowth / 12 / 100),
           ).toFixed(2);
         }
       }
