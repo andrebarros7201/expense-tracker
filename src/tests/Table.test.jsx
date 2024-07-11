@@ -46,4 +46,19 @@ describe("Table Component", () => {
     // Assert that the number of rendered items matches the length of the growth array
     expect(tableItems).toHaveLength(mockGrowth.length);
   });
+
+  it("render message if array is empty", () => {
+    const mockGrowth = [];
+    const mockContextValue = { investment: { growth: mockGrowth } };
+
+    render(
+      <AppContext.Provider value={mockContextValue}>
+        <Table />
+      </AppContext.Provider>,
+    );
+
+    expect(screen.getByRole("heading").textContent).toMatch(
+      /Calculate Growth First/i,
+    );
+  });
 });

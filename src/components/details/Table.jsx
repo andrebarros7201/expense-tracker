@@ -55,17 +55,21 @@ export default function Table() {
   return (
     <div>
       <div className={styles["table"]}>
-        {growth.map((item) => {
-          const element = (
-            <TableItem
-              item={item}
-              previousItem={previousItem}
-              key={item.year}
-            />
-          );
-          previousItem = item; // Update previous item for the next iteration
-          return element;
-        })}
+        {growth.length > 0 ? (
+          growth.map((item) => {
+            const element = (
+              <TableItem
+                item={item}
+                previousItem={previousItem}
+                key={item.year}
+              />
+            );
+            previousItem = item; // Update previous item for the next iteration
+            return element;
+          })
+        ) : (
+          <h2>Calculate Growth First</h2>
+        )}
       </div>
     </div>
   );
