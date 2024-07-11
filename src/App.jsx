@@ -105,13 +105,15 @@ function App() {
           ).toFixed(2);
         } else if (k === 0) {
           investmentGrowth[i].months[k].value = parseFloat(
-            (investmentGrowth[i - 1].value + monthlyContribution) *
-              (1 + yearlyGrowth / 12 / 100),
+            investmentGrowth[i - 1].months[11].value *
+              (1 + yearlyGrowth / 12 / 100) +
+              monthlyContribution,
           ).toFixed(2);
         } else {
           investmentGrowth[i].months[k].value = parseFloat(
-            (investmentGrowth[i].months[k - 1].value + monthlyContribution) *
-              (1 + yearlyGrowth / 12 / 100),
+            investmentGrowth[i].months[k - 1].value *
+              (1 + yearlyGrowth / 12 / 100) +
+              monthlyContribution,
           ).toFixed(2);
         }
       }
