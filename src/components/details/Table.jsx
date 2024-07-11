@@ -15,11 +15,11 @@ function TableItem({ item, previousItem }) {
         <p>
           Final Value: {item.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €{" "}
           {previousItem
-            ? "( +" +
+            ? "(+" +
               parseFloat(item.value - previousItem.value)
                 .toFixed(2)
                 .replace(/\B(?=(\d{3})+(?!\d))/g, " ") +
-              " €)"
+              "€)"
             : "(0€)"}
         </p>
         <button onClick={toggleDetails}>
