@@ -23,9 +23,11 @@ function TableItem({ item, previousItem }) {
               "€)"
             : "(0€)"}
         </p>
-        <button onClick={toggleDetails}>
-          {detailsOpen ? "Close" : "Open"} Details
-        </button>
+        <div>
+          <button onClick={toggleDetails}>
+            {detailsOpen ? "Close" : "Open"} Details
+          </button>
+        </div>
       </div>
       {detailsOpen && (
         <div className={styles["table-item-details"]}>
