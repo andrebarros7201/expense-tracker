@@ -13,7 +13,8 @@ function TableItem({ item, previousItem }) {
       <div className={styles["table-item-head"]}>
         <p>Year: {item.year}</p>
         <p>
-          Final Value: {String(item.value).replace(/\B(?=(\d{3})+(?!\d))/g)} €{" "}
+          Final Value:{" "}
+          {String(item.value).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €{" "}
           {previousItem
             ? "(+" +
               parseFloat(item.value - previousItem.value)
