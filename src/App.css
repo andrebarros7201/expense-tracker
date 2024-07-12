@@ -14,27 +14,8 @@ body {
 .app {
   width: 100vw;
   height: 100vh;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 2fr;
-  gap: 1rem;
-  padding: 1rem;
-  overflow-x: hidden;
-}
-
-@media (max-width: 1000px) {
-  .app {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    padding: 0.3rem;
-    width: 100vw;
-    box-sizing: border-box;
-    overflow-x: hidden;
-
-    & > * {
-      width: 100%;
-    }
-  }
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: white;
+  color: #242424;
 }

@@ -1,7 +1,8 @@
 import App from "./App.jsx";
-import Table from "./components/details/Table.jsx";
-import Chart from "./components/details/Chart.jsx";
-import Fire from "./components/details/Fire.jsx";
+import Chart from "./components/Chart.jsx";
+import Fire from "./components/Fire.jsx";
+import Budget from "./components/Budget.jsx";
+import Prediction from "./components/Prediction.jsx";
 
 const routes = [
   {
@@ -10,7 +11,7 @@ const routes = [
     children: [
       {
         index: true,
-        element: <Table />,
+        element: <Budget />,
       },
       {
         path: "chart",
@@ -19,6 +20,10 @@ const routes = [
       {
         path: "fire",
         element: <Fire />,
+      },
+      {
+        path: "investment",
+        element: <Prediction />,
       },
     ],
   },

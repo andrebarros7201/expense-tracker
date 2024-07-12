@@ -1,10 +1,12 @@
-import styles from "../../styles/detailsNav.module.css";
+import styles from "../styles/detailsNav.module.css";
 import { Link } from "react-router-dom";
 
-export default function DetailsNav() {
+export default function Navbar() {
   return (
     <nav className={styles["details-nav"]}>
-      <Link to="/">Table</Link>
+      <Link to="/">Budget</Link>
+      <Link to="/investment">Investment Growth</Link>
+
       {/*<Link to="/chart">Chart</Link>
       <Link to="/fire">FIRE</Link>*/}
     </nav>

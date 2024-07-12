@@ -1,9 +1,8 @@
 import "./App.css";
 import { createContext, useCallback, useState } from "react";
-import Budget from "./components/Budget.jsx";
-import Prediction from "./components/Prediction.jsx";
-import Details from "./components/Details.jsx";
 import { calculateInvestmentGrowth } from "./utils/calculateInvestmentGrowth.js";
+import Navbar from "./components/Navbar.jsx";
+import { Outlet } from "react-router-dom";
 
 export const AppContext = createContext(null);
 
@@ -80,9 +79,8 @@ function App() {
           handleCalculateGrowth,
         }}
       >
-        <Budget />
-        <Prediction />
-        <Details />
+        <Navbar />
+        <Outlet />
       </AppContext.Provider>
     </div>
   );
