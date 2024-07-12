@@ -1,11 +1,6 @@
 .budget {
-  background-color: #3f6212;
-  box-shadow: 0 0 10px #3f6212;
-  border-radius: 1rem;
   box-sizing: border-box;
   padding: 10px;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;

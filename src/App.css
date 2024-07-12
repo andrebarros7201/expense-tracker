@@ -14,8 +14,9 @@ body {
 .app {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-flow: column nowrap;
-  background-color: white;
-  color: #242424;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr;
+  background-color: var(--oxford-blue);
+  color: white;
 }

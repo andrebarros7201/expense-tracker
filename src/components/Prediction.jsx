@@ -2,6 +2,7 @@ import styles from "../styles/prediction.module.css";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { AppContext } from "../App.jsx";
+import Table from "./Table.jsx";
 
 export default function Prediction() {
   const { investment, handleCalculateGrowth } = useContext(AppContext);
@@ -22,9 +23,9 @@ export default function Prediction() {
   };
 
   return (
-    <section className={styles["prediction"]}>
+    <main className={styles["prediction-main"]}>
       <h2>Investment Prediction</h2>
-      <div>
+      <div className={styles["prediction"]}>
         <div className={styles["left"]}>
           <form
             className={styles["form-prediction"]}
@@ -85,10 +86,7 @@ export default function Prediction() {
             <button type={"submit"}>Calculate</button>
           </form>
         </div>
-
         <div className={styles["right"]}>
-          <h3>Investment Growth</h3>
-
           {investment.growth && (
             <div>
               <p>
@@ -136,8 +134,11 @@ export default function Prediction() {
             </div>
           )}
         </div>
+        <div className={styles["prediction-wrapper-table"]}>
+          <Table />
+        </div>
       </div>
-    </section>
+    </main>
   );
 }
 

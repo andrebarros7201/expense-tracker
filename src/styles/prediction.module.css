@@ -1,11 +1,13 @@
-.prediction {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
+.prediction-main {
   display: flex;
-  flex-flow: column nowrap;
-  background-color: #2b4570;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px #2b4570;
+  flex-direction: column;
+}
+
+.prediction {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  grid-template-rows: 1fr;
   & > div {
     display: flex;
     flex-flow: row wrap;
@@ -23,7 +25,6 @@
 
 .left,
 .right {
-  flex: 1;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -109,4 +110,10 @@
     overflow: auto;
     width: 100%;
   }
+}
+
+.prediction-wrapper-table {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }
