@@ -1,9 +1,9 @@
-const calculateInvestmentGrowth = ({
+export function calculateInvestmentGrowth({
   initialInvestment,
   monthlyContribution,
   yearlyGrowth,
   years,
-}) => {
+}) {
   let investmentGrowth = [];
 
   for (let i = 0; i < years; i++) {
@@ -52,6 +52,4 @@ const calculateInvestmentGrowth = ({
   }
 
   return investmentGrowth;
-};
-
-export { calculateInvestmentGrowth };
+}
