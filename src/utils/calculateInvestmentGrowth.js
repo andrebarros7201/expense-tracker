@@ -27,22 +27,21 @@ export function calculateInvestmentGrowth({
       ],
     };
 
+    const monthlyGrowPercentage = 1 + yearlyGrowth / 12 / 100;
+
     for (let k = 0; k < 12; k++) {
       if (i === 0 && k === 0) {
         investmentGrowth[i].months[k].value = parseFloat(
-          (monthlyContribution + initialInvestment) *
-            (1 + yearlyGrowth / 12 / 100),
+          (monthlyContribution + initialInvestment) * monthlyGrowPercentage,
         ).toFixed(2);
       } else if (k === 0) {
         investmentGrowth[i].months[k].value = parseFloat(
-          investmentGrowth[i - 1].months[11].value *
-            (1 + yearlyGrowth / 12 / 100) +
+          investmentGrowth[i - 1].months[11].value * monthlyGrowPercentage +
             monthlyContribution,
         ).toFixed(2);
       } else {
         investmentGrowth[i].months[k].value = parseFloat(
-          investmentGrowth[i].months[k - 1].value *
-            (1 + yearlyGrowth / 12 / 100) +
+          investmentGrowth[i].months[k - 1].value * monthlyGrowPercentage +
             monthlyContribution,
         ).toFixed(2);
       }
