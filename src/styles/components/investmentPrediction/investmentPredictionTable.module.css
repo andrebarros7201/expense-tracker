@@ -24,7 +24,7 @@
   & button {
     padding: 0.4rem;
     font-size: 1rem;
-    background-color: white;
+    background-color: var(--platinum);
     color: #242424;
     border: 1px solid #242424;
     transition: 0.2s ease-in-out;
@@ -32,7 +32,7 @@
 
     &:hover {
       cursor: pointer;
-      box-shadow: 0 0 10px #242424;
+      box-shadow: 0 0 10px var(--platinum);
     }
   }
 }
