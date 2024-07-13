@@ -7,4 +7,5 @@
   flex: 1;
   background-color: var(--oxford-blue);
   color: var(--platinum);
+  border-radius: 1rem;
 }

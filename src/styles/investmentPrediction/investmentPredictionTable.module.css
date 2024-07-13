@@ -8,6 +8,8 @@
   min-width: fit-content;
   background-color: var(--oxford-blue);
   color: var(--platinum);
+  border-radius: 1rem;
+  height: 100%;
 }
 
 .table-item {

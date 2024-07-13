@@ -1,41 +1,17 @@
 .prediction-main {
   display: flex;
   flex-flow: column nowrap;
+  height: 100vh;
 
   & > div {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
     gap: 1rem;
+    padding: 1rem 1.5rem;
+    height: 100%;
+
+    & > div {
+      height: 100%;
+    }
   }
-}
-
-.left,
-.right {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  min-width: 250px;
-  flex: 1;
-}
-
-.right {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-
-  & > div {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    overflow: auto;
-    width: 100%;
-  }
-}
-
-.prediction-wrapper-table {
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
 }
