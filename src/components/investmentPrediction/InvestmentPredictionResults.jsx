@@ -1,11 +1,11 @@
-import styles from "../../styles/prediction.module.css";
+import styles from "../../styles/investmentPrediction/investmentPredictionResult.module.css";
 import { useContext } from "react";
 import { AppContext } from "../../App.jsx";
 
 export default function InvestmentPredictionResults() {
   const { investment } = useContext(AppContext);
   return (
-    <div className={styles["right"]}>
+    <div className={styles["investmentPredictionResult"]}>
       {investment.growth && (
         <div>
           <p>

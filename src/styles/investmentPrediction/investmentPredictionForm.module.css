@@ -1,23 +1,12 @@
-.prediction-main {
-  display: flex;
-  flex-flow: column nowrap;
-  border: 1px solid red;
-
-  & > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    border: 1px solid green;
-  }
-}
-
-.left,
-.right {
+.investmentPredictionForm {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   min-width: 250px;
   flex: 1;
+  background-color: var(--oxford-blue);
+  color: var(--platinum);
 }
 
 .form-prediction {
@@ -83,25 +72,4 @@
       box-shadow: 0 0 10px white;
     }
   }
-}
-
-.right {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-
-  & > div {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    overflow: auto;
-    width: 100%;
-  }
-}
-
-.prediction-wrapper-table {
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
 }

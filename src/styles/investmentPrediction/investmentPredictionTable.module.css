@@ -6,6 +6,8 @@
   padding-top: 1.5rem;
   box-sizing: border-box;
   min-width: fit-content;
+  background-color: var(--oxford-blue);
+  color: var(--platinum);
 }
 
 .table-item {
@@ -17,7 +19,7 @@
   padding: 1rem;
 
   &:not(:last-child) {
-    border-bottom: 1px solid #242424;
+    border-bottom: 1px solid var(--platinum);
   }
 
   & button {

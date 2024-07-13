@@ -1,5 +1,4 @@
-import styles from "../styles/prediction.module.css";
-import PropTypes from "prop-types";
+import styles from "../styles/investmentPrediction/investmentPrediction.module.css";
 import InvestmentPredictionTable from "./investmentPrediction/InvestmentPredictionTable.jsx";
 import InvestmentPredictionForm from "./investmentPrediction/InvestmentPredictionForm.jsx";
 import InvestmentPredictionResults from "./investmentPrediction/InvestmentPredictionResults.jsx";
@@ -16,8 +15,3 @@ export default function Prediction() {
     </main>
   );
 }
-
-Prediction.propTypes = {
-  handleCalculateGrowth: PropTypes.func,
-  investment: PropTypes.object,
-};
