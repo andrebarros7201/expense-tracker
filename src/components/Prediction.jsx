@@ -7,7 +7,7 @@ export default function Prediction() {
   return (
     <main className={styles["prediction-main"]}>
       <h2>Investment Prediction</h2>
-      <div>
+      <div className={styles["prediction-components"]}>
         <InvestmentPredictionForm />
         <InvestmentPredictionResults />
         <InvestmentPredictionTable />
