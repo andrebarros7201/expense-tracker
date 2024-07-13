@@ -12,16 +12,3 @@
   height: 100%;
   gap: 1rem;
 }
-
-.budgetCRUD {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
-}
-
-.budgetCRUDItem {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-}

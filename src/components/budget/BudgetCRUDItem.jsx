@@ -10,6 +10,8 @@ export default function BudgetCRUDItem({ item }) {
         <p>{item.name}</p>
         <p>{item.proportion}</p>
         <button>{detailsOpen ? "Close" : "Open"} Details</button>
+        <button>Edit</button>
+        <button>Delete</button>
       </div>
       {detailsOpen && (
         <div className={styles["budgetCRUDItem-bottom"]}>
