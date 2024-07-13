@@ -1,8 +1,8 @@
 import App from "./App.jsx";
-import Chart from "./components/Chart.jsx";
-import Fire from "./components/Fire.jsx";
-import Budget from "./components/Budget.jsx";
-import InvestmentPrediction from "./components/investmentPrediction/InvestmentPrediction.jsx";
+import Chart from "./Pages/Chart.jsx";
+import Fire from "./Pages/Fire.jsx";
+import Budget from "./Pages/Budget.jsx";
+import InvestmentPrediction from "./Pages/InvestmentPrediction.jsx";
 
 const routes = [
   {
