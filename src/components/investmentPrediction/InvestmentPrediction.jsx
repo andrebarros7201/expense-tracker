@@ -7,11 +7,11 @@ export default function InvestmentPrediction() {
   return (
     <main className={styles["prediction-main"]}>
       <h2>Investment Prediction</h2>
-      <div className={styles["prediction-components"]}>
+      <section className={styles["prediction-components"]}>
         <InvestmentPredictionForm />
         <InvestmentPredictionResults />
         <InvestmentPredictionTable />
-      </div>
+      </section>
     </main>
   );
 }
