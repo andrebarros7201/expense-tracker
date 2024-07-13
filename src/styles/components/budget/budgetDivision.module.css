@@ -1,9 +1,12 @@
-.budget {
-  box-sizing: border-box;
-  padding: 10px;
+.budget-division {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: var(--oxford-blue);
+  color: var(--platinum);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .budget-input {

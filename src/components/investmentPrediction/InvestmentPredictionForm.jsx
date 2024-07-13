@@ -1,4 +1,4 @@
-import styles from "../../styles/investmentPrediction/investmentPredictionForm.module.css";
+import styles from "../../styles/components/investmentPrediction/investmentPredictionForm.module.css";
 import { useContext, useState } from "react";
 import { AppContext } from "../../App.jsx";
 

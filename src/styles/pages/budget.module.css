@@ -1,0 +1,13 @@
+.budget-main {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.budget-components {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  padding: 0 1rem 1rem 1rem;
+  height: 100%;
+}

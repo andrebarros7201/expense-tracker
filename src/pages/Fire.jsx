@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../App.jsx";
-import styles from "../styles/fire.module.css";
+import styles from "../styles/pages/fire.module.css";
 
 export default function Fire() {
   const { investment } = useContext(AppContext);
