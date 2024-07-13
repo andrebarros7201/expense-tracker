@@ -1,13 +1,27 @@
 .budget-main {
   display: flex;
   flex-flow: column nowrap;
-  gap: 1rem;
+  color: var(--platinum);
 }
 
 .budget-components {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  padding: 0 1rem 1rem 1rem;
+  padding: 0 2rem 2rem 2rem;
   height: 100%;
+  gap: 1rem;
+}
+
+.budgetCRUD {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.budgetCRUDItem {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
 }
