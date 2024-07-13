@@ -1,142 +1,17 @@
 import styles from "../styles/prediction.module.css";
 import PropTypes from "prop-types";
-import { useContext, useState } from "react";
-import { AppContext } from "../App.jsx";
-import Table from "./Table.jsx";
+import InvestmentPredictionTable from "./investmentPrediction/InvestmentPredictionTable.jsx";
+import InvestmentPredictionForm from "./investmentPrediction/InvestmentPredictionForm.jsx";
+import InvestmentPredictionResults from "./investmentPrediction/InvestmentPredictionResults.jsx";
 
 export default function Prediction() {
-  const { investment, handleCalculateGrowth } = useContext(AppContext);
-
-  const [values, setValues] = useState({
-    years: 0,
-    initialInvestment: 0,
-    monthlyContribution: 0,
-    yearlyGrowth: 0,
-  });
-
-  const handlePredictionFormChange = (field, value) => {
-    setValues({ ...values, [field]: value });
-  };
-
-  const handleSubmitForm = (values, e) => {
-    handleCalculateGrowth(values, e);
-  };
-
   return (
     <main className={styles["prediction-main"]}>
       <h2>Investment Prediction</h2>
-      <div className={styles["prediction"]}>
-        <div className={styles["left"]}>
-          <form
-            className={styles["form-prediction"]}
-            onSubmit={(e) => handleSubmitForm(values, e)}
-          >
-            <span>
-              <label htmlFor="years">Years of Investment</label>
-              <input
-                type="number"
-                min={0}
-                max={100}
-                onChange={(e) =>
-                  handlePredictionFormChange("years", parseInt(e.target.value))
-                }
-              />
-            </span>
-            <span>
-              <label htmlFor="initial-investment">Initial Investment</label>
-              <input
-                type="number"
-                min={0}
-                onChange={(e) =>
-                  handlePredictionFormChange(
-                    "initialInvestment",
-                    Number(e.target.value),
-                  )
-                }
-              />
-            </span>
-            <span>
-              <label htmlFor="monthly-contribution">Monthly Contribution</label>
-              <input
-                type="number"
-                min={0}
-                onChange={(e) =>
-                  handlePredictionFormChange(
-                    "monthlyContribution",
-                    Number(e.target.value),
-                  )
-                }
-              />
-            </span>
-            <span>
-              <label htmlFor="investment-growth">
-                Yearly Investment Growth
-              </label>
-              <input
-                type="number"
-                min={0}
-                onChange={(e) =>
-                  handlePredictionFormChange(
-                    "yearlyGrowth",
-                    Number(e.target.value),
-                  )
-                }
-              />
-            </span>
-            <button type={"submit"}>Calculate</button>
-          </form>
-        </div>
-        <div className={styles["right"]}>
-          {investment.growth && (
-            <div>
-              <p>
-                Initial Investment:{" "}
-                {parseFloat(investment.initialInvestment)
-                  .toFixed(2)
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-                €
-              </p>
-              <p>
-                Total Investment:{" "}
-                {parseFloat(investment.totalContribution)
-                  .toFixed(2)
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-                €
-              </p>
-              <p>
-                Growth:{" "}
-                {parseFloat(investment.totalGrowth)
-                  .toFixed(2)
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-                €
-              </p>
-              <p>
-                Final Year:{" "}
-                {parseFloat(investment.finalYear)
-                  .toFixed(2)
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-                €
-              </p>
-              <p>
-                4%:{" "}
-                {parseFloat(investment.fireFourPercent)
-                  .toFixed(2)
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-                €
-              </p>
-              <p>
-                FIRE Income:{" "}
-                {investment.fireMonthlyIncome
-                  .toFixed(2)
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-                €
-              </p>
-            </div>
-          )}
-        </div>
-        <div className={styles["prediction-wrapper-table"]}>
-          <Table />
-        </div>
+      <div>
+        <InvestmentPredictionForm />
+        <InvestmentPredictionResults />
+        <InvestmentPredictionTable />
       </div>
     </main>
   );

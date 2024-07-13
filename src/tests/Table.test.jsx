@@ -1,4 +1,4 @@
-import Table from "../components/Table.jsx";
+import InvestmentPredictionTable from "../components/investmentPrediction/InvestmentPredictionTable.jsx";
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -26,7 +26,7 @@ const generateMockGrowth = (n) => {
   }));
 };
 
-describe("Table Component", () => {
+describe("InvestmentPredictionTable Component", () => {
   it("renders the correct number of TableItem components", () => {
     const mockGrowth = generateMockGrowth(3); // Generate 3 mock growth items
 
@@ -36,7 +36,7 @@ describe("Table Component", () => {
 
     render(
       <AppContext.Provider value={mockContextValue}>
-        <Table />
+        <InvestmentPredictionTable />
       </AppContext.Provider>,
     );
 
@@ -53,7 +53,7 @@ describe("Table Component", () => {
 
     render(
       <AppContext.Provider value={mockContextValue}>
-        <Table />
+        <InvestmentPredictionTable />
       </AppContext.Provider>,
     );
 
