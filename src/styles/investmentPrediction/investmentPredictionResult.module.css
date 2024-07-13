@@ -1,8 +1,9 @@
 .investmentPredictionResult {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: column nowrap;
   align-items: center;
+  justify-content: center;
+  gap: 2rem;
   min-width: 250px;
   flex: 1;
   background-color: var(--oxford-blue);
