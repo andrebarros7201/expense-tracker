@@ -2,7 +2,7 @@ import App from "./App.jsx";
 import Chart from "./components/Chart.jsx";
 import Fire from "./components/Fire.jsx";
 import Budget from "./components/Budget.jsx";
-import Prediction from "./components/Prediction.jsx";
+import InvestmentPrediction from "./components/investmentPrediction/InvestmentPrediction.jsx";
 
 const routes = [
   {
@@ -23,7 +23,7 @@ const routes = [
       },
       {
         path: "investment",
-        element: <Prediction />,
+        element: <InvestmentPrediction />,
       },
     ],
   },
