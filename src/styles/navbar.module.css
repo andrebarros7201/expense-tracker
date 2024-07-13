@@ -1,24 +1,28 @@
 .details-nav {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1.5rem;
-  background-color: var(--rich-black);
+  justify-content: center;
+  align-items: start;
+  padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+  background-color: var(--oxford-blue);
   gap: 1rem;
 
-  & > a {
-    padding: 0.4rem;
-    font-size: 1rem;
-    background-color: white;
-    color: #242424;
-    border: 1px solid #242424;
-    transition: 0.2s ease-in-out;
+  & a {
     text-decoration: none;
+    color: var(--platinum);
+    font-size: 1.2rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
     &:hover {
-      cursor: pointer;
-      box-shadow: 0 0 10px #242424;
+      transform: scale(1.1);
     }
   }
+}
+
+svg {
+  width: 24px;
+  height: 24px;
 }
