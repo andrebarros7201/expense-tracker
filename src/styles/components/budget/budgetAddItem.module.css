@@ -1,0 +1,14 @@
+.add-button {
+  padding: 0.4rem;
+  font-size: 1rem;
+  background-color: var(--platinum);
+  color: #242424;
+  border: 1px solid #242424;
+  transition: 0.2s ease-in-out;
+  max-width: 200px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3px white;
+  }
+}
