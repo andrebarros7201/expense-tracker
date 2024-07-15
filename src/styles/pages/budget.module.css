@@ -1,7 +1,7 @@
 .budget-main {
   display: flex;
   flex-flow: column nowrap;
-  color: var(--platinum);
+  color: #242424;
 }
 
 .budget-components {
@@ -11,4 +11,5 @@
   padding: 0 2rem 2rem 2rem;
   height: 100%;
   gap: 1rem;
+  color: var(--platinum);
 }
