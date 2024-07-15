@@ -29,6 +29,10 @@ function App() {
     fireMonthlyIncome: 0,
   });
 
+  const addBudgetItem = (newItem) => {
+    setBudget([...budget, newItem]);
+  };
+
   const updateBudgetItem = (oldItem, updatedItem) => {
     const oldItemIndex = budget.indexOf(oldItem);
     const newBudget = [...budget];
@@ -91,6 +95,7 @@ function App() {
           handleCalculateGrowth,
           updateBudgetItem,
           deleteBudgetItem,
+          addBudgetItem,
         }}
       >
         <Navbar />
