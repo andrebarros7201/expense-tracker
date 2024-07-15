@@ -1,22 +1,26 @@
 import styles from "../../styles/components/budget/budgetCrud.module.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../../App.jsx";
 
 export default function BudgetCRUDItem({ item }) {
+  const { updateBudget } = useContext(AppContext);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  const [copyItem, setCopyItem] = useState(item);
+  const [newItem, setNewItem] = useState(item);
 
   function handleIsEditing() {
     setIsEditing(true);
   }
 
-  function handleSaveEdit() {
+  function handleSaveEdit(e) {
+    e.preventDefault();
+    updateBudget(item, newItem);
     setIsEditing(false);
   }
 
   function handleCopyItemChange(field, value) {
-    setCopyItem({ ...item, [field]: value });
+    setNewItem({ ...item, [field]: value });
   }
 
   return (
@@ -34,19 +38,19 @@ export default function BudgetCRUDItem({ item }) {
             <input
               type="text"
               id={"name"}
-              value={copyItem.name}
+              value={newItem.name}
               onChange={(e) => handleCopyItemChange("name", e.target.value)}
             />
             <input
               type="number"
               id={"proportion"}
               min={0}
-              value={copyItem.proportion}
+              value={newItem.proportion}
               onChange={(e) =>
                 handleCopyItemChange("proportion", e.target.value)
               }
             />
-            <button onClick={handleSaveEdit}>Save</button>
+            <button onClick={(e) => handleSaveEdit(e)}>Save</button>
             <button>{detailsOpen ? "Close" : "Open"} Details</button>
           </>
         )}
