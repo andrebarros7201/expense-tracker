@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../App.jsx";
 
 export default function BudgetCRUDItem({ item }) {
-  const { updateBudget } = useContext(AppContext);
+  const { updateBudgetItem, deleteBudgetItem } = useContext(AppContext);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [newItem, setNewItem] = useState(item);
@@ -15,7 +15,7 @@ export default function BudgetCRUDItem({ item }) {
 
   function handleSaveEdit(e) {
     e.preventDefault();
-    updateBudget(item, newItem);
+    updateBudgetItem(item, newItem);
     setIsEditing(false);
   }
 
@@ -54,7 +54,7 @@ export default function BudgetCRUDItem({ item }) {
             <button>{detailsOpen ? "Close" : "Open"} Details</button>
           </>
         )}
-        <button>Delete</button>
+        <button onClick={() => deleteBudgetItem(item)}>Delete</button>
       </div>
       {detailsOpen && (
         <div className={styles["budgetCRUDItem-bottom"]}>
