@@ -1,14 +1,14 @@
 import styles from "../../styles/components/budget/budgetCrud.module.css";
 import { useContext } from "react";
 import { AppContext } from "../../App.jsx";
-import BudgetCRUDItem from "./BudgetCRUDItem.jsx";
+import BudgetTableItem from "./BudgetTableItem.jsx";
 
-export default function BudgetCRUD() {
+export default function BudgetTable() {
   const { budget } = useContext(AppContext);
   return (
     <section className={styles["budgetCRUD"]}>
       {budget.map((item) => (
-        <BudgetCRUDItem item={item} key={item.name} />
+        <BudgetTableItem item={item} key={item.name} />
       ))}
     </section>
   );

@@ -1,6 +1,6 @@
 import BudgetDivision from "../components/budget/BudgetDivision.jsx";
 import styles from "../styles/pages/budget.module.css";
-import BudgetCRUD from "../components/budget/BudgetCRUD.jsx";
+import BudgetTable from "../components/budget/BudgetTable.jsx";
 
 export default function Budget() {
   return (
@@ -8,7 +8,7 @@ export default function Budget() {
       <h2>Monthly Budget</h2>
       <div className={styles["budget-components"]}>
         <BudgetDivision />
-        <BudgetCRUD />
+        <BudgetTable />
       </div>
     </main>
   );

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { AppContext } from "../../App.jsx";
 
-export default function BudgetCRUDItem({ item }) {
+export default function BudgetTableItem({ item }) {
   const { updateBudgetItem, deleteBudgetItem } = useContext(AppContext);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -20,7 +20,7 @@ export default function BudgetCRUDItem({ item }) {
   }
 
   function handleCopyItemChange(field, value) {
-    setNewItem({ ...item, [field]: value });
+    setNewItem({ ...newItem, [field]: value });
   }
 
   return (
@@ -70,6 +70,6 @@ export default function BudgetCRUDItem({ item }) {
   );
 }
 
-BudgetCRUDItem.propTypes = {
+BudgetTableItem.propTypes = {
   item: PropTypes.object,
 };
