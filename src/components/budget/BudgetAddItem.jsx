@@ -3,14 +3,23 @@ import styles from "../../styles/components/budget/budgetAddItem.module.css";
 
 export default function BudgetAddItem() {
   const [isAdding, setIsAdding] = useState(false);
+
   return (
-    <div>
+    <div className={styles["budgetAddItem"]}>
       {!isAdding ? (
-        <button className={styles["add-button"]}>Add New Item</button>
+        <button
+          className={styles["add-button"]}
+          onClick={() => {
+            setIsAdding(true);
+          }}
+        >
+          Add New Item
+        </button>
       ) : (
         <>
-          <input type="text" />
-          <input type="number" />
+          <input type="text" placeholder={"Name"} />
+          <input type="number" placeholder={"Proportion"} />
+          <button className={styles["save-button"]}>Save</button>
         </>
       )}
     </div>
