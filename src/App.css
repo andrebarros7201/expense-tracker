@@ -21,3 +21,13 @@ body {
   background-color: var(--platinum);
   color: #242424;
 }
+
+@media (max-width: 1200px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .app {
+    height: auto;
+  }
+}

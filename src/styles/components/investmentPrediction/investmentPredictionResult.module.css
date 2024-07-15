@@ -10,3 +10,10 @@
   color: var(--platinum);
   border-radius: 1rem;
 }
+
+@media (max-width: 1200px) {
+  .investmentPredictionResult {
+    width: 90%;
+    padding: 2rem;
+  }
+}
