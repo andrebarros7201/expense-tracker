@@ -1,4 +1,4 @@
-import styles from "../../styles/components/budget/budgetCrud.module.css";
+import styles from "../../styles/components/budget/budgetTable.module.css";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { AppContext } from "../../App.jsx";
@@ -8,10 +8,6 @@ export default function BudgetTableItem({ item }) {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [newItem, setNewItem] = useState(item);
-
-  function handleIsEditing() {
-    setIsEditing(true);
-  }
 
   function handleSaveEdit(e) {
     e.preventDefault();
@@ -30,7 +26,13 @@ export default function BudgetTableItem({ item }) {
           <>
             <p>{item.name}</p>
             <p>{item.proportion}</p>
-            <button onClick={handleIsEditing}>Edit</button>
+            <button
+              onClick={() => {
+                setIsEditing(true);
+              }}
+            >
+              Edit
+            </button>
             <button>{detailsOpen ? "Close" : "Open"} Details</button>
           </>
         ) : (

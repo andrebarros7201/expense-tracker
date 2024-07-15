@@ -1,4 +1,4 @@
-import styles from "../../styles/components/budget/budgetCrud.module.css";
+import styles from "../../styles/components/budget/budgetTable.module.css";
 import { useContext } from "react";
 import { AppContext } from "../../App.jsx";
 import BudgetTableItem from "./BudgetTableItem.jsx";
