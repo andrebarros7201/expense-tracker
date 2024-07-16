@@ -117,7 +117,11 @@ function App() {
           addBudgetItem,
         }}
       >
-        <Navbar isMobileView={isMobileView} isOpen={isOpen} />
+        <Navbar
+          isMobileView={isMobileView}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
         {isMobileView && (
           <button
             className={styles["toggle-sidebar-button"]}
