@@ -1,0 +1,25 @@
+.container-main {
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+}
+
+.container-components {
+  display: grid;
+  gap: 1rem;
+  padding: 0 2rem 2rem 2rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .container-main {
+    overflow-y: auto;
+  }
+  .container-components {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    overflow-y: auto;
+  }
+}

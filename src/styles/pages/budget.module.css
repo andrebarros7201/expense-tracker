@@ -1,24 +1,4 @@
-.budget-main {
-  display: flex;
-  flex-flow: column nowrap;
-  color: #242424;
-}
-
-@media (min-width: 1025px) {
-  .budget-components {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    padding: 0 2rem 2rem 2rem;
-    height: 100%;
-    gap: 1rem;
-    color: var(--platinum);
-  }
-}
-
-@media (max-width: 1024px) {
-  .budget-components {
-    display: flex;
-    flex-flow: column nowrap;
-  }
+.budget-components {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
 }

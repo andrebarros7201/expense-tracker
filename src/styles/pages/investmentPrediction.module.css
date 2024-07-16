@@ -1,27 +1,4 @@
-.prediction-main {
-  display: flex;
-  flex-flow: column nowrap;
-  overflow: hidden;
-}
-
 .prediction-components {
-  display: grid;
   grid-template-columns: 1.3fr 1.3fr 3fr;
   grid-template-rows: 1fr;
-  gap: 1rem;
-  padding: 0 2rem 2rem 2rem;
-  height: 100%;
-  overflow: hidden;
-}
-
-@media (max-width: 1200px) {
-  .prediction-main {
-    overflow-y: auto;
-  }
-  .prediction-components {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    overflow-y: auto;
-  }
 }
