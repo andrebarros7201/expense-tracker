@@ -1,5 +1,6 @@
 import styles from "../styles/components/navbar.module.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function Navbar({ isMobileView, isOpen, setIsOpen }) {
   return (
@@ -34,3 +35,9 @@ export default function Navbar({ isMobileView, isOpen, setIsOpen }) {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  isMobileView: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+};
