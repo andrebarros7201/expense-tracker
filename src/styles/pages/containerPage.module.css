@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .container-main {
     overflow-y: auto;
   }

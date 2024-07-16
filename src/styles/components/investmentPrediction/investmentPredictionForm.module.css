@@ -73,10 +73,3 @@
     }
   }
 }
-
-@media (max-width: 1200px) {
-  .investmentPredictionForm {
-    width: 90%;
-    padding: 2rem;
-  }
-}
