@@ -9,6 +9,12 @@
   padding: 1rem;
 }
 
+@media (max-width: 1200px) {
+  .budget-division {
+    width: 100%;
+  }
+}
+
 .budget-input {
   width: 33%;
   padding: 10px;

@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { AppContext } from "../../App.jsx";
-import styles from "../../styles/components/budget/budgetDivision.module.css";
+import styles from "../../styles/components/budget/budgetDistribution.module.css";
 import PropTypes from "prop-types";
 import Budget from "../../pages/Budget.jsx";
 
-export default function BudgetDivision() {
+export default function BudgetDistribution() {
   const { income, budget, handleIncomeChange } = useContext(AppContext);
 
   return (
