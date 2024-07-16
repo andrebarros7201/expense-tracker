@@ -1,6 +1,7 @@
 import { AppContext } from "../../App.jsx";
 import { useContext, useState } from "react";
 import styles from "../../styles/components/investmentPrediction/investmentPredictionTable.module.css";
+import containerComponent from "../../styles/components/containerComponent.module.css";
 import PropTypes from "prop-types";
 
 function TableItem({ item, previousItem }) {
@@ -9,7 +10,10 @@ function TableItem({ item, previousItem }) {
     setDetailsOpen(!detailsOpen);
   };
   return (
-    <div className={styles["table-item"]} data-testid="table-item">
+    <div
+      className={containerComponent["container-table-item"]}
+      data-testid="table-item"
+    >
       <div className={styles["table-item-head"]}>
         <p>Year: {item.year}</p>
         <p>
@@ -58,7 +62,7 @@ export default function InvestmentPredictionTable() {
   let previousItem = null; // Initialize previous item as null
 
   return (
-    <div className={styles["table"]}>
+    <div className={containerComponent["container-table"]}>
       {growth.length > 0 ? (
         growth.map((item) => {
           const element = (

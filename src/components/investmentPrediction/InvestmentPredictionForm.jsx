@@ -1,4 +1,5 @@
 import styles from "../../styles/components/investmentPrediction/investmentPredictionForm.module.css";
+import containerComponent from "../../styles/components/containerComponent.module.css";
 import { useContext, useState } from "react";
 import { AppContext } from "../../App.jsx";
 
@@ -20,7 +21,7 @@ export default function InvestmentPredictionForm() {
     handleCalculateGrowth(values, e);
   };
   return (
-    <div className={styles["investmentPredictionForm"]}>
+    <div className={containerComponent["container-component"]}>
       <form
         className={styles["form-prediction"]}
         onSubmit={(e) => handleSubmitForm(values, e)}

@@ -1,11 +1,11 @@
-import styles from "../../styles/components/investmentPrediction/investmentPredictionResult.module.css";
+import containerComponent from "../../styles/components/containerComponent.module.css";
 import { useContext } from "react";
 import { AppContext } from "../../App.jsx";
 
 export default function InvestmentPredictionResults() {
   const { investment } = useContext(AppContext);
   return (
-    <section className={styles["investmentPredictionResult"]}>
+    <section className={containerComponent["container-component"]}>
       <p>
         Initial Investment:{" "}
         {parseFloat(investment.initialInvestment)
