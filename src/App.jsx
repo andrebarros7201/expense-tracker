@@ -1,6 +1,7 @@
 import "./App.css";
-import { createContext, useCallback, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import { calculateInvestmentGrowth } from "./utils/calculateInvestmentGrowth.js";
+import styles from "./styles/components/navbar.module.css";
 import Navbar from "./components/Navbar.jsx";
 import { Outlet } from "react-router-dom";
 
@@ -15,7 +16,23 @@ function App() {
 
   const [income, setIncome] = useState(0);
   const [budget, setBudget] = useState(initialBudget);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1000);
 
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleResize = () => {
+    setIsMobileView(window.innerWidth < 1000);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const [investment, setInvestment] = useState({
     years: 0,
     initialInvestment: 0,
@@ -98,7 +115,15 @@ function App() {
           addBudgetItem,
         }}
       >
-        <Navbar />
+        <Navbar isMobileView={isMobileView} isOpen={isOpen} />
+        {isMobileView && (
+          <button
+            className={styles["toggle-sidebar-button"]}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            Toggle Sidebar
+          </button>
+        )}
         <Outlet />
       </AppContext.Provider>
     </div>

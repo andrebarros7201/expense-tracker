@@ -1,9 +1,11 @@
 import styles from "../styles/components/navbar.module.css";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ isMobileView, isOpen }) {
   return (
-    <nav className={styles["details-nav"]}>
+    <nav
+      className={`${styles["details-nav"]} ${isMobileView ? "mobile" : ""} ${isOpen ? "open" : "close"}`}
+    >
       <Link to="/">
         <svg
           viewBox="0 0 16 16"
@@ -29,9 +31,6 @@ export default function Navbar() {
         </svg>{" "}
         Investment Growth
       </Link>
-
-      {/*<Link to="/chart">Chart</Link>
-      <Link to="/fire">FIRE</Link>*/}
     </nav>
   );
 }
