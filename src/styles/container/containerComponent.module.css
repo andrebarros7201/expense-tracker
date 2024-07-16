@@ -8,12 +8,12 @@
   background-color: var(--oxford-blue);
   color: var(--platinum);
   border-radius: 1rem;
-  overflow-y: scroll;
   padding: 1rem;
 }
 
 .container-table {
   justify-content: flex-start;
+  overflow-y: scroll;
 }
 
 .container-table-item {
