@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Navbar({ isMobileView, isOpen }) {
   return (
     <nav
-      className={`${styles["details-nav"]} ${isMobileView ? "mobile" : ""} ${isOpen ? "open" : "close"}`}
+      className={`${styles["details-nav"]} ${styles[isMobileView ? "mobile" : ""]} ${styles[isOpen ? "open" : "close"]}`}
     >
       <Link to="/">
         <svg

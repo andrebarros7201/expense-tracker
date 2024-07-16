@@ -17,14 +17,16 @@ function App() {
   const [income, setIncome] = useState(0);
   const [budget, setBudget] = useState(initialBudget);
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1000);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1300);
 
   const handleResize = () => {
-    setIsMobileView(window.innerWidth < 1000);
+    setIsMobileView(window.innerWidth < 1300);
+
+    if (window.innerWidth > 1300) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
   };
 
   useEffect(() => {

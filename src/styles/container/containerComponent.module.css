@@ -92,10 +92,11 @@ input {
   .container-component,
   .container-table {
     width: 90%;
+    height: auto;
   }
 
   .container-table {
-    max-height: 500px;
+    max-height: 700px;
   }
 
   .container-table-item-top {
