@@ -22,6 +22,7 @@
     flex: 1;
   }
 }
+
 ul {
   display: flex;
   flex-flow: column nowrap;
