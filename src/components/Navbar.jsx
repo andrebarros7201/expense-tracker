@@ -1,9 +1,9 @@
-import containerComponent from "../styles/container/containerComponent.module.css";
+import styles from "../styles/components/navbar.module.css";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className={containerComponent["details-nav"]}>
+    <nav className={styles["details-nav"]}>
       <Link to="/">
         <svg
           viewBox="0 0 16 16"
