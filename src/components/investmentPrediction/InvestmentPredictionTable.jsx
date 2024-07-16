@@ -14,7 +14,7 @@ function TableItem({ item, previousItem }) {
       className={containerComponent["container-table-item"]}
       data-testid="table-item"
     >
-      <div className={styles["table-item-head"]}>
+      <div className={containerComponent["container-table-item-top"]}>
         <p>Year: {item.year}</p>
         <p>
           Final Value:{" "}
@@ -29,11 +29,12 @@ function TableItem({ item, previousItem }) {
               : "(0€)"}
           </b>
         </p>
-        <div>
-          <button onClick={toggleDetails}>
-            {detailsOpen ? "Close" : "Open"} Details
-          </button>
-        </div>
+        <button
+          onClick={toggleDetails}
+          className={containerComponent["button-primary"]}
+        >
+          {detailsOpen ? "Close" : "Open"} Details
+        </button>
       </div>
       {detailsOpen && (
         <div className={styles["table-item-details"]}>

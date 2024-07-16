@@ -1,13 +1,11 @@
 .add-button,
 .save-button {
-  margin-top: 1rem;
   padding: 0.4rem;
   font-size: 1rem;
   background-color: var(--platinum);
   color: #242424;
   border: 1px solid #242424;
   transition: 0.2s ease-in-out;
-  max-width: 200px;
 
   &:hover {
     cursor: pointer;
@@ -15,25 +13,15 @@
   }
 }
 
-.budget-table-top {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 1rem;
+.add-item {
+  margin-top: 2rem;
+}
 
+.budget-table-top {
   & > * {
     flex: 1;
   }
 }
-
-@media (max-width: 1300px) {
-  .budget-table-top {
-    flex-flow: column nowrap;
-  }
-}
-
 ul {
   display: flex;
   flex-flow: column nowrap;

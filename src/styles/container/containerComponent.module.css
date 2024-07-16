@@ -19,7 +19,6 @@
 .container-table-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   width: 90%;
   height: min-content;
   padding: 1rem;
@@ -27,20 +26,34 @@
   &:not(:last-child) {
     border-bottom: 1px solid var(--platinum);
   }
+}
 
-  & button {
-    padding: 0.4rem;
-    font-size: 1rem;
-    background-color: var(--platinum);
-    color: #242424;
-    border: 1px solid #242424;
-    transition: 0.2s ease-in-out;
-    max-width: 200px;
+.container-table-item-top {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
 
-    &:hover {
-      cursor: pointer;
-      box-shadow: 0 0 10px var(--platinum);
-    }
+  & > * {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.button-primary {
+  padding: 0.4rem;
+  font-size: 1rem;
+  background-color: var(--platinum);
+  color: #242424;
+  border: 1px solid #242424;
+  transition: 0.2s ease-in-out;
+  width: fit-content;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--platinum);
   }
 }
 
@@ -112,6 +125,11 @@ input {
 
   .container-table {
     max-height: 500px;
+  }
+
+  .container-table-item-top {
+    flex-flow: column nowrap;
+    gap: 0.5rem;
   }
 
   .details-nav {

@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import styles from "../../styles/components/budget.module.css";
+import containerComponent from "../../styles/container/containerComponent.module.css";
 import { AppContext } from "../../App.jsx";
 
 export default function BudgetAddItem() {
@@ -18,7 +19,9 @@ export default function BudgetAddItem() {
   }
 
   return (
-    <div className={styles["budgetAddItem"]}>
+    <div
+      className={`${containerComponent["container-table-item-top"]} ${styles["add-item"]}`}
+    >
       {!isAdding ? (
         <button
           className={styles["add-button"]}
@@ -33,11 +36,17 @@ export default function BudgetAddItem() {
           <input
             type="text"
             placeholder={"Name"}
+            minLength={3}
+            maxLength={30}
+            required={true}
             onChange={(e) => handleChange("name", e.target.value)}
           />
           <input
             type="number"
             placeholder={"Proportion"}
+            min={1}
+            max={100}
+            required={true}
             onChange={(e) => handleChange("proportion", e.target.value)}
           />
           <button

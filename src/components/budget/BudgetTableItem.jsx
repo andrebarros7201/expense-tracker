@@ -22,10 +22,12 @@ export default function BudgetTableItem({ item }) {
 
   return (
     <div
-      className={containerComponent["container-table-item"]}
+      className={`${containerComponent["container-table-item"]} `}
       data-testid="budgetCRUDITem"
     >
-      <div className={styles["budget-table-top"]}>
+      <div
+        className={`${containerComponent["container-table-item-top"]} ${styles["budget-table-top"]}`}
+      >
         {!isEditing ? (
           <>
             <p>{item.name}</p>
@@ -34,10 +36,13 @@ export default function BudgetTableItem({ item }) {
               onClick={() => {
                 setIsEditing(true);
               }}
+              className={containerComponent["button-primary"]}
             >
               Edit
             </button>
-            <button>{detailsOpen ? "Close" : "Open"} Details</button>
+            <button className={containerComponent["button-primary"]}>
+              {detailsOpen ? "Close" : "Open"} Details
+            </button>
           </>
         ) : (
           <>
@@ -56,11 +61,23 @@ export default function BudgetTableItem({ item }) {
                 handleCopyItemChange("proportion", e.target.value)
               }
             />
-            <button onClick={(e) => handleSaveEdit(e)}>Save</button>
-            <button>{detailsOpen ? "Close" : "Open"} Details</button>
+            <button
+              onClick={(e) => handleSaveEdit(e)}
+              className={containerComponent["button-primary"]}
+            >
+              Save
+            </button>
+            <button className={containerComponent["button-primary"]}>
+              {detailsOpen ? "Close" : "Open"} Details
+            </button>
           </>
         )}
-        <button onClick={() => deleteBudgetItem(item)}>Delete</button>
+        <button
+          onClick={() => deleteBudgetItem(item)}
+          className={containerComponent["button-primary"]}
+        >
+          Delete
+        </button>
       </div>
       {detailsOpen && (
         <div className={styles["budgetCRUDItem-bottom"]}>
