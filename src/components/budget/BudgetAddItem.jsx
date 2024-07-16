@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import styles from "../../styles/components/budget/budgetAddItem.module.css";
+import styles from "../../styles/components/budget.module.css";
 import { AppContext } from "../../App.jsx";
 
 export default function BudgetAddItem() {

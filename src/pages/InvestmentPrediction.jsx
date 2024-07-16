@@ -1,5 +1,5 @@
 import styles from "../styles/pages/investmentPrediction.module.css";
-import containerPage from "../styles/pages/containerPage.module.css";
+import containerPage from "../styles/container/containerPage.module.css";
 import InvestmentPredictionTable from "../components/investmentPrediction/InvestmentPredictionTable.jsx";
 import InvestmentPredictionForm from "../components/investmentPrediction/InvestmentPredictionForm.jsx";
 import InvestmentPredictionResults from "../components/investmentPrediction/InvestmentPredictionResults.jsx";

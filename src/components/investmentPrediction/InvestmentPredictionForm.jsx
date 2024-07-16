@@ -1,5 +1,5 @@
 import styles from "../../styles/components/investmentPrediction/investmentPredictionForm.module.css";
-import containerComponent from "../../styles/components/containerComponent.module.css";
+import containerComponent from "../../styles/container/containerComponent.module.css";
 import { useContext, useState } from "react";
 import { AppContext } from "../../App.jsx";
 

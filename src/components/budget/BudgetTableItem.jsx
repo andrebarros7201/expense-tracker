@@ -1,4 +1,5 @@
-import styles from "../../styles/components/budget/budgetTable.module.css";
+import styles from "../../styles/components/budget.module.css";
+import containerComponent from "../../styles/container/containerComponent.module.css";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { AppContext } from "../../App.jsx";
@@ -20,12 +21,15 @@ export default function BudgetTableItem({ item }) {
   }
 
   return (
-    <div className={styles["budgetCRUDITem"]} data-testid="budgetCRUDITem">
-      <div className={styles["budgetCRUDITem-top"]}>
+    <div
+      className={containerComponent["container-table-item"]}
+      data-testid="budgetCRUDITem"
+    >
+      <div className={styles["budget-table-top"]}>
         {!isEditing ? (
           <>
             <p>{item.name}</p>
-            <p>{item.proportion}</p>
+            <p>{item.proportion} %</p>
             <button
               onClick={() => {
                 setIsEditing(true);
@@ -63,7 +67,7 @@ export default function BudgetTableItem({ item }) {
           {item.detail.map((itemDetail) => (
             <div key={itemDetail.name}>
               <p>{itemDetail.name}</p>
-              <p>{itemDetail.proportion}</p>
+              <p>{itemDetail.proportion} %</p>
             </div>
           ))}
         </div>

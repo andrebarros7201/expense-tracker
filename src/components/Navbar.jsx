@@ -1,4 +1,4 @@
-import containerComponent from "../styles/components//containerComponent.module.css";
+import containerComponent from "../styles/container/containerComponent.module.css";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {

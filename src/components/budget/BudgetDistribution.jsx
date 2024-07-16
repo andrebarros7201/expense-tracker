@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../../App.jsx";
-import styles from "../../styles/components/budget/budgetDistribution.module.css";
+import containerComponent from "../../styles/container/containerComponent.module.css";
 import PropTypes from "prop-types";
 import Budget from "../../pages/Budget.jsx";
 
@@ -8,9 +8,8 @@ export default function BudgetDistribution() {
   const { income, budget, handleIncomeChange } = useContext(AppContext);
 
   return (
-    <section className={styles["budget-division"]}>
+    <section className={containerComponent["container-component"]}>
       <input
-        className={styles["budget-input"]}
         type="number"
         onChange={(e) => handleIncomeChange(Number(e.target.value))}
         placeholder="Income"
