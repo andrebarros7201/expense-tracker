@@ -16,7 +16,7 @@ function App() {
 
   const [income, setIncome] = useState(0);
   const [budget, setBudget] = useState(initialBudget);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1300);
 
   const handleResize = () => {
