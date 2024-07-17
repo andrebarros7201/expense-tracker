@@ -128,7 +128,35 @@ function App() {
             className={styles["toggle-sidebar-button"]}
             onClick={() => setIsOpen(!isOpen)}
           >
-            Toggle Sidebar
+            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+              <rect
+                x="0"
+                y="5"
+                width="64"
+                height="10"
+                fill="#1b263bff"
+                stroke="#e0e1ddff"
+                strokeWidth="1"
+              />
+              <rect
+                x="0"
+                y="27"
+                width="64"
+                height="10"
+                fill="#1b263bff"
+                stroke="#e0e1ddff"
+                strokeWidth="1"
+              />
+              <rect
+                x="0"
+                y="49"
+                width="64"
+                height="10"
+                fill="#1b263bff"
+                stroke="#e0e1ddff"
+                strokeWidth="1"
+              />
+            </svg>
           </button>
         )}
         <Outlet />
