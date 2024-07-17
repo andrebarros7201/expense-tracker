@@ -16,26 +16,6 @@ function App() {
 
   const [income, setIncome] = useState(0);
   const [budget, setBudget] = useState(initialBudget);
-  const [isOpen, setIsOpen] = useState(window.innerWidth >= 1300);
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1300);
-
-  const handleResize = () => {
-    setIsMobileView(window.innerWidth < 1300);
-
-    if (window.innerWidth >= 1300) {
-      setIsOpen(true);
-    } else {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   const [investment, setInvestment] = useState({
     years: 0,
     initialInvestment: 0,
@@ -48,6 +28,26 @@ function App() {
     fireFourPercent: 0,
     fireMonthlyIncome: 0,
   });
+  const [isOpen, setIsOpen] = useState(window.innerWidth >= 1300);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1300);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleResize = () => {
+    setIsMobileView(window.innerWidth < 1300);
+
+    // Automatically closes/opens when width less/greater than 1300px
+    if (window.innerWidth >= 1300) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  };
 
   const addBudgetItem = (newItem) => {
     setBudget([...budget, newItem]);
