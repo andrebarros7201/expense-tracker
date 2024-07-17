@@ -22,7 +22,7 @@ function App() {
   const handleResize = () => {
     setIsMobileView(window.innerWidth < 1300);
 
-    if (window.innerWidth > 1300) {
+    if (window.innerWidth >= 1300) {
       setIsOpen(true);
     } else {
       setIsOpen(false);
@@ -35,6 +35,7 @@ function App() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const [investment, setInvestment] = useState({
     years: 0,
     initialInvestment: 0,

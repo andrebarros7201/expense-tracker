@@ -7,7 +7,12 @@ export default function Navbar({ isMobileView, isOpen, setIsOpen }) {
     <nav
       className={`${styles["details-nav"]} ${styles[isMobileView ? "mobile" : ""]} ${styles[isOpen ? "open" : "close"]}`}
     >
-      <Link to="/" onClick={() => setIsOpen(false)}>
+      <Link
+        to="/"
+        onClick={() => {
+          isMobileView ? setIsOpen(false) : setIsOpen(true);
+        }}
+      >
         <svg
           viewBox="0 0 16 16"
           xmlSpace="preserve"
@@ -22,7 +27,12 @@ export default function Navbar({ isMobileView, isOpen, setIsOpen }) {
         </svg>{" "}
         Budget
       </Link>
-      <Link to="/investment" onClick={() => setIsOpen(false)}>
+      <Link
+        to="/investment"
+        onClick={() => {
+          isMobileView ? setIsOpen(false) : setIsOpen(true);
+        }}
+      >
         <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M90 15.75H66a6 6 0 0 0 0 12h9.516L54 49.266 34.242 29.508a5.998 5.998 0 0 0-8.484 0l-24 24a6 6 0 0 0 8.484 8.484L30 42.234l19.758 19.758a5.998 5.998 0 0 0 8.484 0L84 36.234v9.516a6 6 0 0 0 12 0v-24a5.997 5.997 0 0 0-6-6Z"
