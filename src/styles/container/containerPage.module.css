@@ -21,5 +21,6 @@
     flex-flow: column nowrap;
     align-items: center;
     overflow-y: auto;
+    padding: 0 1rem 1rem 1rem;
   }
 }
