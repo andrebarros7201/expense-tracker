@@ -45,6 +45,12 @@
   }
 }
 
+@media (max-width: 1300px) {
+  .details-nav {
+    align-items: center;
+  }
+}
+
 .toggle-sidebar-button {
   width: 64px;
   height: 64px;
