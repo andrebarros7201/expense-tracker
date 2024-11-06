@@ -1,9 +1,8 @@
 import "./App.css";
 import { createContext, useCallback, useEffect, useState } from "react";
 import { calculateInvestmentGrowth } from "./utils/calculateInvestmentGrowth.js";
-import styles from "./styles/components/navbar.module.css";
-import Navbar from "./components/Navbar.jsx";
 import { Outlet } from "react-router-dom";
+import Header from "./components/Header/Header.jsx";
 
 export const AppContext = createContext(null);
 
@@ -118,47 +117,7 @@ function App() {
           addBudgetItem,
         }}
       >
-        <Navbar
-          isMobileView={isMobileView}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-        />
-        {isMobileView && (
-          <button
-            className={styles["toggle-sidebar-button"]}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
-              <rect
-                x="0"
-                y="5"
-                width="64"
-                height="10"
-                fill="#1b263bff"
-                stroke="#e0e1ddff"
-                strokeWidth="1"
-              />
-              <rect
-                x="0"
-                y="27"
-                width="64"
-                height="10"
-                fill="#1b263bff"
-                stroke="#e0e1ddff"
-                strokeWidth="1"
-              />
-              <rect
-                x="0"
-                y="49"
-                width="64"
-                height="10"
-                fill="#1b263bff"
-                stroke="#e0e1ddff"
-                strokeWidth="1"
-              />
-            </svg>
-          </button>
-        )}
+        <Header />
         <Outlet />
       </AppContext.Provider>
     </div>
