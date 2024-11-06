@@ -1,6 +1,6 @@
 import styles from "./investmentPredictionForm.module.css";
 import { useContext, useState } from "react";
-import { AppContext } from "../../../App.jsx";
+import { AppContext } from "../../../../App.jsx";
 
 export default function InvestmentPredictionForm() {
   const { handleCalculateGrowth } = useContext(AppContext);

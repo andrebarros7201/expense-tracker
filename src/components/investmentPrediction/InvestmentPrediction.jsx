@@ -1,7 +1,7 @@
 import styles from "./investmentPrediction.module.css";
-import InvestmentPredictionTable from "./components/InvestmentPredictionTable.jsx";
-import InvestmentPredictionForm from "./components/InvestmentPredictionForm.jsx";
-import InvestmentPredictionResults from "./components/InvestmentPredictionResults.jsx";
+import InvestmentPredictionTable from "./components/investmentPredictionTable/InvestmentPredictionTable.jsx";
+import InvestmentPredictionForm from "./components/investmentPredictionForm/InvestmentPredictionForm.jsx";
+import InvestmentPredictionResults from "./components/investmentPredictionResults/InvestmentPredictionResults.jsx";
 
 export default function InvestmentPrediction() {
   return (

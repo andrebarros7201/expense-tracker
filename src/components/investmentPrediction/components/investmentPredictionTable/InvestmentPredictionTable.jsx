@@ -1,4 +1,4 @@
-import { AppContext } from "../../../App.jsx";
+import { AppContext } from "../../../../App.jsx";
 import { useContext, useState } from "react";
 import styles from "./investmentPredictionTable.module.css";
 import PropTypes from "prop-types";

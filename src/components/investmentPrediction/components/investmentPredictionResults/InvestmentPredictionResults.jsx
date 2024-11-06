@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext } from "../../../App.jsx";
+import { AppContext } from "../../../../App.jsx";
 
 export default function InvestmentPredictionResults() {
   const { investment } = useContext(AppContext);
