@@ -24,7 +24,7 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: 1.3fr 1.3fr 3fr;
-  grid-template-rows: 350px 400px;
+  grid-template-rows: 350px;
   grid-template-areas: "form results table";
   grid-auto-flow: row;
   box-sizing: border-box;
