@@ -1,4 +1,4 @@
-import styles from "../budget.module.css";
+import styles from "../budget.module.scss";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { AppContext } from "../../../../App.jsx";

@@ -1,6 +1,6 @@
 import { AppContext } from "../../../../App.jsx";
 import { useContext, useState } from "react";
-import styles from "./investmentPredictionTable.module.css";
+import styles from "./investmentPredictionTable.module.scss";
 import PropTypes from "prop-types";
 
 function TableItem({ item, previousItem }) {

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { createContext, useCallback, useEffect, useState } from "react";
 import { calculateInvestmentGrowth } from "./utils/calculateInvestmentGrowth.js";
 import { Outlet } from "react-router-dom";

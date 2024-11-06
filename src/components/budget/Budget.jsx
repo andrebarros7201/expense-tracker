@@ -1,4 +1,4 @@
-import styles from "./budget.module.css";
+import styles from "./budget.module.scss";
 import BudgetDistribution from "./components/budgetDistribution/BudgetDistribution.jsx";
 import BudgetTable from "./components/budgetTable/BudgetTable.jsx";
 

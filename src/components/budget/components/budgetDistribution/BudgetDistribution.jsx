@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../../../../App.jsx";
-import "../budget.module.css";
+import "../budget.module.scss";
 import PropTypes from "prop-types";
 import Budget from "../../Budget.jsx";
 

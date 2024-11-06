@@ -1,4 +1,4 @@
-import styles from "./investmentPrediction.module.css";
+import styles from "./investmentPrediction.module.scss";
 import InvestmentPredictionTable from "./components/investmentPredictionTable/InvestmentPredictionTable.jsx";
 import InvestmentPredictionForm from "./components/investmentPredictionForm/InvestmentPredictionForm.jsx";
 import InvestmentPredictionResults from "./components/investmentPredictionResults/InvestmentPredictionResults.jsx";
