@@ -1,0 +1,10 @@
+.page{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+.page__title{
+  font-size: 2rem;
+}
