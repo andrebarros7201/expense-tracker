@@ -1,52 +1,7 @@
 import { AppContext } from "../../../../App.jsx";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import styles from "./investmentPredictionTable.module.scss";
-import PropTypes from "prop-types";
-
-function TableItem({ item, previousItem }) {
-  const [detailsOpen, setDetailsOpen] = useState(false);
-  const toggleDetails = () => {
-    setDetailsOpen(!detailsOpen);
-  };
-  return (
-    <div data-testid="table-item">
-      <div>
-        <p>Year: {item.year}</p>
-        <p>
-          Final Value:{" "}
-          {String(item.value).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} € <br />
-          <b>
-            {previousItem
-              ? "(+" +
-                parseFloat(item.value - previousItem.value)
-                  .toFixed(2)
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ") +
-                "€)"
-              : "(0€)"}
-          </b>
-        </p>
-        <button onClick={toggleDetails}>
-          {detailsOpen ? "Close" : "Open"} Details
-        </button>
-      </div>
-      {detailsOpen && (
-        <div className={styles["table-item-details"]}>
-          {item.months.map((item) => (
-            <div key={item.month}>
-              <p>{item.month}:</p>{" "}
-              <p>{item.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €</p>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-TableItem.propTypes = {
-  item: PropTypes.object.isRequired,
-  previousItem: PropTypes.object,
-};
+import TableItem from "../investmentPredictionTableItem/InvestmentPredictionTableItem.jsx";
 
 export default function InvestmentPredictionTable() {
   const {
@@ -56,7 +11,7 @@ export default function InvestmentPredictionTable() {
   let previousItem = null; // Initialize previous item as null
 
   return (
-    <div>
+    <section className={styles["table"]}>
       {growth.length > 0 ? (
         growth.map((item) => {
           const element = (
@@ -70,8 +25,8 @@ export default function InvestmentPredictionTable() {
           return element;
         })
       ) : (
-        <h2>Calculate Growth First</h2>
+        <h2 className={styles["table__text"]}>Calculate Growth First</h2>
       )}
-    </div>
+    </section>
   );
 }

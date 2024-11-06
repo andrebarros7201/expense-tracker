@@ -1,0 +1,43 @@
+@import "../../../../styles/colors.scss";
+
+.table__item {
+}
+
+.table__item-info {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.table__item-difference {
+  font-weight: bold;
+}
+
+.table__item-toggle {
+  padding: 0.5rem;
+  background-color: $color-primary;
+  color: $color-text-light;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  border: none;
+  font-weight: bolder;
+  transition: all 50ms ease-in-out;
+
+  &:hover {
+    background-color: darken($color-primary, 5%);
+  }
+}
+
+.table__item-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: row;
+}
+
+.table__item-month {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
