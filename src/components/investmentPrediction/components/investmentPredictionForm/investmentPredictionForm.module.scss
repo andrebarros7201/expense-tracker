@@ -1,4 +1,6 @@
-.form-prediction {
+@import "../../../../styles/colors.scss";
+
+.form {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -6,28 +8,39 @@
   justify-content: flex-start;
   align-items: center;
   padding-bottom: 1rem;
+  padding-right: 3rem;
+}
 
-  & span {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
+.form__field {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
 
-  & button {
-    background-color: #2b4570;
-    color: white;
-    border: 2px solid white;
-    padding: 1rem;
-    width: 50%;
-    border-radius: 1rem;
-    transition: all 200ms;
-    font-size: 1rem;
+.form__label {
+  font-weight: bold;
+}
 
-    &:hover {
-      cursor: pointer;
-      box-shadow: 0 0 10px white;
-    }
+.form__input {
+  width: 100%;
+  padding: 0.2rem;
+  border: 1px solid $color-border-dark;
+  border-radius: 0.2rem;
+}
+
+.form__button {
+  background-color: $color-primary;
+  color: $color-text-light;
+  padding: 0.2rem 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  transition: all 50ms ease-in-out;
+
+  &:hover {
+    background-color: darken($color-primary, 5%);
   }
 }

@@ -20,60 +20,72 @@ export default function InvestmentPredictionForm() {
     handleCalculateGrowth(values, e);
   };
   return (
-    <div>
-      <form
-        className={styles["form-prediction"]}
-        onSubmit={(e) => handleSubmitForm(values, e)}
-      >
-        <span>
-          <label htmlFor="years">Years of Investment</label>
-          <input
-            type="number"
-            min={0}
-            max={100}
-            onChange={(e) =>
-              handlePredictionFormChange("years", parseInt(e.target.value))
-            }
-          />
-        </span>
-        <span>
-          <label htmlFor="initial-investment">Initial Investment</label>
-          <input
-            type="number"
-            min={0}
-            onChange={(e) =>
-              handlePredictionFormChange(
-                "initialInvestment",
-                Number(e.target.value),
-              )
-            }
-          />
-        </span>
-        <span>
-          <label htmlFor="monthly-contribution">Monthly Contribution</label>
-          <input
-            type="number"
-            min={0}
-            onChange={(e) =>
-              handlePredictionFormChange(
-                "monthlyContribution",
-                Number(e.target.value),
-              )
-            }
-          />
-        </span>
-        <span>
-          <label htmlFor="investment-growth">Yearly Investment Growth</label>
-          <input
-            type="number"
-            min={0}
-            onChange={(e) =>
-              handlePredictionFormChange("yearlyGrowth", Number(e.target.value))
-            }
-          />
-        </span>
-        <button type={"submit"}>Calculate</button>
-      </form>
-    </div>
+    <form
+      className={styles["form"]}
+      onSubmit={(e) => handleSubmitForm(values, e)}
+    >
+      <span className={styles["form__field"]}>
+        <label htmlFor="years" className={styles["form__label"]}>
+          Years of Investment
+        </label>
+        <input
+          className={styles["form__input"]}
+          type="number"
+          min={0}
+          max={100}
+          onChange={(e) =>
+            handlePredictionFormChange("years", parseInt(e.target.value))
+          }
+        />
+      </span>
+      <span className={styles["form__field"]}>
+        <label htmlFor="initial-investment" className={styles["form__label"]}>
+          Initial Investment
+        </label>
+        <input
+          className={styles["form__input"]}
+          type="number"
+          min={0}
+          onChange={(e) =>
+            handlePredictionFormChange(
+              "initialInvestment",
+              Number(e.target.value),
+            )
+          }
+        />
+      </span>
+      <span className={styles["form__field"]}>
+        <label htmlFor="monthly-contribution" className={styles["form__label"]}>
+          Monthly Contribution
+        </label>
+        <input
+          className={styles["form__input"]}
+          type="number"
+          min={0}
+          onChange={(e) =>
+            handlePredictionFormChange(
+              "monthlyContribution",
+              Number(e.target.value),
+            )
+          }
+        />
+      </span>
+      <span className={styles["form__field"]}>
+        <label htmlFor="investment-growth" className={styles["form__label"]}>
+          Yearly Investment Growth
+        </label>
+        <input
+          className={styles["form__input"]}
+          type="number"
+          min={0}
+          onChange={(e) =>
+            handlePredictionFormChange("yearlyGrowth", Number(e.target.value))
+          }
+        />
+      </span>
+      <button className={styles["form__button"]} type={"submit"}>
+        Calculate
+      </button>
+    </form>
   );
 }
