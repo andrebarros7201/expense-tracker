@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { AppContext } from "../../../App.jsx";
-import BudgetTableItem from "./BudgetTableItem.jsx";
-import BudgetAddItem from "./BudgetAddItem.jsx";
+import { AppContext } from "../../../../App.jsx";
+import BudgetTableItem from "../budgetTableItem/BudgetTableItem.jsx";
+import BudgetAddItem from "../budgetAddItem/BudgetAddItem.jsx";
 
 export default function BudgetTable() {
   const { budget } = useContext(AppContext);

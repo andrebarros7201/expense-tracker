@@ -1,6 +1,6 @@
 import styles from "./budget.module.css";
-import BudgetDistribution from "./components/BudgetDistribution.jsx";
-import BudgetTable from "./components/BudgetTable.jsx";
+import BudgetDistribution from "./components/budgetDistribution/BudgetDistribution.jsx";
+import BudgetTable from "./components/budgetTable/BudgetTable.jsx";
 
 export default function Budget() {
   return (

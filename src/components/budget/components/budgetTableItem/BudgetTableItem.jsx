@@ -1,7 +1,7 @@
-import styles from "./budget.module.css";
+import styles from "../budget.module.css";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
-import { AppContext } from "../../../App.jsx";
+import { AppContext } from "../../../../App.jsx";
 
 export default function BudgetTableItem({ item }) {
   const { updateBudgetItem, deleteBudgetItem } = useContext(AppContext);

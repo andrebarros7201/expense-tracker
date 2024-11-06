@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import styles from "./budget.module.css";
-import { AppContext } from "../../../App.jsx";
+import styles from "../budget.module.css";
+import { AppContext } from "../../../../App.jsx";
 
 export default function BudgetAddItem() {
   const { addBudgetItem } = useContext(AppContext);
