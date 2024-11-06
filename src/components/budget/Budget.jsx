@@ -1,7 +1,7 @@
-import styles from "../styles/pages/budget.module.css";
-import containerPage from "../styles/container/containerPage.module.css";
-import BudgetDistribution from "../components/budget/BudgetDistribution.jsx";
-import BudgetTable from "../components/budget/BudgetTable.jsx";
+import styles from "../../styles/pages/budget.module.css";
+import containerPage from "../../styles/container/containerPage.module.css";
+import BudgetDistribution from "./BudgetDistribution.jsx";
+import BudgetTable from "./BudgetTable.jsx";
 
 export default function Budget() {
   return (

@@ -2,7 +2,7 @@ import "./App.css";
 import { createContext, useCallback, useEffect, useState } from "react";
 import { calculateInvestmentGrowth } from "./utils/calculateInvestmentGrowth.js";
 import { Outlet } from "react-router-dom";
-import Header from "./components/Header/Header.jsx";
+import Header from "./components/header/Header.jsx";
 
 export const AppContext = createContext(null);
 

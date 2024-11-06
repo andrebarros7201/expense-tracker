@@ -1,5 +1,5 @@
 import "../styles/pages.scss";
-import InvestmentPrediction from "./InvestmentPrediction.jsx";
+import InvestmentPrediction from "../components/investmentPrediction/InvestmentPrediction.jsx";
 
 export default function Investments() {
   return (

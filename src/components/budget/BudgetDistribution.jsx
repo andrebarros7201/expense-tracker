@@ -3,7 +3,7 @@ import { AppContext } from "../../App.jsx";
 import containerComponent from "../../styles/container/containerComponent.module.css";
 import "../../styles/components/budget.module.css";
 import PropTypes from "prop-types";
-import Budget from "../../pages/Budget.jsx";
+import Budget from "./Budget.jsx";
 
 export default function BudgetDistribution() {
   const { income, budget, handleIncomeChange } = useContext(AppContext);
