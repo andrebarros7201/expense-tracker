@@ -1,22 +1,25 @@
-// Primary Color
-$color-primary: #DC143C; // Crimson
+// Primary Colors
+$color-primary: #2c6b3f; // Forest Green (Represents financial stability, growth, and wealth)
+$color-secondary: #f1c40f; // Gold (Symbolizes wealth, success, and prosperity)
 
-// Secondary Color
-$color-secondary: #F5F5DC; // Beige
+// Neutral Colors
+$color-neutral-light: #f5f5f5; // Light Gray (Soft background or neutral tone)
+$color-neutral-dark: #2c3e50; // Charcoal Gray (Professional tone for text and borders)
 
 // Accent Colors
-$color-accent-light: #FF6F61; // Light Crimson Accent
-$color-accent-dark: #8B0000; // Dark Crimson Accent
+$color-accent-success: #27ae60; // Emerald Green (Represents success and profit)
+$color-accent-warning: #e67e22; // Orange (For caution or alerting on warnings)
+$color-accent-danger: #e74c3c; // Red (To indicate financial losses or errors)
 
 // Background Colors
-$color-background-light: #FAF0E6; // Linen (for a light, neutral background)
-$color-background-dark: #2E2E2E; // Dark Gray (for dark mode)
+$color-background-light: #ecf0f1; // Light Silver (Background color for forms, tables)
+$color-background-dark: #34495e; // Dark Slate (Used for headers or footers)
 
 // Text Colors
-$color-text-primary: #333333; // Dark gray for main text
-$color-text-secondary: #666666; // Medium gray for secondary text
-$color-text-light: #FFFFFF; // White for text on dark backgrounds
+$color-text-primary: #2c3e50; // Charcoal Gray (For main text, strong readability)
+$color-text-secondary: #7f8c8d; // Grayish (For secondary text, less emphasis)
+$color-text-light: #ffffff; // White (For text on dark backgrounds)
 
 // Border Colors
-$color-border-light: #D3D3D3; // Light Gray Border
-$color-border-dark: #A9A9A9; // Dark Gray Border
+$color-border-light: #bdc3c7; // Light Gray (For borders on cards, input fields)
+$color-border-dark: #34495e; // Dark Slate (For darker border elements)
