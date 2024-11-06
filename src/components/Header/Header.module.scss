@@ -1,0 +1,30 @@
+@import '../../styles/colors.scss';
+
+.header{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__list{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__title{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.header__list-item{
+  color: $color-text-light;
+  text-decoration: none;
+  border-bottom: 2px solid $color-primary;
+  transition: all 50ms ease-in-out;
+  cursor: pointer;
+  padding: 0 .2rem;
+}
+
