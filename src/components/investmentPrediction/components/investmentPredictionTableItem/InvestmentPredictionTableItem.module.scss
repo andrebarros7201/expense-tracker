@@ -1,6 +1,7 @@
 @import "../../../../styles/colors.scss";
 
-.table__item {
+.table__item:not(:first-child) {
+  border-top: 2px solid $color-border-dark;
 }
 
 .table__item-info {
