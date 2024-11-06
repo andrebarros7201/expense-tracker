@@ -1,5 +1,5 @@
 import App from "./App.jsx";
-import Market from "./pages/Market.jsx";
+import Investments from "./pages/Investments.jsx";
 import PersonalFinances from "./pages/PersonalFinances.jsx";
 
 const routes = [
@@ -8,8 +8,8 @@ const routes = [
     element: <App />,
     children: [
       {
-        path: "/market",
-        element: <Market />,
+        path: "/investments",
+        element: <Investments />,
       },
       {
         index: true,
