@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
-import styles from "../../styles/components/budget.module.css";
-import containerComponent from "../../styles/container/containerComponent.module.css";
-import { AppContext } from "../../App.jsx";
+import styles from "./budget.module.css";
+import { AppContext } from "../../../App.jsx";
 
 export default function BudgetAddItem() {
   const { addBudgetItem } = useContext(AppContext);
@@ -19,9 +18,7 @@ export default function BudgetAddItem() {
   }
 
   return (
-    <div
-      className={`${containerComponent["container-table-item-top"]} ${styles["add-item"]}`}
-    >
+    <div className={`${styles["add-item"]}`}>
       {!isAdding ? (
         <button
           className={styles["add-button"]}

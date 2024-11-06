@@ -1,16 +1,13 @@
-import styles from "../../styles/pages/investmentPrediction.module.css";
-import containerPage from "../../styles/container/containerPage.module.css";
-import InvestmentPredictionTable from "./InvestmentPredictionTable.jsx";
-import InvestmentPredictionForm from "./InvestmentPredictionForm.jsx";
-import InvestmentPredictionResults from "./InvestmentPredictionResults.jsx";
+import styles from "./investmentPrediction.module.css";
+import InvestmentPredictionTable from "./components/InvestmentPredictionTable.jsx";
+import InvestmentPredictionForm from "./components/InvestmentPredictionForm.jsx";
+import InvestmentPredictionResults from "./components/InvestmentPredictionResults.jsx";
 
 export default function InvestmentPrediction() {
   return (
-    <main className={`${containerPage["container-main"]}`}>
+    <main>
       <h2>Investment Prediction</h2>
-      <section
-        className={`${containerPage["container-components"]} ${styles["prediction-components"]}`}
-      >
+      <section className={` ${styles["prediction-components"]}`}>
         <InvestmentPredictionForm />
         <InvestmentPredictionResults />
         <InvestmentPredictionTable />

@@ -1,7 +1,6 @@
-import { AppContext } from "../../App.jsx";
+import { AppContext } from "../../../App.jsx";
 import { useContext, useState } from "react";
-import styles from "../../styles/components/investmentPrediction/investmentPredictionTable.module.css";
-import containerComponent from "../../styles/container/containerComponent.module.css";
+import styles from "./investmentPredictionTable.module.css";
 import PropTypes from "prop-types";
 
 function TableItem({ item, previousItem }) {
@@ -10,11 +9,8 @@ function TableItem({ item, previousItem }) {
     setDetailsOpen(!detailsOpen);
   };
   return (
-    <div
-      className={containerComponent["container-table-item"]}
-      data-testid="table-item"
-    >
-      <div className={containerComponent["container-table-item-top"]}>
+    <div data-testid="table-item">
+      <div>
         <p>Year: {item.year}</p>
         <p>
           Final Value:{" "}
@@ -29,10 +25,7 @@ function TableItem({ item, previousItem }) {
               : "(0€)"}
           </b>
         </p>
-        <button
-          onClick={toggleDetails}
-          className={containerComponent["button-primary"]}
-        >
+        <button onClick={toggleDetails}>
           {detailsOpen ? "Close" : "Open"} Details
         </button>
       </div>
@@ -63,7 +56,7 @@ export default function InvestmentPredictionTable() {
   let previousItem = null; // Initialize previous item as null
 
   return (
-    <div className={containerComponent["container-table"]}>
+    <div>
       {growth.length > 0 ? (
         growth.map((item) => {
           const element = (

@@ -1,8 +1,7 @@
-import styles from "../../styles/components/budget.module.css";
-import containerComponent from "../../styles/container/containerComponent.module.css";
+import styles from "./budget.module.css";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
-import { AppContext } from "../../App.jsx";
+import { AppContext } from "../../../App.jsx";
 
 export default function BudgetTableItem({ item }) {
   const { updateBudgetItem, deleteBudgetItem } = useContext(AppContext);
@@ -21,13 +20,8 @@ export default function BudgetTableItem({ item }) {
   }
 
   return (
-    <div
-      className={`${containerComponent["container-table-item"]} `}
-      data-testid="budgetCRUDITem"
-    >
-      <div
-        className={`${containerComponent["container-table-item-top"]} ${styles["budget-table-top"]}`}
-      >
+    <div data-testid="budgetCRUDITem">
+      <div className={`${styles["budget-table-top"]}`}>
         {!isEditing ? (
           <>
             <p>{item.name}</p>
@@ -36,13 +30,10 @@ export default function BudgetTableItem({ item }) {
               onClick={() => {
                 setIsEditing(true);
               }}
-              className={containerComponent["button-primary"]}
             >
               Edit
             </button>
-            <button className={containerComponent["button-primary"]}>
-              {detailsOpen ? "Close" : "Open"} Details
-            </button>
+            <button>{detailsOpen ? "Close" : "Open"} Details</button>
           </>
         ) : (
           <>
@@ -61,23 +52,11 @@ export default function BudgetTableItem({ item }) {
                 handleCopyItemChange("proportion", e.target.value)
               }
             />
-            <button
-              onClick={(e) => handleSaveEdit(e)}
-              className={containerComponent["button-primary"]}
-            >
-              Save
-            </button>
-            <button className={containerComponent["button-primary"]}>
-              {detailsOpen ? "Close" : "Open"} Details
-            </button>
+            <button onClick={(e) => handleSaveEdit(e)}>Save</button>
+            <button>{detailsOpen ? "Close" : "Open"} Details</button>
           </>
         )}
-        <button
-          onClick={() => deleteBudgetItem(item)}
-          className={containerComponent["button-primary"]}
-        >
-          Delete
-        </button>
+        <button onClick={() => deleteBudgetItem(item)}>Delete</button>
       </div>
       {detailsOpen && (
         <div className={styles["budgetCRUDItem-bottom"]}>

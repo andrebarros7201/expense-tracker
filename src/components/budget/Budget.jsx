@@ -1,15 +1,12 @@
-import styles from "../../styles/pages/budget.module.css";
-import containerPage from "../../styles/container/containerPage.module.css";
-import BudgetDistribution from "./BudgetDistribution.jsx";
-import BudgetTable from "./BudgetTable.jsx";
+import styles from "./budget.module.css";
+import BudgetDistribution from "./components/BudgetDistribution.jsx";
+import BudgetTable from "./components/BudgetTable.jsx";
 
 export default function Budget() {
   return (
-    <main className={containerPage["container-main"]}>
+    <main>
       <h2>Monthly Budget</h2>
-      <div
-        className={`${containerPage["container-components"]}  ${styles["budget-components"]}`}
-      >
+      <div className={`${styles["budget-components"]}`}>
         <BudgetDistribution />
         <BudgetTable />
       </div>

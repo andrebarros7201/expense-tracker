@@ -1,4 +1,4 @@
-import InvestmentPredictionTable from "../components/investmentPrediction/InvestmentPredictionTable.jsx";
+import InvestmentPredictionTable from "../components/investmentPrediction/components/InvestmentPredictionTable.jsx";
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
