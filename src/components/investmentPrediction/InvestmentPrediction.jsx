@@ -5,9 +5,9 @@ import InvestmentPredictionResults from "./components/investmentPredictionResult
 
 export default function InvestmentPrediction() {
   return (
-    <main>
+    <main className={styles["prediction"]}>
       <h2>Investment Prediction</h2>
-      <section className={` ${styles["prediction-components"]}`}>
+      <section className={styles["prediction__container"]}>
         <InvestmentPredictionForm />
         <InvestmentPredictionResults />
         <InvestmentPredictionTable />

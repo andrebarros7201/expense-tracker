@@ -4,7 +4,6 @@ import InvestmentPrediction from "../components/investmentPrediction/InvestmentP
 export default function Investments() {
   return (
     <main className={"page"}>
-      <h2 className={"page__title"}>Investments</h2>
       <InvestmentPrediction />
     </main>
   );
