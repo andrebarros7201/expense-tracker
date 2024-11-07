@@ -1,16 +1,16 @@
 import { useContext } from "react";
-import { AppContext } from "../../../../App.jsx";
 import BudgetTableItem from "../budgetTableItem/BudgetTableItem.jsx";
-import BudgetAddItem from "../budgetAddItem/BudgetAddItem.jsx";
+import BudgetAddItemForm from "../budgetAddItem/BudgetAddItemForm.jsx";
+import { BudgetContext } from "../../Budget.jsx";
 
 export default function BudgetTable() {
-  const { budget } = useContext(AppContext);
+  const { budget } = useContext(BudgetContext);
   return (
     <section>
       {budget.map((item) => (
         <BudgetTableItem item={item} key={item.name} />
       ))}
-      <BudgetAddItem />
+      <BudgetAddItemForm />
     </section>
   );
 }

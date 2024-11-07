@@ -1,33 +1,15 @@
 import { useContext } from "react";
-import { AppContext } from "../../../../App.jsx";
 import "../budget.module.scss";
 import PropTypes from "prop-types";
-import Budget from "../../Budget.jsx";
+import { BudgetContext } from "../../Budget.jsx";
 
 export default function BudgetDistribution() {
-  const { income, budget, handleIncomeChange } = useContext(AppContext);
+  const { income, budget, handleIncomeChange } = useContext(BudgetContext);
 
-  return (
-    <section>
-      <input
-        type="number"
-        onChange={(e) => handleIncomeChange(Number(e.target.value))}
-        placeholder="Income"
-      />
-      <h3>Distribution</h3>
-      <ul>
-        {budget.map((budget) => (
-          <li key={budget.name}>
-            ({budget.proportion}%) {budget.name}:{" "}
-            {income * (budget.proportion / 100)} €
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
+  return <section></section>;
 }
 
-Budget.propTypes = {
+BudgetDistribution.propTypes = {
   income: PropTypes.number,
   budget: PropTypes.array,
   handleIncoming: PropTypes.func,

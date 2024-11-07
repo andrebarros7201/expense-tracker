@@ -1,12 +1,12 @@
-import { AppContext } from "../../../../App.jsx";
 import { useContext } from "react";
 import styles from "./investmentPredictionTable.module.scss";
 import TableItem from "../investmentPredictionTableItem/InvestmentPredictionTableItem.jsx";
+import { InvestmentContext } from "../../../../pages/Investments.jsx";
 
 export default function InvestmentPredictionTable() {
   const {
     investment: { growth },
-  } = useContext(AppContext);
+  } = useContext(InvestmentContext);
 
   let previousItem = null; // Initialize previous item as null
 
@@ -21,7 +21,7 @@ export default function InvestmentPredictionTable() {
               key={item.year}
             />
           );
-          previousItem = item; // Update previous item for the next iteration
+          previousItem = item;
           return element;
         })
       ) : (
