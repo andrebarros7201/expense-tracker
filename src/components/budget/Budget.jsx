@@ -3,6 +3,7 @@ import styles from "./budget.module.scss";
 import BudgetDistribution from "./components/budgetDistribution/BudgetDistribution.jsx";
 import BudgetTable from "./components/budgetTable/BudgetTable.jsx";
 import { createContext, useState } from "react";
+import BudgetAddItemForm from "./components/budgetAddItem/BudgetAddItemForm.jsx";
 
 export const BudgetContext = createContext(null);
 
@@ -11,17 +12,20 @@ const initialBudget = [
   { name: "Groceries", category: "Food", percentage: 25 },
   { name: "Utilities", category: "Bills", percentage: 15 },
   { name: "Entertainment", category: "Leisure", percentage: 20 },
+  { name: "Internet", category: "Housing", percentage: 10 },
+  { name: "Dining Out", category: "Food", percentage: 10 },
 ];
 
 const expenseCategories = [
   "Housing",
   "Utilities",
-  "Groceries",
+  "Food",
   "Transportation",
   "Insurance",
   "Healthcare",
   "Debt Payments",
-  "Entertainment",
+  "Bills",
+  "Leisure",
   "Dining Out",
   "Education",
   "Savings & Investments",
@@ -32,7 +36,7 @@ const expenseCategories = [
 ];
 
 export default function Budget() {
-  const [income, setIncome] = useState(0);
+  const [income, setIncome] = useState(500);
   const [budget, setBudget] = useState(initialBudget);
 
   const addBudgetItem = (newItem) => {
@@ -58,6 +62,7 @@ export default function Budget() {
   return (
     <BudgetContext.Provider
       value={{
+        income,
         budget,
         expenseCategories,
         addBudgetItem,
@@ -71,6 +76,7 @@ export default function Budget() {
         <div className={styles["budget__container"]}>
           <BudgetDistribution />
           <BudgetTable />
+          <BudgetAddItemForm />
         </div>
       </main>
     </BudgetContext.Provider>

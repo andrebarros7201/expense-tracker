@@ -1,0 +1,18 @@
+.distribution {
+  display: grid;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.distribution__category {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  & > p {
+    margin: 0;
+  }
+
+  & > p:first-child {
+    text-align: left;
+  }
+}
