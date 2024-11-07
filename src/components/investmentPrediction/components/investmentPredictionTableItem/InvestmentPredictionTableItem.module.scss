@@ -34,11 +34,15 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-flow: row;
+  gap: 0.5rem;
 }
 
 .table__item-month {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  & > p {
+    margin: 0;
+  }
 }
