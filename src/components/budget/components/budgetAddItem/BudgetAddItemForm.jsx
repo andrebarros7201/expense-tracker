@@ -34,7 +34,7 @@ export default function BudgetAddItemForm() {
         />
       </span>
       <span className={styles["form__field"]}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Category</label>
         <select
           onChange={(e) => handleChange("category", e.target.value)}
           value={newItem.category}
@@ -49,7 +49,7 @@ export default function BudgetAddItemForm() {
       <span className={styles["form__field"]}>
         <label htmlFor="percentage">Percentage</label>
         <input
-          onChange={(e) => handleChange("percentage", e.target.value)}
+          onChange={(e) => handleChange("percentage", Number(e.target.value))}
           value={newItem.percentage}
           type="number"
           id={"percentage"}
