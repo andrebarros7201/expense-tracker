@@ -3,6 +3,7 @@ import styles from "./budget.module.scss";
 import BudgetDistribution from "./components/budgetDistribution/BudgetDistribution.jsx";
 import { createContext, useState } from "react";
 import BudgetAddItemForm from "./components/budgetAddItem/BudgetAddItemForm.jsx";
+import BudgetIncome from "./components/budgetIncome/BudgetIncome.jsx";
 
 export const BudgetContext = createContext(null);
 
@@ -68,6 +69,7 @@ export default function Budget() {
         income,
         budget,
         expenseCategories,
+        setIncome,
         addBudgetItem,
         updateBudgetItem,
         deleteBudgetItem,
@@ -78,6 +80,7 @@ export default function Budget() {
         <h2>Monthly Budget</h2>
         <div className={styles["budget__container"]}>
           <BudgetDistribution />
+          <BudgetIncome />
           <BudgetAddItemForm />
         </div>
       </main>
