@@ -53,7 +53,7 @@ export default function Budget() {
   };
 
   const deleteBudgetItem = (item) => {
-    const newBudget = budget.filter((x) => x.name !== item.name);
+    const newBudget = budget.filter((x) => x.id !== item.id);
     setBudget(newBudget);
   };
 

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./BudgetDistributionitem.module.scss";
+import { BudgetContext } from "../../Budget.jsx";
 
 export default function DistributionItem({
   list,
@@ -8,6 +9,7 @@ export default function DistributionItem({
   filteredBudget,
   income,
 }) {
+  const { deleteBudgetItem } = useContext(BudgetContext);
   const [isOpen, setIsOpen] = useState(false);
 
   function handleToggle() {
@@ -37,7 +39,7 @@ export default function DistributionItem({
               <p>{((item.percentage / 100) * income).toFixed(2)} €</p>
               <div className={styles["distribution__details-item-operations"]}>
                 <button>Update</button>
-                <button>Delete</button>
+                <button onClick={() => deleteBudgetItem(item)}>Delete</button>
               </div>
             </div>
           ))}
