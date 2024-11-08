@@ -1,0 +1,107 @@
+@import "../../../../styles/colors.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form__field {
+  width: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.form__label {
+  font-weight: bold;
+  width: 100%;
+}
+
+.form__input {
+  width: 100%;
+  border: 1px solid $color-border-light;
+  padding: 0.35rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  font-size: 1rem;
+  color: $color-text-primary;
+  background-color: $color-neutral-light;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:focus {
+    border-color: $color-primary; // Highlight border color on focus
+    box-shadow: 0 0 5px rgba($color-primary, 0.3); // Soft shadow on focus
+    outline: none; // Remove default outline for custom styling
+  }
+
+  &:hover {
+    border-color: $color-border-dark; // Darker border on hover for better feedback
+  }
+
+  &::placeholder {
+    color: $color-text-secondary; // Subtle color for placeholder text
+    font-style: italic;
+  }
+}
+
+.form__button {
+  background-color: $color-primary;
+  color: $color-text-light;
+  padding: 0.4rem 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  transition: all 50ms ease-in-out;
+
+  &:hover {
+    background-color: darken($color-primary, 5%);
+  }
+}
+
+.form__select {
+  width: 100%;
+  border: 1px solid $color-border-light;
+  padding: 0.35rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  font-size: 1rem;
+  color: $color-text-primary;
+  background-color: $color-neutral-light;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  appearance: none; // Remove default styling for consistent cross-browser appearance
+
+  &:focus {
+    border-color: $color-primary; // Highlight border color on focus
+    box-shadow: 0 0 5px rgba($color-primary, 0.3); // Soft shadow on focus
+    outline: none; // Remove default outline for custom styling
+  }
+
+  &:hover {
+    border-color: $color-border-dark; // Darker border on hover for better feedback
+  }
+}
+
+.form__option {
+  color: $color-text-primary;
+  background-color: $color-neutral-light;
+
+  &:hover {
+    background-color: darken(
+      $color-neutral-light,
+      5%
+    ); // Slightly darker on hover for better feedback
+  }
+}

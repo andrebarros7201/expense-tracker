@@ -25,8 +25,11 @@ export default function BudgetAddItemForm() {
   return (
     <form onSubmit={(e) => handleSubmit(e)} className={styles["form"]}>
       <span className={styles["form__field"]}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name" className={styles["form__label"]}>
+          Name
+        </label>
         <input
+          className={styles["form__input"]}
           onChange={(e) => handleChange("name", e.target.value)}
           value={newItem.name}
           type="text"
@@ -34,21 +37,27 @@ export default function BudgetAddItemForm() {
         />
       </span>
       <span className={styles["form__field"]}>
-        <label htmlFor="name">Category</label>
+        <label htmlFor="name" className={styles["form__label"]}>
+          Category
+        </label>
         <select
+          className={styles["form__select"]}
           onChange={(e) => handleChange("category", e.target.value)}
           value={newItem.category}
         >
           {expenseCategories.map((item, index) => (
-            <option key={index} value={item}>
+            <option className={styles["form__option"]} key={index} value={item}>
               {item}
             </option>
           ))}
         </select>
       </span>
       <span className={styles["form__field"]}>
-        <label htmlFor="percentage">Percentage</label>
+        <label htmlFor="percentage" className={styles["form__label"]}>
+          Percentage
+        </label>
         <input
+          className={styles["form__input"]}
           onChange={(e) => handleChange("percentage", Number(e.target.value))}
           value={newItem.percentage}
           type="number"
