@@ -26,7 +26,7 @@ export default function DistributionItem({
       <p>{totalPercentage} %</p>
       <p>{totalAmount} €</p>
       <button className={styles["distribution__button"]} onClick={handleToggle}>
-        {isOpen ? "Close" : "Open"}
+        {isOpen ? "Close" : "Open"} Details
       </button>
       {isOpen && (
         <div className={styles["distribution__details"]}>
