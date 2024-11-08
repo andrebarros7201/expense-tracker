@@ -35,6 +35,10 @@ export default function DistributionItem({
               <p>{item.name}</p>
               <p>{item.percentage} %</p>
               <p>{((item.percentage / 100) * income).toFixed(2)} €</p>
+              <div className={styles["distribution__details-item-operations"]}>
+                <button>Update</button>
+                <button>Delete</button>
+              </div>
             </div>
           ))}
         </div>

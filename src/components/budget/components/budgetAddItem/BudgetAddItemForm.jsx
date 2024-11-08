@@ -3,7 +3,8 @@ import styles from "./BudgetAddItemForm.module.scss";
 import { BudgetContext } from "../../Budget.jsx";
 
 export default function BudgetAddItemForm() {
-  const { addBudgetItem, expenseCategories } = useContext(BudgetContext);
+  const { countID, addBudgetItem, expenseCategories } =
+    useContext(BudgetContext);
 
   const initialValues = {
     name: "",

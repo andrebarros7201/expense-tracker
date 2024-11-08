@@ -7,12 +7,12 @@ import BudgetAddItemForm from "./components/budgetAddItem/BudgetAddItemForm.jsx"
 export const BudgetContext = createContext(null);
 
 const initialBudget = [
-  { name: "Rent", category: "Housing", percentage: 40 },
-  { name: "Groceries", category: "Food", percentage: 25 },
-  { name: "Utilities", category: "Bills", percentage: 15 },
-  { name: "Entertainment", category: "Leisure", percentage: 20 },
-  { name: "Internet", category: "Housing", percentage: 10 },
-  { name: "Dining Out", category: "Food", percentage: 10 },
+  { id: 1, name: "Rent", category: "Housing", percentage: 40 },
+  { id: 2, name: "Groceries", category: "Food", percentage: 25 },
+  { id: 3, name: "Utilities", category: "Bills", percentage: 15 },
+  { id: 4, name: "Entertainment", category: "Leisure", percentage: 20 },
+  { id: 5, name: "Internet", category: "Housing", percentage: 10 },
+  { id: 6, name: "Dining Out", category: "Food", percentage: 10 },
 ];
 
 const expenseCategories = [
@@ -35,11 +35,14 @@ const expenseCategories = [
 ];
 
 export default function Budget() {
+  const [countID, setCountID] = useState(7);
   const [income, setIncome] = useState(500);
   const [budget, setBudget] = useState(initialBudget);
 
   const addBudgetItem = (newItem) => {
+    newItem["id"] = countID;
     setBudget([...budget, newItem]);
+    setCountID((countID) => countID + 1);
   };
 
   const updateBudgetItem = (oldItem, updatedItem) => {
@@ -61,6 +64,7 @@ export default function Budget() {
   return (
     <BudgetContext.Provider
       value={{
+        countID,
         income,
         budget,
         expenseCategories,
