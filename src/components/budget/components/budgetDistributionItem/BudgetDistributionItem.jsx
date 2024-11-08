@@ -44,6 +44,7 @@ export default function DistributionItem({
 }
 
 DistributionItem.propTypes = {
+  list: PropTypes.array.isRequired,
   category: PropTypes.string.isRequired,
   filteredBudget: PropTypes.array.isRequired,
   income: PropTypes.number.isRequired,
