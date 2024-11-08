@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./BudgetDistributionitem.module.scss";
-import { BudgetContext } from "../../Budget.jsx";
+import BudgetItem from "../budgetItem/BudgetItem.jsx";
 
 export default function DistributionItem({
   list,
@@ -9,27 +9,10 @@ export default function DistributionItem({
   filteredBudget,
   income,
 }) {
-  const { deleteBudgetItem, updateBudgetItem } = useContext(BudgetContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
-  const [updatedBudgetItem, setUpdatedBudgetItem] = useState(undefined);
-
-  function handleOnChangeUpdateItem(field, value) {
-    setUpdatedBudgetItem({ ...updatedBudgetItem, [field]: value });
-  }
 
   function handleToggle() {
     setIsOpen(!isOpen);
-  }
-
-  function toggleIsEditing(item) {
-    setUpdatedBudgetItem(item);
-    setIsEditing(!isEditing);
-  }
-
-  function handleSaveUpdatedItem(oldItem) {
-    updateBudgetItem(oldItem, updatedBudgetItem);
-    setIsEditing(false);
   }
 
   const totalPercentage = filteredBudget.reduce(
@@ -48,45 +31,8 @@ export default function DistributionItem({
       </button>
       {isOpen && (
         <div className={styles["distribution__details"]}>
-          {list.map((item, index) => (
-            <div key={index} className={styles["distribution__details-item"]}>
-              {!isEditing ? (
-                <>
-                  <p>{item.name}</p>
-                  <p>{item.percentage} %</p>
-                  <p>{((item.percentage / 100) * income).toFixed(2)} €</p>
-                </>
-              ) : (
-                <>
-                  <input
-                    type="text"
-                    value={item.name}
-                    onChange={(e) =>
-                      handleOnChangeUpdateItem("name", e.target.value)
-                    }
-                  />
-                  <input
-                    type="text"
-                    value={item.percentage}
-                    onChange={(e) =>
-                      handleOnChangeUpdateItem("percentage", e.target.value)
-                    }
-                  />
-                </>
-              )}
-
-              <div className={styles["distribution__details-item-operations"]}>
-                {!isEditing ? (
-                  <button onClick={() => toggleIsEditing(item)}>Update</button>
-                ) : (
-                  <button onClick={() => handleSaveUpdatedItem(item)}>
-                    Save
-                  </button>
-                )}
-
-                <button onClick={() => deleteBudgetItem(item)}>Delete</button>
-              </div>
-            </div>
+          {list.map((item) => (
+            <BudgetItem item={item} key={item.id} />
           ))}
         </div>
       )}
