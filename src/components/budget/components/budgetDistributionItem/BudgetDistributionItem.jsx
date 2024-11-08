@@ -9,11 +9,27 @@ export default function DistributionItem({
   filteredBudget,
   income,
 }) {
-  const { deleteBudgetItem } = useContext(BudgetContext);
+  const { deleteBudgetItem, updateBudgetItem } = useContext(BudgetContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [updatedBudgetItem, setUpdatedBudgetItem] = useState(undefined);
+
+  function handleOnChangeUpdateItem(field, value) {
+    setUpdatedBudgetItem({ ...updatedBudgetItem, [field]: value });
+  }
 
   function handleToggle() {
     setIsOpen(!isOpen);
+  }
+
+  function toggleIsEditing(item) {
+    setUpdatedBudgetItem(item);
+    setIsEditing(!isEditing);
+  }
+
+  function handleSaveUpdatedItem(oldItem) {
+    updateBudgetItem(oldItem, updatedBudgetItem);
+    setIsEditing(false);
   }
 
   const totalPercentage = filteredBudget.reduce(
@@ -34,11 +50,40 @@ export default function DistributionItem({
         <div className={styles["distribution__details"]}>
           {list.map((item, index) => (
             <div key={index} className={styles["distribution__details-item"]}>
-              <p>{item.name}</p>
-              <p>{item.percentage} %</p>
-              <p>{((item.percentage / 100) * income).toFixed(2)} €</p>
+              {!isEditing ? (
+                <>
+                  <p>{item.name}</p>
+                  <p>{item.percentage} %</p>
+                  <p>{((item.percentage / 100) * income).toFixed(2)} €</p>
+                </>
+              ) : (
+                <>
+                  <input
+                    type="text"
+                    value={item.name}
+                    onChange={(e) =>
+                      handleOnChangeUpdateItem("name", e.target.value)
+                    }
+                  />
+                  <input
+                    type="text"
+                    value={item.percentage}
+                    onChange={(e) =>
+                      handleOnChangeUpdateItem("percentage", e.target.value)
+                    }
+                  />
+                </>
+              )}
+
               <div className={styles["distribution__details-item-operations"]}>
-                <button>Update</button>
+                {!isEditing ? (
+                  <button onClick={() => toggleIsEditing(item)}>Update</button>
+                ) : (
+                  <button onClick={() => handleSaveUpdatedItem(item)}>
+                    Save
+                  </button>
+                )}
+
                 <button onClick={() => deleteBudgetItem(item)}>Delete</button>
               </div>
             </div>
