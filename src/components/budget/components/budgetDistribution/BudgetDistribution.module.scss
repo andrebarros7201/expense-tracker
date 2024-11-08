@@ -1,18 +1,9 @@
 .distribution {
-  display: grid;
+  grid-area: distribution;
+  display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 1rem;
   padding: 1rem;
-}
-
-.distribution__category {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  & > p {
-    margin: 0;
-  }
-
-  & > p:first-child {
-    text-align: left;
-  }
+  overflow-y: auto;
 }

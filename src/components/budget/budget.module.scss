@@ -1,6 +1,9 @@
 .budget__container {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: 300px;
   gap: 1rem;
+  padding: 1rem;
+  grid-template-areas: "distribution form";
 }

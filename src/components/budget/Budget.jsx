@@ -1,7 +1,6 @@
 import "../../styles/container.scss";
 import styles from "./budget.module.scss";
 import BudgetDistribution from "./components/budgetDistribution/BudgetDistribution.jsx";
-import BudgetTable from "./components/budgetTable/BudgetTable.jsx";
 import { createContext, useState } from "react";
 import BudgetAddItemForm from "./components/budgetAddItem/BudgetAddItemForm.jsx";
 
@@ -75,7 +74,6 @@ export default function Budget() {
         <h2>Monthly Budget</h2>
         <div className={styles["budget__container"]}>
           <BudgetDistribution />
-          <BudgetTable />
           <BudgetAddItemForm />
         </div>
       </main>

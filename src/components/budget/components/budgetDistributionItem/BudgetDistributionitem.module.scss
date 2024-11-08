@@ -1,0 +1,36 @@
+.distribution__category {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  & > p {
+    margin: 0;
+  }
+
+  & > p:first-child {
+    text-align: left;
+  }
+}
+
+.distribution__details {
+  padding: 1rem 0;
+  box-sizing: border-box;
+  grid-column: 1/-2;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.distribution__details-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  & > p {
+    margin: 0;
+  }
+
+  & > p:first-child {
+    padding-left: 1rem;
+    text-align: left;
+  }
+}
