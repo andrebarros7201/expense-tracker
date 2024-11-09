@@ -29,7 +29,7 @@ export default function InvestmentPredictionForm() {
           Years of Investment
         </label>
         <input
-          className={styles["form__input"]}
+          className={"form__input"}
           type="number"
           min={0}
           max={100}
@@ -43,7 +43,7 @@ export default function InvestmentPredictionForm() {
           Initial Investment
         </label>
         <input
-          className={styles["form__input"]}
+          className={"form__input"}
           type="number"
           min={0}
           onChange={(e) =>
@@ -59,7 +59,7 @@ export default function InvestmentPredictionForm() {
           Monthly Contribution
         </label>
         <input
-          className={styles["form__input"]}
+          className={"form__input"}
           type="number"
           min={0}
           onChange={(e) =>
@@ -75,7 +75,7 @@ export default function InvestmentPredictionForm() {
           Yearly Investment Growth
         </label>
         <input
-          className={styles["form__input"]}
+          className={"form__input"}
           type="number"
           min={0}
           onChange={(e) =>

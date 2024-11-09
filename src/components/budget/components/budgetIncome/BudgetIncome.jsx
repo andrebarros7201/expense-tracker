@@ -1,4 +1,5 @@
 import styles from "./BudgetIncome.module.scss";
+import "../../../../styles/main.scss";
 import { useContext } from "react";
 import { BudgetContext } from "../../Budget.jsx";
 
@@ -19,7 +20,7 @@ export default function BudgetIncome() {
         type={"number"}
         min={0}
         onChange={(e) => handleChangeIncome(Number(e.target.value))}
-        className={styles["income__input"]}
+        className={"form__input"}
       />
     </span>
   );

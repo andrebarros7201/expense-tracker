@@ -31,7 +31,7 @@ export default function BudgetAddItemForm() {
           Name
         </label>
         <input
-          className={styles["form__input"]}
+          className={"form__input"}
           onChange={(e) => handleChange("name", e.target.value)}
           value={newItem.name}
           type="text"
@@ -59,7 +59,7 @@ export default function BudgetAddItemForm() {
           Percentage
         </label>
         <input
-          className={styles["form__input"]}
+          className={"form__input"}
           onChange={(e) => handleChange("percentage", Number(e.target.value))}
           value={newItem.percentage}
           type="number"

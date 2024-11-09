@@ -23,35 +23,6 @@
   width: 100%;
 }
 
-.form__input {
-  width: 100%;
-  border: 1px solid $color-border-light;
-  padding: 0.35rem;
-  border-radius: 0.4rem;
-  text-align: center;
-  font-size: 1rem;
-  color: $color-text-primary;
-  background-color: $color-neutral-light;
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-
-  &:focus {
-    border-color: $color-primary; // Highlight border color on focus
-    box-shadow: 0 0 5px rgba($color-primary, 0.3); // Soft shadow on focus
-    outline: none; // Remove default outline for custom styling
-  }
-
-  &:hover {
-    border-color: $color-border-dark; // Darker border on hover for better feedback
-  }
-
-  &::placeholder {
-    color: $color-text-secondary; // Subtle color for placeholder text
-    font-style: italic;
-  }
-}
-
 .form__select {
   width: 100%;
   border: 1px solid $color-border-light;
