@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./BudgetDistributionitem.module.scss";
 import BudgetItem from "../budgetItem/BudgetItem.jsx";
+import "../../../../styles/main.scss";
 
 export default function DistributionItem({
   list,
@@ -26,7 +27,7 @@ export default function DistributionItem({
       <p>{category}:</p>
       <p>{totalPercentage} %</p>
       <p>{totalAmount} €</p>
-      <button className={styles["distribution__button"]} onClick={handleToggle}>
+      <button className={"button"} onClick={handleToggle}>
         {isOpen ? "Close" : "Open"} Details
       </button>
       {isOpen && (
