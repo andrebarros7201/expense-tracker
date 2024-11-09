@@ -51,9 +51,3 @@
     background-color: darken($color-primary, 5%);
   }
 }
-
-.distribution__details-item-operations {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
