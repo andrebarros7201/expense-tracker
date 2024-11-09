@@ -1,4 +1,4 @@
-import "../styles/pages.scss";
+import "../styles/_pages.scss";
 import Budget from "../components/budget/Budget.jsx";
 
 export default function PersonalFinances() {

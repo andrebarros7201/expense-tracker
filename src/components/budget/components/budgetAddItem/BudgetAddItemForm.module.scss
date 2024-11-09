@@ -1,4 +1,4 @@
-@import "../../../../styles/colors.scss";
+@import "../../../../styles/colors";
 
 .form {
   grid-area: form;
@@ -49,23 +49,6 @@
   &::placeholder {
     color: $color-text-secondary; // Subtle color for placeholder text
     font-style: italic;
-  }
-}
-
-.form__button {
-  background-color: $color-primary;
-  color: $color-text-light;
-  padding: 0.4rem 1rem;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 0.2rem;
-  font-size: 1rem;
-  font-weight: bolder;
-  transition: all 50ms ease-in-out;
-
-  &:hover {
-    background-color: darken($color-primary, 5%);
   }
 }
 

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import styles from "./BudgetAddItemForm.module.scss";
 import { BudgetContext } from "../../Budget.jsx";
+import "../../../../styles/main.scss";
 
 export default function BudgetAddItemForm() {
   const { countID, addBudgetItem, expenseCategories } =
@@ -67,7 +68,7 @@ export default function BudgetAddItemForm() {
           max={100}
         />
       </span>
-      <button type={"submit"} className={styles["form__button"]}>
+      <button type={"submit"} className={"button"}>
         Add Item
       </button>
     </form>

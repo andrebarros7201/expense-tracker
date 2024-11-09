@@ -1,4 +1,4 @@
-import "../styles/pages.scss";
+import "../styles/_pages.scss";
 import InvestmentPrediction from "../components/investmentPrediction/InvestmentPrediction.jsx";
 import { createContext, useCallback, useState } from "react";
 import { calculateInvestmentGrowth } from "../utils/calculateInvestmentGrowth.js";

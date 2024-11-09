@@ -1,4 +1,4 @@
-import "../../styles/container.scss";
+import "../../styles/_container.scss";
 import styles from "./budget.module.scss";
 import BudgetDistribution from "./components/budgetDistribution/BudgetDistribution.jsx";
 import { createContext, useState } from "react";
