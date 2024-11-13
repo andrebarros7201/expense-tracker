@@ -1,6 +1,10 @@
 #root {
-  width: min(1200px, 100%);
+  width: clamp(550px, 100%, 1200px);
   text-align: center;
   box-sizing: border-box;
   padding: 0 2rem;
+
+  @media (max-width: 800px) {
+    padding: 0;
+  }
 }
