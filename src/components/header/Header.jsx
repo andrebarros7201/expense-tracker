@@ -19,6 +19,11 @@ export default function Header() {
             Investments
           </Link>
         </li>
+        <li>
+          <Link className={styles["header__list-item"]} to={"/market"}>
+            Market
+          </Link>
+        </li>
       </ul>
     </header>
   );

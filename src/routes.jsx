@@ -1,6 +1,7 @@
 import App from "./App.jsx";
 import Investments from "./pages/Investments.jsx";
 import PersonalFinances from "./pages/PersonalFinances.jsx";
+import Market from "./components/market/Market.jsx";
 
 const routes = [
   {
@@ -18,6 +19,10 @@ const routes = [
       {
         path: "/personal-finances",
         element: <PersonalFinances />,
+      },
+      {
+        path: "/market",
+        element: <Market />,
       },
     ],
   },
