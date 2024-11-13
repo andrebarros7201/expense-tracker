@@ -1,7 +1,7 @@
 import App from "./App.jsx";
 import Investments from "./pages/Investments.jsx";
 import PersonalFinances from "./pages/PersonalFinances.jsx";
-import Market from "./components/market/Market.jsx";
+import Market from "./pages/Market.jsx";
 
 const routes = [
   {

@@ -1,5 +1,5 @@
 import styles from "./investmentPrediction.module.scss";
-import "../../styles/_container.scss";
+import "../../styles/main.scss";
 import InvestmentPredictionTable from "./components/investmentPredictionTable/InvestmentPredictionTable.jsx";
 import InvestmentPredictionForm from "./components/investmentPredictionForm/InvestmentPredictionForm.jsx";
 import InvestmentPredictionResults from "./components/investmentPredictionResults/InvestmentPredictionResults.jsx";
