@@ -6,10 +6,13 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
-  padding: 1rem;
   overflow-y: auto;
-  max-height: 300px;
-  border-right: 2px solid $color-border-dark;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.4rem;
+  box-shadow: $box-shadow;
 
   @media (max-width: 1000px) {
     border: none;
