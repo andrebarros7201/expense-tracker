@@ -18,13 +18,13 @@ export default function DistributionItem({
 
   const totalPercentage = filteredBudget.reduce(
     (total, acc) => total + acc.percentage,
-    0,
+    0
   );
   const totalAmount = parseFloat((totalPercentage / 100) * income).toFixed(2);
 
   return (
     <div className={styles["distribution__category"]}>
-      <p>{category}:</p>
+      <p className={styles["distribution__title"]}>{category}</p>
       <p>{totalPercentage} %</p>
       <p>{totalAmount} €</p>
       <button className={"button"} onClick={handleToggle}>
