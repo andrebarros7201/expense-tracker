@@ -1,5 +1,4 @@
 import App from "./App.jsx";
-import Investments from "./pages/Investments.jsx";
 import PersonalFinances from "./pages/PersonalFinances.jsx";
 import Market from "./pages/Market.jsx";
 
@@ -8,10 +7,6 @@ const routes = [
     path: "/",
     element: <App />,
     children: [
-      {
-        path: "/investments",
-        element: <Investments />,
-      },
       {
         index: true,
         element: <PersonalFinances />,
