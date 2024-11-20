@@ -5,6 +5,7 @@
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
+  gap: 2rem;
 
   @media (max-width: 800px) {
     padding: 0 2rem;
@@ -15,8 +16,11 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  justify-content: flex-start;
   gap: 1rem;
   list-style: none;
+  border: 1px solid blue;
+  padding: 0;
 }
 
 .header__title {
@@ -28,8 +32,8 @@
 .header__list-item {
   text-decoration: none;
   cursor: pointer;
-  padding: 0 0.2rem;
   transition: all 50ms ease-in-out;
+  border: 1px solid red;
 
   &:hover {
     transform: scale(1.05);
@@ -38,5 +42,15 @@
   a {
     color: $color-text-primary;
     text-decoration: none;
+  }
+}
+
+.header__button {
+  height: 100%;
+  border: none;
+  cursor: pointer;
+
+  img {
+    height: 100%;
   }
 }
