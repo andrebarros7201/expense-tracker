@@ -4,8 +4,7 @@ import { BudgetContext } from "../../Budget.jsx";
 import "../../../../styles/main.scss";
 
 export default function BudgetAddItemForm() {
-  const { countID, addBudgetItem, expenseCategories } =
-    useContext(BudgetContext);
+  const { addBudgetItem, expenseCategories } = useContext(BudgetContext);
 
   const initialValues = {
     name: "",
