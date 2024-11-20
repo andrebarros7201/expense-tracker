@@ -19,7 +19,6 @@
   justify-content: flex-start;
   gap: 1rem;
   list-style: none;
-  border: 1px solid blue;
   padding: 0;
 }
 
@@ -33,7 +32,6 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 50ms ease-in-out;
-  border: 1px solid red;
 
   &:hover {
     transform: scale(1.05);
