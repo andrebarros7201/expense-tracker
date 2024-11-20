@@ -6,7 +6,7 @@ import SearchBox from "./marketSearchBox/SearchBox.jsx";
 export const MarketContext = createContext(null);
 
 export default function Market() {
-  const [ticker, setTicker] = useState(undefined);
+  const [ticker, setTicker] = useState("");
   const [tickerData, setTickerData] = useState(null);
 
   return (

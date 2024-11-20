@@ -12,7 +12,7 @@ export default function SearchBox() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    console.log("ticker");
+
     try {
       const response = await fetch(
         `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=${import.meta.env.VITE_API_KEY}`,
