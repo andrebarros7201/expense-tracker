@@ -1,9 +1,9 @@
 import styles from "./InvestmentPredictionResults.module.scss";
 import { useContext } from "react";
-import { InvestmentContext } from "../../../../pages/Investments.jsx";
+import { InvestmentPredictionContext } from "../../InvestmentPrediction.jsx";
 
 export default function InvestmentPredictionResults() {
-  const { investment } = useContext(InvestmentContext);
+  const { investment } = useContext(InvestmentPredictionContext);
   return (
     <section className={styles["result"]}>
       <p className={styles["result__text"]}>

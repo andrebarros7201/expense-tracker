@@ -1,9 +1,9 @@
 import styles from "./investmentPredictionForm.module.scss";
 import { useContext, useState } from "react";
-import { InvestmentContext } from "../../../../pages/Investments.jsx";
+import { InvestmentPredictionContext } from "../../InvestmentPrediction.jsx";
 
 export default function InvestmentPredictionForm() {
-  const { handleCalculateGrowth } = useContext(InvestmentContext);
+  const { handleCalculateGrowth } = useContext(InvestmentPredictionContext);
 
   const [values, setValues] = useState({
     years: 0,
