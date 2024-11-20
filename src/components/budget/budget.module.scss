@@ -2,7 +2,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2.5fr;
-  grid-template-rows: 1fr 350px;
+  grid-template-rows: 60px 350px;
   gap: 1rem;
   grid-template-areas:
     "income distribution"
