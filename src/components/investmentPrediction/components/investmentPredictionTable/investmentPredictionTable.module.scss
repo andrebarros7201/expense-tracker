@@ -1,5 +1,10 @@
+@import "../../../../styles/main.scss";
+
 .table {
   grid-area: table;
   height: 100%;
   overflow-y: auto;
+  background-color: white;
+  border-radius: 0.4rem;
+  box-shadow: $box-shadow;
 }

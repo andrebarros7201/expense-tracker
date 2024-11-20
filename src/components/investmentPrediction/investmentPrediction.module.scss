@@ -2,7 +2,6 @@
 
 .prediction__container {
   width: 100%;
-  padding: 1rem;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1.3fr 1.3fr 3fr;
@@ -10,6 +9,7 @@
   grid-template-areas: "form results table";
   grid-auto-flow: row;
   box-sizing: border-box;
+  margin-bottom: 1rem;
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr 1fr;
