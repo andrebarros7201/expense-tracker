@@ -15,11 +15,6 @@ export default function Header() {
           </Link>
         </li>
         <li>
-          <Link className={styles["header__list-item"]} to={"/investments"}>
-            Investments
-          </Link>
-        </li>
-        <li>
           <Link className={styles["header__list-item"]} to={"/market"}>
             Market
           </Link>
