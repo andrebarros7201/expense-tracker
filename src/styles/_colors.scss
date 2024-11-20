@@ -23,3 +23,8 @@ $color-text-light: #ffffff; // White (For text on dark backgrounds)
 // Border Colors
 $color-border-light: #bdc3c7; // Light Gray (For borders on cards, input fields)
 $color-border-dark: #34495e; // Dark Slate (For darker border elements)
+
+// Box Shadow
+$box-shadow:
+  0 4px 6px rgba(0, 0, 0, 0.1),
+  0 1px 3px rgba(0, 0, 0, 0.06);
