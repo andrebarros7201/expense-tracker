@@ -1,4 +1,4 @@
-@import "../../../../styles/colors";
+@import "../../../../styles/main.scss";
 
 .distribution__category {
   display: grid;
@@ -22,18 +22,6 @@
   flex-flow: column nowrap;
   gap: 1rem;
   animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-  0% {
-    transform: scaleY(0.8);
-    opacity: 0;
-    transform-origin: top;
-  }
-  100% {
-    transform: scaleY(1);
-    opacity: 1;
-  }
 }
 
 .distribution__button {

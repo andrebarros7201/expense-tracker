@@ -14,8 +14,8 @@ export default function Market() {
       value={{ ticker, setTicker, tickerData, setTickerData }}
     >
       <main className={"container"}>
-        <h2>Market</h2>
         <div className={styles["market"]}>
+          <h2>Market</h2>
           <SearchBox />
         </div>
       </main>

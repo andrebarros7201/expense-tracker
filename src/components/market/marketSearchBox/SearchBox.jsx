@@ -29,7 +29,7 @@ export default function SearchBox() {
     }
   }
   return (
-    <section className={styles["search"]}>
+    <form className={styles["search"]}>
       <input
         className={"form__input"}
         type="text"
@@ -40,9 +40,13 @@ export default function SearchBox() {
         value={ticker}
         onChange={(e) => handleChange(e)}
       />
-      <button onClick={(e) => handleSubmit(e)} className={"button"}>
+      <button
+        type={"submit"}
+        onClick={(e) => handleSubmit(e)}
+        className={"button"}
+      >
         Search
       </button>
-    </section>
+    </form>
   );
 }
