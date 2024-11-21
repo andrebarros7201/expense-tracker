@@ -3,6 +3,9 @@
   text-align: center;
   box-sizing: border-box;
   padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   @media (max-width: 800px) {
     padding: 0 0.5rem;

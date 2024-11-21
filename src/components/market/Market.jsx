@@ -2,6 +2,7 @@ import styles from "./Market.module.scss";
 import "../../styles/main.scss";
 import { createContext, useState } from "react";
 import SearchBox from "./marketSearchBox/SearchBox.jsx";
+import MarketTickerInfo from "./marketTickerInfo/MarketTickerInfo.jsx";
 
 export const MarketContext = createContext(null);
 
@@ -18,6 +19,7 @@ export default function Market() {
           <h2>Market</h2>
           <SearchBox />
         </div>
+        <MarketTickerInfo />
       </main>
     </MarketContext.Provider>
   );
