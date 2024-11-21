@@ -1,7 +1,9 @@
 @import "../../../../styles/colors";
 
-.table__item:not(:first-child) {
-  border-top: 2px solid $color-border-dark;
+.table__item {
+  background-color: $color-background-light;
+  border-radius: 0.4rem;
+  box-shadow: $box-shadow;
 }
 
 .table__item-info {
