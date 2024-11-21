@@ -1,0 +1,26 @@
+@import "../../../../styles/main.scss";
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  border-radius: 0.4rem;
+  box-shadow: $box-shadow;
+  overflow-y: auto;
+}
+
+.list__header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  position: sticky;
+  top: 0;
+  background-color: white;
+  box-shadow: $box-shadow;
+
+  p {
+    font-weight: bold;
+  }
+}
