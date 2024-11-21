@@ -6,48 +6,60 @@ export default function InvestmentPredictionResults() {
   const { investment } = useContext(InvestmentPredictionContext);
   return (
     <section className={styles["result"]}>
-      <p className={styles["result__text"]}>
-        Initial Investment:{" "}
-        {parseFloat(investment.initialInvestment)
-          .toFixed(2)
-          .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-        €
-      </p>
-      <p className={styles["result__text"]}>
-        Total Investment:{" "}
-        {parseFloat(investment.totalContribution)
-          .toFixed(2)
-          .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-        €
-      </p>
-      <p className={styles["result__text"]}>
-        Growth:{" "}
-        {parseFloat(investment.totalGrowth)
-          .toFixed(2)
-          .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-        €
-      </p>
-      <p className={styles["result__text"]}>
-        Final Year:{" "}
-        {parseFloat(investment.finalYear)
-          .toFixed(2)
-          .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-        €
-      </p>
-      <p className={styles["result__text"]}>
-        4%:{" "}
-        {parseFloat(investment.fireFourPercent)
-          .toFixed(2)
-          .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-        €
-      </p>
-      <p className={styles["result__text"]}>
-        FIRE Income:{" "}
-        {investment.fireMonthlyIncome
-          .toFixed(2)
-          .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-        €
-      </p>
+      <span className={styles["result__field"]}>
+        <p>Initial Investment: </p>
+        <p>
+          {parseFloat(investment.initialInvestment)
+            .toFixed(2)
+            .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+          €
+        </p>
+      </span>
+      <span className={styles["result__field"]}>
+        <p>Total Investment: </p>
+        <p>
+          {parseFloat(investment.totalContribution)
+            .toFixed(2)
+            .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+          €
+        </p>
+      </span>
+      <span className={styles["result__field"]}>
+        <p>Growth: </p>
+        <p>
+          {parseFloat(investment.totalGrowth)
+            .toFixed(2)
+            .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+          €
+        </p>
+      </span>
+      <span className={styles["result__field"]}>
+        <p>Final Year: </p>
+        <p>
+          {parseFloat(investment.finalYear)
+            .toFixed(2)
+            .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+          €
+        </p>
+      </span>
+      <span className={styles["result__field"]}>
+        <p>4%: </p>
+        <p>
+          {parseFloat(investment.fireFourPercent)
+            .toFixed(2)
+            .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+          €
+        </p>
+      </span>
+      <span className={styles["result__field"]}>
+        <p>FIRE Income: </p>
+        <p>
+          {investment.fireMonthlyIncome
+            .toFixed(2)
+            .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+          €
+        </p>
+      </span>
     </section>
   );
 }

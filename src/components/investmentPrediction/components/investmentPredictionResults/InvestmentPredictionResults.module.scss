@@ -11,12 +11,16 @@
   background-color: white;
   border-radius: 0.4rem;
   box-shadow: $box-shadow;
+  padding: 1rem;
+  box-sizing: border-box;
 
   @media (max-width: 1200px) {
     border-right: none;
   }
 }
 
-.result__text {
-  margin: 0;
+.result__field {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
