@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import TickerList from "./TickerList/TickerList.jsx";
 
 export default function MarketTopGainersLosers() {
-  const [topLosers, setTopLosers] = useState(null);
-  const [topGainers, setTopGainers] = useState(null);
+  const [topLosers, setTopLosers] = useState(undefined);
+  const [topGainers, setTopGainers] = useState(undefined);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,16 +28,13 @@ export default function MarketTopGainersLosers() {
   }, []);
 
   return (
-    <>
-      <section className={styles["top"]}>
-        <TickerList loading={loading} list={topGainers}>
-          Top Gainers
-        </TickerList>
-        <TickerList loading={loading} list={topLosers}>
-          Top Losers
-        </TickerList>
-      </section>
-      )
-    </>
+    <section className={styles["top"]}>
+      <TickerList loading={loading} list={topGainers}>
+        Top Gainers
+      </TickerList>
+      <TickerList loading={loading} list={topLosers}>
+        Top Losers
+      </TickerList>
+    </section>
   );
 }
