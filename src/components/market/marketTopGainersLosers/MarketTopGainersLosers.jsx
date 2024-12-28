@@ -29,12 +29,15 @@ export default function MarketTopGainersLosers() {
 
   return (
     <>
-      {!loading && (
-        <section className={styles["top"]}>
-          <TickerList list={topGainers}>Top Gainers</TickerList>
-          <TickerList list={topLosers}>Top Losers </TickerList>
-        </section>
-      )}
+      <section className={styles["top"]}>
+        <TickerList loading={loading} list={topGainers}>
+          Top Gainers
+        </TickerList>
+        <TickerList loading={loading} list={topLosers}>
+          Top Losers
+        </TickerList>
+      </section>
+      )
     </>
   );
 }
