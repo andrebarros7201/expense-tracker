@@ -10,7 +10,7 @@ export default function BudgetAddItemForm() {
   const initialValues = {
     name: "",
     category: expenseCategories[0],
-    percentage: 0,
+    percentage: 1,
   };
 
   const [newItem, setNewItem] = useState(initialValues);
@@ -78,7 +78,7 @@ export default function BudgetAddItemForm() {
           value={newItem.percentage}
           type="number"
           id={"percentage"}
-          min={0}
+          min={1}
           max={maxPercentage}
         />
       </span>
