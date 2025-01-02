@@ -1,8 +1,9 @@
-@import "colors";
+@use "colors";
+@use "mixins";
 
 .button {
-  background-color: $color-primary;
-  color: $color-text-light;
+  background-color: colors.$color-primary;
+  color: colors.$color-text-light;
   padding: 0.4rem 1rem;
   border: none;
   outline: none;
@@ -12,7 +13,11 @@
   font-weight: bolder;
   transition: all 50ms ease-in-out;
 
+  @include mixins.respond-to(md) {
+    font-size: 0.7rem;
+  }
+
   &:hover {
-    background-color: darken($color-primary, 5%);
+    background-color: darken(colors.$color-primary, 5%);
   }
 }
