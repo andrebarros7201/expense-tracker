@@ -1,10 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./BudgetAddItemForm.module.scss";
 import { BudgetContext } from "../../Budget.jsx";
 import "../../../../styles/main.scss";
 
 export default function BudgetAddItemForm() {
-  const { addBudgetItem, expenseCategories } = useContext(BudgetContext);
+  const { addBudgetItem, expenseCategories, budget } =
+    useContext(BudgetContext);
 
   const initialValues = {
     name: "",
@@ -13,13 +14,26 @@ export default function BudgetAddItemForm() {
   };
 
   const [newItem, setNewItem] = useState(initialValues);
+  const [maxPercentage, setMaxPercentage] = useState(50);
 
   function handleSubmit(e) {
     e.preventDefault();
     addBudgetItem(newItem);
   }
 
+  useEffect(() => {
+    setMaxPercentage(
+      100 - budget.reduce((acc, curr) => acc + curr.percentage, 0),
+    );
+  }, [budget]);
+
   function handleChange(field, value) {
+    if (field === "percentage") {
+      if (value <= maxPercentage) {
+        setNewItem({ ...newItem, [field]: value });
+      }
+      setNewItem({ ...newItem, [field]: maxPercentage });
+    }
     setNewItem({ ...newItem, [field]: value });
   }
 
@@ -64,7 +78,7 @@ export default function BudgetAddItemForm() {
           type="number"
           id={"percentage"}
           min={0}
-          max={100}
+          max={maxPercentage}
         />
       </span>
       <button type={"submit"} className={"button"}>
