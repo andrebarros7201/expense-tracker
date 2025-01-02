@@ -1,5 +1,5 @@
 #root {
-  width: clamp(550px, 100%, 1200px);
+  width: min(100%, 1200px);
   text-align: center;
   box-sizing: border-box;
   padding: 0 2rem;
