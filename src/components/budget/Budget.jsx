@@ -1,4 +1,4 @@
-import "../../styles/_container.scss";
+import "../../styles/main.scss";
 import styles from "./budget.module.scss";
 import BudgetDistribution from "./components/budgetDistribution/BudgetDistribution.jsx";
 import { createContext, useState } from "react";
@@ -73,7 +73,7 @@ export default function Budget() {
       }}
     >
       <main className={"container"}>
-        <h2>Monthly Budget</h2>
+        <h2 className={"page__title"}>Monthly Budget</h2>
         <div className={styles["budget__container"]}>
           <BudgetDistribution />
           <BudgetIncome />
