@@ -49,6 +49,7 @@ export default function BudgetAddItemForm() {
           value={newItem.name}
           type="text"
           id={"name"}
+          required={true}
         />
       </span>
       <span className={styles["form__field"]}>
