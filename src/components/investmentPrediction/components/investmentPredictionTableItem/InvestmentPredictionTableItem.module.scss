@@ -1,9 +1,9 @@
-@import "../../../../styles/colors";
+@use "../../../../styles/colors";
 
 .table__item {
-  background-color: $color-background-light;
+  background-color: colors.$color-background-light;
   border-radius: 0.4rem;
-  box-shadow: $box-shadow;
+  box-shadow: colors.$box-shadow;
 }
 
 .table__item-info {
@@ -19,8 +19,8 @@
 
 .table__item-toggle {
   padding: 0.5rem;
-  background-color: $color-primary;
-  color: $color-text-light;
+  background-color: colors.$color-primary;
+  color: colors.$color-text-light;
   border-radius: 0.2rem;
   cursor: pointer;
   border: none;
@@ -28,7 +28,7 @@
   transition: all 50ms ease-in-out;
 
   &:hover {
-    background-color: darken($color-primary, 5%);
+    background-color: darken(colors.$color-primary, 5%);
   }
 }
 

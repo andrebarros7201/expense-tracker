@@ -1,4 +1,4 @@
-@import "../../../../styles/main.scss";
+@use "../../../../styles/colors";
 
 .list {
   display: flex;
@@ -7,7 +7,7 @@
   align-items: center;
   background-color: white;
   border-radius: 0.4rem;
-  box-shadow: $box-shadow;
+  box-shadow: colors.$box-shadow;
   overflow-y: auto;
 
   &--loading {
@@ -29,7 +29,7 @@
   position: sticky;
   top: 0;
   background-color: white;
-  box-shadow: $box-shadow;
+  box-shadow: colors.$box-shadow;
 
   p {
     font-weight: bold;

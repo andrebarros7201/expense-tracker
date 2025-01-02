@@ -1,4 +1,4 @@
-@import "../../../../styles/colors";
+@use "../../../../styles/colors";
 
 .result {
   grid-area: results;
@@ -10,7 +10,7 @@
   height: 100%;
   background-color: white;
   border-radius: 0.4rem;
-  box-shadow: $box-shadow;
+  box-shadow: colors.$box-shadow;
   padding: 1rem;
   box-sizing: border-box;
 

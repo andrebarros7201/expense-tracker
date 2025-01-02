@@ -1,4 +1,4 @@
-@import "../../../../styles/colors";
+@use "../../../../styles/colors";
 
 .form {
   grid-area: form;
@@ -10,7 +10,7 @@
   align-items: center;
   padding: 1rem;
   background-color: white;
-  box-shadow: $box-shadow;
+  box-shadow: colors.$box-shadow;
   border-radius: 0.4rem;
 }
 
@@ -28,8 +28,8 @@
 }
 
 .form__button {
-  background-color: $color-primary;
-  color: $color-text-light;
+  background-color: colors.$color-primary;
+  color: colors.$color-text-light;
   padding: 0.4rem 1rem;
   border: none;
   outline: none;
@@ -40,6 +40,6 @@
   transition: all 50ms ease-in-out;
 
   &:hover {
-    background-color: darken($color-primary, 5%);
+    background-color: darken(colors.$color-primary, 5%);
   }
 }

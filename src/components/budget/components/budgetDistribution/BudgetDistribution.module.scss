@@ -1,4 +1,4 @@
-@import "../../../../styles/main.scss";
+@use "../../../../styles/colors";
 
 .distribution {
   grid-area: distribution;
@@ -12,7 +12,7 @@
   padding: 1rem;
   background-color: white;
   border-radius: 0.4rem;
-  box-shadow: $box-shadow;
+  box-shadow: colors.$box-shadow;
 
   @media (max-width: 1000px) {
     border: none;

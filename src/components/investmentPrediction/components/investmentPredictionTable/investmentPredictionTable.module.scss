@@ -1,4 +1,4 @@
-@import "../../../../styles/main.scss";
+@use "../../../../styles/colors";
 
 .table {
   grid-area: table;
@@ -6,7 +6,7 @@
   overflow-y: auto;
   background-color: white;
   border-radius: 0.4rem;
-  box-shadow: $box-shadow;
+  box-shadow: colors.$box-shadow;
   padding: 1rem;
   gap: 1rem;
   display: flex;
