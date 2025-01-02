@@ -1,3 +1,5 @@
+@use "../../styles/mixins";
+
 .prediction__container {
   width: 100%;
   display: grid;
@@ -9,11 +11,16 @@
   box-sizing: border-box;
   margin-bottom: 1rem;
 
-  @media (max-width: 1200px) {
+  @include mixins.respond-to(lg) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 400px 400px;
     grid-template-areas:
       "form results"
       "table table";
+  }
+
+  @include mixins.respond-to(md) {
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -1,3 +1,5 @@
+@use "../../styles/mixins";
+
 .budget__container {
   width: 100%;
   display: grid;
@@ -8,7 +10,7 @@
     "income distribution"
     "form distribution";
 
-  @media (max-width: 1000px) {
+  @include mixins.respond-to(md) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-auto-flow: row;
