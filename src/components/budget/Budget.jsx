@@ -9,11 +9,7 @@ export const BudgetContext = createContext(null);
 
 const initialBudget = [
   { id: 1, name: "Rent", category: "Housing", percentage: 40 },
-  { id: 2, name: "Groceries", category: "Food", percentage: 25 },
-  { id: 3, name: "Utilities", category: "Bills", percentage: 15 },
-  { id: 4, name: "Entertainment", category: "Leisure", percentage: 20 },
-  { id: 5, name: "Internet", category: "Housing", percentage: 10 },
-  { id: 6, name: "Dining Out", category: "Food", percentage: 10 },
+  { id: 2, name: "Internet", category: "Housing", percentage: 10 },
 ];
 
 const expenseCategories = [
@@ -36,7 +32,7 @@ const expenseCategories = [
 ];
 
 export default function Budget() {
-  const [countID, setCountID] = useState(7);
+  const [countID, setCountID] = useState(3);
   const [income, setIncome] = useState(500);
   const [budget, setBudget] = useState(initialBudget);
 
