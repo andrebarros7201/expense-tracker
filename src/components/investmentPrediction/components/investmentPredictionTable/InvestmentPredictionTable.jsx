@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import styles from "./investmentPredictionTable.module.scss";
+import "../../../../styles/main.scss";
 import TableItem from "../investmentPredictionTableItem/InvestmentPredictionTableItem.jsx";
 import { InvestmentPredictionContext } from "../../InvestmentPrediction.jsx";
 
@@ -25,7 +26,7 @@ export default function InvestmentPredictionTable() {
           return element;
         })
       ) : (
-        <h2 className={styles["table__text"]}>Calculate Growth First</h2>
+        <h3>Calculate Growth First</h3>
       )}
     </section>
   );

@@ -20,6 +20,15 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 1.5rem;
+  color: colors.$color-text-primary;
+
+  @include mixins.respond-to(md) {
+    font-size: 1.25rem;
+  }
+}
+
 p,
 a {
   font-size: 1rem;
