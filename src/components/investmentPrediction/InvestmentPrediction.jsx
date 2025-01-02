@@ -61,7 +61,7 @@ export default function InvestmentPrediction() {
       value={{ investment, setInvestment, handleCalculateGrowth }}
     >
       <main className={"container"}>
-        <h2 className={"page__title"}>Investment Prediction</h2>
+        <h3>Investment Prediction</h3>
         <section className={styles["prediction__container"]}>
           <InvestmentPredictionForm />
           <InvestmentPredictionResults />

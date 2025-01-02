@@ -73,7 +73,7 @@ export default function Budget() {
       }}
     >
       <main className={"container"}>
-        <h2 className={"page__title"}>Monthly Budget</h2>
+        <h3>Monthly Budget</h3>
         <div className={styles["budget__container"]}>
           <BudgetDistribution />
           <BudgetIncome />

@@ -2,19 +2,12 @@
 @use "mixins";
 
 .page {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: start;
-  gap: 1rem;
+  gap: 2rem;
   animation: fadeIn 0.3s ease-in-out;
   flex: 1;
-}
-
-.page__title {
-  font-size: 2rem;
-
-  @include mixins.respond-to(md) {
-    font-size: 1.3rem;
-  }
 }
