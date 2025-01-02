@@ -19,6 +19,7 @@ export default function BudgetIncome() {
         value={income}
         type={"number"}
         min={0}
+        step={10}
         onChange={(e) => handleChangeIncome(Number(e.target.value))}
         className={"form__input"}
       />
