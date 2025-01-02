@@ -1,4 +1,5 @@
 import styles from "./investmentPredictionForm.module.scss";
+import "../../../../styles/main.scss";
 import { useContext, useState } from "react";
 import { InvestmentPredictionContext } from "../../InvestmentPrediction.jsx";
 
@@ -83,7 +84,7 @@ export default function InvestmentPredictionForm() {
           }
         />
       </span>
-      <button className={styles["form__button"]} type={"submit"}>
+      <button className={"button"} type={"submit"}>
         Calculate
       </button>
     </form>

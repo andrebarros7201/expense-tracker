@@ -24,23 +24,6 @@
   animation: fadeIn 0.5s;
 }
 
-.distribution__button {
-  background-color: colors.$color-primary;
-  color: colors.$color-text-light;
-  padding: 0.4rem 1rem;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 0.2rem;
-  font-size: 1rem;
-  font-weight: bolder;
-  transition: all 50ms ease-in-out;
-
-  &:hover {
-    background-color: darken(colors.$color-primary, 5%);
-  }
-}
-
 .distribution__title {
   font-weight: bold;
 }
