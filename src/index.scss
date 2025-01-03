@@ -1,4 +1,4 @@
-@import "styles/colors";
+@use "styles/colors";
 
 :root {
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -10,8 +10,8 @@
   color-scheme: light;
   box-sizing: content-box;
 
-  background-color: $color-background-light;
-  color: $color-text-primary;
+  background-color: colors.$color-background-light;
+  color: colors.$color-text-primary;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

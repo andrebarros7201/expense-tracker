@@ -1,4 +1,4 @@
-@import "../../../../styles/colors";
+@use "../../../../styles/colors";
 
 .budget__item {
   width: 100%;
@@ -17,29 +17,29 @@
 
 .budget__input {
   width: 100%;
-  border: 1px solid $color-border-light;
+  border: 1px solid colors.$color-border-light;
   border-radius: 0.4rem;
   box-sizing: border-box;
   text-align: center;
   font-size: 1rem;
-  color: $color-text-primary;
-  background-color: $color-neutral-light;
+  color: colors.$color-text-primary;
+  background-color: colors.$color-neutral-light;
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 
   &:focus {
-    border-color: $color-primary; // Highlight border color on focus
-    box-shadow: 0 0 5px rgba($color-primary, 0.3); // Soft shadow on focus
+    border-color: colors.$color-primary; // Highlight border color on focus
+    box-shadow: 0 0 5px rgba(colors.$color-primary, 0.3); // Soft shadow on focus
     outline: none; // Remove default outline for custom styling
   }
 
   &:hover {
-    border-color: $color-border-dark; // Darker border on hover for better feedback
+    border-color: colors.$color-border-dark; // Darker border on hover for better feedback
   }
 
   &::placeholder {
-    color: $color-text-secondary; // Subtle color for placeholder text
+    color: colors.$color-text-secondary; // Subtle color for placeholder text
     font-style: italic;
   }
 
@@ -56,8 +56,8 @@
 }
 
 .budget__button {
-  background-color: $color-primary;
-  color: $color-text-light;
+  background-color: colors.$color-primary;
+  color: colors.$color-text-light;
   padding: 0.4rem 1rem;
   width: 100%;
   border: none;
@@ -70,25 +70,25 @@
 }
 
 .budget__button--update {
-  background-color: $color-primary;
+  background-color: colors.$color-primary;
 
   &:hover {
-    background-color: darken($color-primary, 5%);
+    background-color: darken(colors.$color-primary, 5%);
   }
 }
 
 .budget__button--save {
-  background-color: $color-accent-warning;
+  background-color: colors.$color-accent-warning;
 
   &:hover {
-    background-color: darken($color-accent-warning, 5%);
+    background-color: darken(colors.$color-accent-warning, 5%);
   }
 }
 
 .budget__button--delete {
-  background-color: $color-accent-danger;
+  background-color: colors.$color-accent-danger;
 
   &:hover {
-    background-color: darken($color-accent-danger, 5%);
+    background-color: darken(colors.$color-accent-danger, 5%);
   }
 }
