@@ -1,5 +1,6 @@
 import styles from "./TickerListItem.module.scss";
 import "../../../../../styles/main.scss";
+import PropTypes from "prop-types";
 
 export default function TickerList({ item }) {
   return (
@@ -12,3 +13,7 @@ export default function TickerList({ item }) {
     </div>
   );
 }
+
+TickerList.propTypes = {
+  item: PropTypes.object.isRequired,
+};
