@@ -3,3 +3,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
+
+.item__name {
+  font-weight: bold;
+}

@@ -1,11 +1,13 @@
 import styles from "./TickerListItem.module.scss";
+import "../../../../../styles/main.scss";
+
 export default function TickerList({ item }) {
   return (
     <div className={styles["item"]}>
-      <p>{item.ticker}</p>
-      <p>{item.price}</p>
-      <p>{item.change_amount}</p>
-      <p>{item.change_percentage}</p>
+      <p className={styles["item__name"]}>{item.ticker}</p>
+      <p>{Number(item.price).toFixed(3)} $</p>
+      <p>{Number(item.change_amount).toFixed(2)} $</p>
+      <p>{parseFloat(item.change_percentage).toFixed(2)} %</p>
       <p>{item.volume}</p>
     </div>
   );
