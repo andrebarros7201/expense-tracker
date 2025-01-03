@@ -28,7 +28,7 @@ export default function MarketTopGainersLosers() {
   }, []);
 
   return (
-    <section className={styles["top"]}>
+    <section className={styles["container"]}>
       <TickerList loading={loading} list={topGainers}>
         Top Gainers
       </TickerList>
