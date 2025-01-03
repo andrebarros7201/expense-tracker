@@ -14,6 +14,9 @@
   &--loading {
     justify-content: center;
     align-items: center;
+    height: 400px;
+    background-color: white;
+    box-shadow: colors.$box-shadow;
   }
 }
 
