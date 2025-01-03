@@ -1,7 +1,15 @@
+@use "../../../styles/mixins";
+
 .top {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 400px;
   gap: 1rem;
+
+  @include mixins.respond-to(md) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
