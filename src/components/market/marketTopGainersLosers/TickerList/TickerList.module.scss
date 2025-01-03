@@ -9,6 +9,7 @@
   border-radius: 0.4rem;
   box-shadow: colors.$box-shadow;
   overflow-y: auto;
+  overflow-x: hidden;
   max-height: 400px;
 
   &--loading {
