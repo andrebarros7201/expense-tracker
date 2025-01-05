@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function SearchBox() {
   const { setTicker, ticker } = useContext(MarketContext);
-  const [searchResults, setSearchResults] = useState(null);
+  const [searchResults, setSearchResults] = useState([]);
 
   function handleChange(event) {
     setTicker(event.target.value);
@@ -38,7 +38,7 @@ export default function SearchBox() {
         value={ticker}
         onChange={(e) => handleChange(e)}
       />
-      {searchResults && ticker ? (
+      {searchResults.length > 0 && ticker ? (
         <div className={styles["search__results"]}>
           {searchResults.map((result, index) => (
             <Link
