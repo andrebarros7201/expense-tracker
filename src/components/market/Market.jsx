@@ -3,6 +3,7 @@ import "../../styles/main.scss";
 import { createContext, useState } from "react";
 import SearchBox from "./marketSearchBox/SearchBox.jsx";
 import MarketTopGainersLosers from "./marketTopGainersLosers/MarketTopGainersLosers.jsx";
+import { Outlet } from "react-router-dom";
 
 export const MarketContext = createContext(null);
 
@@ -19,7 +20,7 @@ export default function Market() {
           <h2>Market</h2>
           <SearchBox />
         </div>
-        <MarketTopGainersLosers />
+        <Outlet />
       </main>
     </MarketContext.Provider>
   );
