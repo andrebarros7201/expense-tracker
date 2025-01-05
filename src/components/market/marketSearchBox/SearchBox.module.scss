@@ -5,13 +5,14 @@
   position: relative;
   flex-direction: column;
   width: min(500px, 100%);
+
+  &:not(:focus-within) .search__results {
+    display: none;
+  }
 }
 
 .search__input {
   width: 100%;
-  &:not(:focus-within) .search__results {
-    display: none;
-  }
 }
 
 .search__results {
