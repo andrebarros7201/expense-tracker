@@ -44,11 +44,14 @@ export default function SearchBox() {
             <Link
               className={styles["search__result"]}
               key={index}
-              to={`/market/${result.symbol}/${result.country}`}
+              to={`/market/${result.instrument_type}/${result.symbol}/${result.country}`}
             >
               <p>{result.symbol}</p>
-              <p>{result.currency}</p>
-              <p>{result.instrument_type}</p>
+              <div className={styles["search__result-group"]}>
+                <p>{result.instrument_name}</p>
+                <p>{result.currency}</p>
+                <p>{result.instrument_type}</p>
+              </div>
             </Link>
           ))}
         </div>

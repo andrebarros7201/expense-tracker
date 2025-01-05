@@ -34,12 +34,29 @@
 .search__result {
   width: 100%;
   box-sizing: border-box;
-  padding-right: 0.5rem;
   &:not(:last-child) {
     border-bottom: 1px solid colors.$color-border-dark;
   }
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  flex-flow: row nowrap;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: start;
   margin: 0;
+  gap: 0.5rem;
+  padding: 0.4rem;
+  & > p {
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.search__result-group {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  gap: 1rem;
+  box-sizing: border-box;
+  & > p {
+    margin: 0;
+  }
 }
