@@ -39,7 +39,7 @@ export default function SearchBox() {
           value={ticker}
           onChange={(e) => handleChange(e)}
         />
-        {searchResults ? (
+        {searchResults && ticker ? (
           <div className={styles["search__results"]}>
             {searchResults.map((result, index) => (
               <Link
