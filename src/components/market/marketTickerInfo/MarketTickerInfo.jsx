@@ -4,33 +4,40 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function MarketTickerInfo() {
-  const { ticker } = useParams();
+  const { symbol, type, country } = useParams(); // Get params from URL
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(undefined);
-  const [tickerInfo, setTickerInfo] = useState();
+  const [tickerInfo, setTickerInfo] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch(
-          `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=${import.meta.env.VITE_API_KEY}`,
-        );
-        const data = await response.json();
-        setTickerInfo(data);
-      } catch (error) {
-        console.error(error);
-        setError(error);
+        let response = undefined;
+        if (type === "ETF")
+          response = await fetch(
+            `https://api.twelvedata.com/etfs?symbol=${symbol}&country=${country}`,
+          );
+        if (type === "Common Stock")
+          response = await fetch(
+            `https://api.twelvedata.com/stocks?symbol=${symbol}&country=${country}`,
+          );
+        if (response) {
+          const json = await response.json();
+          setTickerInfo(json);
+        }
+      } catch (e) {
+        setError(e.response.data);
       } finally {
         setLoading(false);
       }
     };
     fetchData();
-  });
+  }, [symbol, country]);
 
   return (
     <section className={styles["container"]}>
-      <h2>{ticker}</h2>
+      <h2>{symbol}</h2>
     </section>
   );
 }

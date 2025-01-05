@@ -23,7 +23,7 @@ const routes = [
         children: [
           { index: true, element: <MarketTopGainersLosers /> },
           {
-            path: "/market/:ticker/:country",
+            path: "/market/:type/:symbol/:country",
             element: <MarketTickerInfo />,
           },
         ],

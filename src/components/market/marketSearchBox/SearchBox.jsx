@@ -48,9 +48,10 @@ export default function SearchBox() {
             >
               <p>{result.symbol}</p>
               <div className={styles["search__result-group"]}>
-                <p>{result.instrument_name}</p>
+                <p>{result.instrument_name.slice(0, 20)}...</p>
                 <p>{result.currency}</p>
                 <p>{result.instrument_type}</p>
+                <p>{result.country}</p>
               </div>
             </Link>
           ))}
