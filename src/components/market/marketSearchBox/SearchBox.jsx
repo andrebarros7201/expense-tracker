@@ -28,31 +28,31 @@ export default function SearchBox() {
     fetchData();
   }, [ticker]);
   return (
-    <form className={styles["search"]}>
-      <div className={styles["search__field"]}>
-        <input
-          className={"form__input"}
-          type="text"
-          placeholder="Ticker: IBM, AAPL..."
-          min={1}
-          max={4}
-          value={ticker}
-          onChange={(e) => handleChange(e)}
-        />
-        {searchResults && ticker ? (
-          <div className={styles["search__results"]}>
-            {searchResults.map((result, index) => (
-              <Link
-                className={styles["search__result"]}
-                key={index}
-                to={`/market/${result.symbol}`}
-              >
-                {result.symbol}
-              </Link>
-            ))}
-          </div>
-        ) : null}
-      </div>
-    </form>
+    <div className={styles["search"]}>
+      <input
+        className={`form__input ${styles["search__input"]}`}
+        type="text"
+        placeholder="Ticker: IBM, AAPL..."
+        min={1}
+        max={4}
+        value={ticker}
+        onChange={(e) => handleChange(e)}
+      />
+      {searchResults && ticker ? (
+        <div className={styles["search__results"]}>
+          {searchResults.map((result, index) => (
+            <Link
+              className={styles["search__result"]}
+              key={index}
+              to={`/market/${result.symbol}`}
+            >
+              <p>{result.symbol}</p>
+              <p>{result.currency}</p>
+              <p>{result.instrument_type}</p>
+            </Link>
+          ))}
+        </div>
+      ) : null}
+    </div>
   );
 }

@@ -2,14 +2,13 @@
 
 .search {
   display: flex;
-  flex-flow: column;
   position: relative;
+  flex-direction: column;
+  width: min(500px, 100%);
 }
 
-.search__field {
-  display: flex;
-  flex-direction: column;
-
+.search__input {
+  width: 100%;
   &:not(:focus-within) .search__results {
     display: none;
   }
@@ -18,7 +17,7 @@
 .search__results {
   display: flex;
   flex-flow: column nowrap;
-  height: 150px;
+  height: 200px;
   position: absolute;
   top: calc(100% + 0.2rem);
   left: 0;
@@ -33,9 +32,13 @@
 
 .search__result {
   width: 100%;
-  padding: 0.4rem;
   box-sizing: border-box;
+  padding-right: 0.5rem;
   &:not(:last-child) {
     border-bottom: 1px solid colors.$color-border-dark;
   }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-flow: row nowrap;
+  margin: 0;
 }
