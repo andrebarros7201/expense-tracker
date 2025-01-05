@@ -44,7 +44,7 @@ export default function SearchBox() {
             <Link
               className={styles["search__result"]}
               key={index}
-              to={`/market/${result.symbol}`}
+              to={`/market/${result.symbol}/${result.country}`}
             >
               <p>{result.symbol}</p>
               <p>{result.currency}</p>
