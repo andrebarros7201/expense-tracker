@@ -20,7 +20,13 @@ export default function SearchBox() {
           `https://api.twelvedata.com/symbol_search?symbol=${ticker}`,
         );
         const json = await response.json();
-        setSearchResults(json.data);
+        setSearchResults(
+          json.data.filter(
+            (x) =>
+              x.instrument_type === "ETF" ||
+              x.instrument_type === "Common Stock",
+          ),
+        );
       } catch (error) {
         console.error(error);
       }
