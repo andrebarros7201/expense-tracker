@@ -5,7 +5,7 @@ import { MarketContext } from "../Market.jsx";
 import { Link } from "react-router-dom";
 
 export default function SearchBox() {
-  const { setTicker, ticker } = useContext(MarketContext);
+  const { setTicker, ticker, setTickerName } = useContext(MarketContext);
   const [searchResults, setSearchResults] = useState([]);
 
   function handleChange(event) {
@@ -45,11 +45,13 @@ export default function SearchBox() {
               className={styles["search__result"]}
               key={index}
               to={`/market/${result.instrument_type}/${result.symbol}/${result.country}`}
+              onClick={() => setTickerName(result.instrument_name)}
             >
               <p>{result.symbol}</p>
               <div className={styles["search__result-group"]}>
-                <p>{result.instrument_name.slice(0, 20)}...</p>
+                <p>{result.instrument_name.slice(0, 30)}...</p>
                 <p>{result.currency}</p>
+                <p>{result.mic_code}</p>
                 <p>{result.instrument_type}</p>
                 <p>{result.country}</p>
               </div>

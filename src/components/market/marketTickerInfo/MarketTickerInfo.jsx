@@ -1,10 +1,12 @@
 import styles from "./MarketTickerInfo.module.scss";
 import "../../../styles/main.scss";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { MarketContext } from "../Market.jsx";
 
 export default function MarketTickerInfo() {
-  const { symbol, type, country } = useParams(); // Get params from URL
+  const { symbol, type, country } = useParams();
+  const { tickerName } = useContext(MarketContext);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(undefined);
   const [tickerInfo, setTickerInfo] = useState(null);
@@ -24,7 +26,7 @@ export default function MarketTickerInfo() {
           );
         if (response) {
           const json = await response.json();
-          setTickerInfo(json);
+          setTickerInfo(json.data.filter((x) => x.name === tickerName));
         }
       } catch (e) {
         setError(e.response.data);
@@ -33,7 +35,32 @@ export default function MarketTickerInfo() {
       }
     };
     fetchData();
-  }, [symbol, country]);
+  }, [symbol, country, tickerName, type]);
+
+  if (loading) {
+    return (
+      <section className={styles["container"]}>
+        <h2>Loading...</h2>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className={styles["container"]}>
+        <h2>Error</h2>
+        <p>{error}</p>
+      </section>
+    );
+  }
+
+  if (!tickerInfo) {
+    return (
+      <section className={styles["container"]}>
+        <h2>No data available</h2>
+      </section>
+    );
+  }
 
   return (
     <section className={styles["container"]}>

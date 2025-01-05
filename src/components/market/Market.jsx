@@ -10,10 +10,18 @@ export const MarketContext = createContext(null);
 export default function Market() {
   const [ticker, setTicker] = useState("");
   const [tickerData, setTickerData] = useState(null);
+  const [tickerName, setTickerName] = useState(null);
 
   return (
     <MarketContext.Provider
-      value={{ ticker, setTicker, tickerData, setTickerData }}
+      value={{
+        ticker,
+        setTicker,
+        tickerData,
+        setTickerData,
+        tickerName,
+        setTickerName,
+      }}
     >
       <main className={"container"}>
         <div className={styles["market"]}>
