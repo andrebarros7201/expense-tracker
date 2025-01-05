@@ -9,6 +9,10 @@
 .search__field {
   display: flex;
   flex-direction: column;
+
+  &:not(:focus-within) .search__results {
+    display: none;
+  }
 }
 
 .search__results {
@@ -20,7 +24,6 @@
   left: 0;
   width: 100%;
   border-radius: 0.4rem;
-
   background-color: white;
   border: 1px solid colors.$color-border-dark;
   overflow-y: scroll;
