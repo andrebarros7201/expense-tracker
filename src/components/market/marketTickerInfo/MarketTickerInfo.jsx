@@ -6,7 +6,7 @@ import { MarketContext } from "../Market.jsx";
 
 export default function MarketTickerInfo() {
   const { symbol, type, country } = useParams();
-  const { tickerName } = useContext(MarketContext);
+  const { tickerName, mic_code } = useContext(MarketContext);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(undefined);
   const [tickerInfo, setTickerInfo] = useState(null);
@@ -18,15 +18,15 @@ export default function MarketTickerInfo() {
         let response = undefined;
         if (type === "ETF")
           response = await fetch(
-            `https://api.twelvedata.com/etfs?symbol=${symbol}&country=${country}`,
+            `https://api.twelvedata.com/etfs?symbol=${symbol}&country=${country}&mic_code=${mic_code}`,
           );
         if (type === "Common Stock")
           response = await fetch(
-            `https://api.twelvedata.com/stocks?symbol=${symbol}&country=${country}`,
+            `https://api.twelvedata.com/stocks?symbol=${symbol}&country=${country}&mic_code=${mic_code}`,
           );
         if (response) {
           const json = await response.json();
-          setTickerInfo(json.data.filter((x) => x.name === tickerName));
+          setTickerInfo(json.data.filter((x) => x.name === tickerName)[0]);
         }
       } catch (e) {
         setError(e.response.data);

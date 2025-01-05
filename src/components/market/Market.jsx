@@ -11,6 +11,7 @@ export default function Market() {
   const [ticker, setTicker] = useState("");
   const [tickerData, setTickerData] = useState(null);
   const [tickerName, setTickerName] = useState(null);
+  const [mic_code, setMicCode] = useState(null);
 
   return (
     <MarketContext.Provider
@@ -21,6 +22,8 @@ export default function Market() {
         setTickerData,
         tickerName,
         setTickerName,
+        mic_code,
+        setMicCode,
       }}
     >
       <main className={"container"}>
