@@ -33,6 +33,7 @@ export default function InvestmentPredictionForm() {
           className={"form__input"}
           type="number"
           min={0}
+          required={true}
           max={100}
           onChange={(e) =>
             handlePredictionFormChange("years", parseInt(e.target.value))
@@ -47,6 +48,7 @@ export default function InvestmentPredictionForm() {
           className={"form__input"}
           type="number"
           min={0}
+          required={true}
           onChange={(e) =>
             handlePredictionFormChange(
               "initialInvestment",
@@ -63,6 +65,7 @@ export default function InvestmentPredictionForm() {
           className={"form__input"}
           type="number"
           min={0}
+          required={true}
           onChange={(e) =>
             handlePredictionFormChange(
               "monthlyContribution",
@@ -79,6 +82,7 @@ export default function InvestmentPredictionForm() {
           className={"form__input"}
           type="number"
           min={0}
+          required={true}
           onChange={(e) =>
             handlePredictionFormChange("yearlyGrowth", Number(e.target.value))
           }
