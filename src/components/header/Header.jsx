@@ -10,9 +10,11 @@ export default function Header() {
         <li className={styles["header__list-item"]}>
           <Link to={"/personal-finances"}>Personal Finances</Link>
         </li>
-        <li className={styles["header__list-item"]}>
-          <Link to={"/market"}>Market</Link>
-        </li>
+        {/*
+          <li className={styles["header__list-item"]}>
+            <Link to={"/market"}>Market</Link>
+          </li>
+        */}
       </ul>
     </header>
   );
