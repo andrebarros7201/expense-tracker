@@ -1,13 +1,14 @@
 import styles from "./BudgetIncome.module.scss";
 import "../../../../styles/main.scss";
-import { useContext } from "react";
-import { BudgetContext } from "../../Budget.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { BudgetActions } from "../../../../store/budgetSlicer.js";
 
 export default function BudgetIncome() {
-  const { income, setIncome } = useContext(BudgetContext);
+  const dispatch = useDispatch();
+  const income = useSelector((state) => state.budget.income);
 
   function handleChangeIncome(value) {
-    setIncome(value);
+    dispatch(BudgetActions.setIncome({ income: value }));
   }
 
   return (
