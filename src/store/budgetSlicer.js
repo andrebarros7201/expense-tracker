@@ -39,7 +39,10 @@ const budgetSlice = createSlice({
     },
     removeBudgetItem: (state, action) => {
       const { item } = action.payload;
-      state.budget.splice(state.findIndex(item), 1);
+      state.budget.splice(
+        state.budget.findIndex((x) => x.id === item.id),
+        1,
+      );
     },
     updateBudgetItem: (state, action) => {
       const { item } = action.payload;

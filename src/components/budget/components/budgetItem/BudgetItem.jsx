@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
 import styles from "./BudgetItem.module.scss";
 import { BudgetContext } from "../../Budget.jsx";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BudgetActions } from "../../../../store/budgetSlicer.js";
 
 export default function BudgetItem({ item }) {
-  const { income, deleteBudgetItem, updateBudgetItem } =
-    useContext(BudgetContext);
+  const { income } = useSelector((state) => state.budget);
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
   const [updatedBudgetItem, setUpdatedBudgetItem] = useState({
@@ -28,6 +27,10 @@ export default function BudgetItem({ item }) {
   function handleSaveUpdatedItem() {
     dispatch(BudgetActions.updateBudgetItem({ item: updatedBudgetItem }));
     setIsEditing(false);
+  }
+
+  function handleDelete() {
+    dispatch(BudgetActions.removeBudgetItem({ item }));
   }
 
   return (
@@ -77,7 +80,7 @@ export default function BudgetItem({ item }) {
 
         <button
           className={`${styles["budget__button"]} ${styles["budget__button--delete"]}`}
-          onClick={() => deleteBudgetItem(item)}
+          onClick={handleDelete}
         >
           Delete
         </button>
