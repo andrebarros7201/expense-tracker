@@ -1,13 +1,20 @@
 import { useContext, useState } from "react";
 import styles from "./BudgetItem.module.scss";
 import { BudgetContext } from "../../Budget.jsx";
+import { useDispatch } from "react-redux";
+import { BudgetActions } from "../../../../store/budgetSlicer.js";
 
 export default function BudgetItem({ item }) {
   const { income, deleteBudgetItem, updateBudgetItem } =
     useContext(BudgetContext);
+  const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
-  const [updatedItem, setUpdatedItem] = useState(null);
-  const [updatedBudgetItem, setUpdatedBudgetItem] = useState(undefined);
+  const [updatedBudgetItem, setUpdatedBudgetItem] = useState({
+    id: item.id,
+    name: item.name,
+    percentage: item.percentage,
+    category: item.category,
+  });
 
   function handleOnChangeUpdateItem(field, value) {
     setUpdatedBudgetItem({ ...updatedBudgetItem, [field]: value });
@@ -18,8 +25,8 @@ export default function BudgetItem({ item }) {
     setIsEditing(!isEditing);
   }
 
-  function handleSaveUpdatedItem(oldItem) {
-    updateBudgetItem(oldItem, updatedBudgetItem);
+  function handleSaveUpdatedItem() {
+    dispatch(BudgetActions.updateBudgetItem({ item: updatedBudgetItem }));
     setIsEditing(false);
   }
 
@@ -62,7 +69,7 @@ export default function BudgetItem({ item }) {
         ) : (
           <button
             className={`${styles["budget__button"]} ${styles["budget__button--save"]}`}
-            onClick={() => handleSaveUpdatedItem(item)}
+            onClick={handleSaveUpdatedItem}
           >
             Save
           </button>
