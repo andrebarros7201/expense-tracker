@@ -2,14 +2,15 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./BudgetAddItemForm.module.scss";
 import { BudgetContext } from "../../Budget.jsx";
 import "../../../../styles/main.scss";
+import { useSelector } from "react-redux";
 
 export default function BudgetAddItemForm() {
-  const { addBudgetItem, expenseCategories, budget } =
-    useContext(BudgetContext);
+  const { addBudgetItem, budget } = useContext(BudgetContext);
 
+  const categories = useSelector((state) => state.budget.categories);
   const initialValues = {
     name: "",
-    category: expenseCategories[0],
+    category: categories[0],
     percentage: 1,
   };
 
@@ -61,7 +62,7 @@ export default function BudgetAddItemForm() {
           onChange={(e) => handleChange("category", e.target.value)}
           value={newItem.category}
         >
-          {expenseCategories.map((item, index) => (
+          {categories.map((item, index) => (
             <option className={styles["form__option"]} key={index} value={item}>
               {item}
             </option>
