@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import styles from "./BudgetItem.module.scss";
-import { BudgetContext } from "../../Budget.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { BudgetActions } from "../../../../store/budgetSlicer.js";
+import { PropTypes } from "prop-types";
 
 export default function BudgetItem({ item }) {
   const { income } = useSelector((state) => state.budget);
@@ -88,3 +88,7 @@ export default function BudgetItem({ item }) {
     </div>
   );
 }
+
+BudgetItem.propTypes = {
+  item: PropTypes.object.isRequired,
+};
