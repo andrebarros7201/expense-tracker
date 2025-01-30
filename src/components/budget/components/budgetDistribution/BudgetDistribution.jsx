@@ -1,15 +1,14 @@
-import { useContext } from "react";
 import styles from "./BudgetDistribution.module.scss";
 import PropTypes from "prop-types";
-import { BudgetContext } from "../../Budget.jsx";
 import DistributionItem from "../budgetDistributionItem/BudgetDistributionItem.jsx";
+import { useSelector } from "react-redux";
 
 export default function BudgetDistribution() {
-  const { budget, income, expenseCategories } = useContext(BudgetContext);
+  const { budget, income, categories } = useSelector((state) => state.budget);
 
   return (
     <section className={styles["distribution"]}>
-      {expenseCategories.map((category) => {
+      {categories.map((category) => {
         const filteredBudget = budget.filter((x) => x.category === category);
         return filteredBudget.length > 0 ? (
           <DistributionItem
