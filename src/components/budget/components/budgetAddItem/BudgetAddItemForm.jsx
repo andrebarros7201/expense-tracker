@@ -1,17 +1,18 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./BudgetAddItemForm.module.scss";
-import { BudgetContext } from "../../Budget.jsx";
 import "../../../../styles/main.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { BudgetActions } from "../../../../store/budgetSlicer.js";
 
 export default function BudgetAddItemForm() {
-  const { addBudgetItem, budget } = useContext(BudgetContext);
+  const dispatch = useDispatch();
+  const { countID, categories, budget } = useSelector((state) => state.budget);
 
-  const categories = useSelector((state) => state.budget.categories);
   const initialValues = {
     name: "",
     category: categories[0],
     percentage: 1,
+    id: countID,
   };
 
   const [newItem, setNewItem] = useState(initialValues);
@@ -19,7 +20,7 @@ export default function BudgetAddItemForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    addBudgetItem(newItem);
+    dispatch(BudgetActions.addBudgetItem({ item: newItem }));
   }
 
   useEffect(() => {
