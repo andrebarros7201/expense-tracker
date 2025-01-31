@@ -1,9 +1,9 @@
-export function calculateInvestmentGrowth({
+export default function calculateInvestmentGrowth(
+  years,
   initialInvestment,
   monthlyContribution,
   yearlyGrowth,
-  years,
-}) {
+) {
   const investmentGrowth = [];
   const monthlyGrowPercentage = 1 + yearlyGrowth / 12 / 100;
   let balance = initialInvestment;

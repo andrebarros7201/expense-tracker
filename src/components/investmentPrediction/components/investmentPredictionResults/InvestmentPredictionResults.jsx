@@ -1,15 +1,15 @@
 import styles from "./InvestmentPredictionResults.module.scss";
-import { useContext } from "react";
-import { InvestmentPredictionContext } from "../../InvestmentPrediction.jsx";
+import { useSelector } from "react-redux";
 
 export default function InvestmentPredictionResults() {
-  const { investment } = useContext(InvestmentPredictionContext);
+  const { initialInvestment, totalContribution, totalGrowth, finalYear } =
+    useSelector((state) => state.investment);
   return (
     <section className={styles["result"]}>
       <span className={styles["result__field"]}>
         <p>Initial Investment: </p>
         <p>
-          {parseFloat(investment.initialInvestment)
+          {parseFloat(initialInvestment)
             .toFixed(2)
             .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
           €
@@ -18,7 +18,7 @@ export default function InvestmentPredictionResults() {
       <span className={styles["result__field"]}>
         <p>Total Investment: </p>
         <p>
-          {parseFloat(investment.totalContribution)
+          {parseFloat(totalContribution)
             .toFixed(2)
             .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
           €
@@ -27,7 +27,7 @@ export default function InvestmentPredictionResults() {
       <span className={styles["result__field"]}>
         <p>Growth: </p>
         <p>
-          {parseFloat(investment.totalGrowth)
+          {parseFloat(totalGrowth)
             .toFixed(2)
             .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
           €
@@ -36,25 +36,7 @@ export default function InvestmentPredictionResults() {
       <span className={styles["result__field"]}>
         <p>Final Year: </p>
         <p>
-          {parseFloat(investment.finalYear)
-            .toFixed(2)
-            .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-          €
-        </p>
-      </span>
-      <span className={styles["result__field"]}>
-        <p>4%: </p>
-        <p>
-          {parseFloat(investment.fireFourPercent)
-            .toFixed(2)
-            .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
-          €
-        </p>
-      </span>
-      <span className={styles["result__field"]}>
-        <p>FIRE Income: </p>
-        <p>
-          {investment.fireMonthlyIncome
+          {parseFloat(finalYear)
             .toFixed(2)
             .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
           €

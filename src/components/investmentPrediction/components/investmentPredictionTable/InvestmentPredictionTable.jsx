@@ -1,20 +1,16 @@
-import { useContext } from "react";
 import styles from "./investmentPredictionTable.module.scss";
 import "../../../../styles/main.scss";
 import TableItem from "../investmentPredictionTableItem/InvestmentPredictionTableItem.jsx";
-import { InvestmentPredictionContext } from "../../InvestmentPrediction.jsx";
+import { useSelector } from "react-redux";
 
 export default function InvestmentPredictionTable() {
-  const {
-    investment: { growth },
-  } = useContext(InvestmentPredictionContext);
-
+  const { prediction } = useSelector((state) => state.investment);
   let previousItem = null; // Initialize previous item as null
 
   return (
     <section className={styles["table"]}>
-      {growth.length > 0 ? (
-        growth.map((item) => {
+      {prediction.length > 0 ? (
+        prediction.map((item) => {
           const element = (
             <TableItem
               item={item}

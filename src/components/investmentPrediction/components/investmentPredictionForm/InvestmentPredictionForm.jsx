@@ -1,11 +1,11 @@
 import styles from "./investmentPredictionForm.module.scss";
 import "../../../../styles/main.scss";
-import { useContext, useState } from "react";
-import { InvestmentPredictionContext } from "../../InvestmentPrediction.jsx";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { InvestmentActions } from "../../../../store/investmentSlicer.js";
 
 export default function InvestmentPredictionForm() {
-  const { handleCalculateGrowth } = useContext(InvestmentPredictionContext);
-
+  const dispatch = useDispatch();
   const [values, setValues] = useState({
     years: 0,
     initialInvestment: 0,
@@ -17,14 +17,20 @@ export default function InvestmentPredictionForm() {
     setValues({ ...values, [field]: value });
   };
 
-  const handleSubmitForm = (values, e) => {
-    handleCalculateGrowth(values, e);
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    dispatch(
+      InvestmentActions.calculateInvestment({
+        years: values.years,
+        initialInvestment: values.initialInvestment,
+        monthlyContribution: values.monthlyContribution,
+        yearlyGrowth: values.yearlyGrowth,
+      }),
+    );
   };
+
   return (
-    <form
-      className={styles["form"]}
-      onSubmit={(e) => handleSubmitForm(values, e)}
-    >
+    <form className={styles["form"]} onSubmit={(e) => handleSubmitForm(e)}>
       <span className={styles["form__field"]}>
         <label htmlFor="years" className={styles["form__label"]}>
           Years of Investment
