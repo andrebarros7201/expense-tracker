@@ -10,6 +10,7 @@ import styles from "./budget.module.scss";
 
 export default function Budget() {
   const budget = useSelector((state) => state.budget);
+  const { theme } = useSelector((state) => state.theme);
 
   useEffect(() => {
     localStorage.setItem("budget", JSON.stringify(budget));
@@ -17,7 +18,9 @@ export default function Budget() {
 
   return (
     <main className={"container"}>
-      <h3>Monthly Budget</h3>
+      <h3 className={`${theme === "dark" ? "dark-text" : ""}`}>
+        Monthly Budget
+      </h3>
       <div className={styles["budget__container"]}>
         <BudgetDistribution />
         <BudgetIncome />

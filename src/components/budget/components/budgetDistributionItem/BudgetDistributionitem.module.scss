@@ -4,7 +4,7 @@
 .distribution__category {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background-color: colors.$color-background-light;
+  background-color: colors.$component-background-light;
   padding: 0.5rem;
   border-radius: 0.5rem;
   box-shadow: colors.$box-shadow;

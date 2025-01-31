@@ -10,6 +10,7 @@ import InvestmentPredictionResults from "./components/investmentPredictionResult
 
 export default function InvestmentPrediction() {
   const investment = useSelector((state) => state.investment);
+  const { theme } = useSelector((state) => state.theme);
 
   useEffect(() => {
     localStorage.setItem("investment", JSON.stringify(investment));
@@ -17,7 +18,9 @@ export default function InvestmentPrediction() {
 
   return (
     <main className={"container"}>
-      <h3>Investment Prediction</h3>
+      <h3 className={`${theme === "dark" ? "dark-text" : ""}`}>
+        Investment Prediction
+      </h3>
       <section className={styles["prediction__container"]}>
         <InvestmentPredictionForm />
         <InvestmentPredictionResults />

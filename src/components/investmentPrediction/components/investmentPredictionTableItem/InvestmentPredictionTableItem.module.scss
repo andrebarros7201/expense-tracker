@@ -1,7 +1,7 @@
 @use "../../../../styles/colors";
 
 .table__item {
-  background-color: colors.$color-background-light;
+  background-color: colors.$component-background-light;
   border-radius: 0.4rem;
   box-shadow: colors.$box-shadow;
 }

@@ -11,9 +11,13 @@ $color-accent-success: #27ae60; // Emerald Green (Represents success and profit)
 $color-accent-warning: #e67e22; // Orange (For caution or alerting on warnings)
 $color-accent-danger: #e74c3c; // Red (To indicate financial losses or errors)
 
-// Background Colors
-$color-background-light: #ecf0f1; // Light Silver (Background color for forms, tables)
-$color-background-dark: #34495e; // Dark Slate (Used for headers or footers)
+// App Background (General Page Background)
+$app-background-light: #f8f9fa; // Light Grayish Blue (Softer on eyes)
+$app-background-dark: #1c1f26; // Dark Charcoal (Better for dark mode contrast)
+
+//  Component Background (Forms, Cards, Tables)
+$component-background-light: #ffffff; // Pure White (For clean, elevated components)
+$component-background-dark: #2c3e50; // Deep Blue Gray (Matches dark themes)
 
 // Text Colors
 $color-text-primary: #2c3e50; // Charcoal Gray (For main text, strong readability)

@@ -23,6 +23,7 @@ h2 {
 h3 {
   font-size: 1.5rem;
   color: colors.$color-text-primary;
+  margin: 0;
 
   @include mixins.respond-to(md) {
     font-size: 1.25rem;
@@ -43,11 +44,14 @@ a {
   text-decoration: none;
 }
 
-h3,
 h4,
 h5,
 h6 {
   font-weight: variables.$font-weight-bold;
   color: colors.$color-text-primary;
   margin: 0;
+}
+
+.dark-text {
+  color: colors.$color-text-light;
 }

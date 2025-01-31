@@ -10,9 +10,6 @@
   color-scheme: light;
   box-sizing: content-box;
 
-  background-color: colors.$color-background-light;
-  color: colors.$color-text-primary;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,6 +17,8 @@
 }
 
 body {
+  background-color: colors.$app-background-light;
+  color: colors.$color-text-primary;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -30,4 +29,8 @@ body {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+}
+
+.dark {
+  background-color: colors.$app-background-dark;
 }
