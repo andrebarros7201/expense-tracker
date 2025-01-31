@@ -1,16 +1,18 @@
 import styles from "./investmentPredictionForm.module.scss";
 import "../../../../styles/main.scss";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { InvestmentActions } from "../../../../store/investmentSlicer.js";
 
 export default function InvestmentPredictionForm() {
   const dispatch = useDispatch();
+  const { years, initialInvestment, monthlyContribution, yearlyGrowth } =
+    useSelector((state) => state.investment);
   const [values, setValues] = useState({
-    years: 0,
-    initialInvestment: 0,
-    monthlyContribution: 0,
-    yearlyGrowth: 0,
+    years: years || 0,
+    initialInvestment: initialInvestment || 0,
+    monthlyContribution: monthlyContribution || 0,
+    yearlyGrowth: yearlyGrowth || 0,
   });
 
   const handlePredictionFormChange = (field, value) => {
@@ -41,6 +43,7 @@ export default function InvestmentPredictionForm() {
           min={0}
           required={true}
           max={100}
+          value={values.years}
           onChange={(e) =>
             handlePredictionFormChange("years", parseInt(e.target.value))
           }
@@ -55,6 +58,7 @@ export default function InvestmentPredictionForm() {
           type="number"
           min={0}
           required={true}
+          value={values.initialInvestment}
           onChange={(e) =>
             handlePredictionFormChange(
               "initialInvestment",
@@ -72,6 +76,7 @@ export default function InvestmentPredictionForm() {
           type="number"
           min={0}
           required={true}
+          value={values.monthlyContribution}
           onChange={(e) =>
             handlePredictionFormChange(
               "monthlyContribution",
@@ -89,6 +94,7 @@ export default function InvestmentPredictionForm() {
           type="number"
           min={0}
           required={true}
+          value={values.yearlyGrowth}
           onChange={(e) =>
             handlePredictionFormChange("yearlyGrowth", Number(e.target.value))
           }
