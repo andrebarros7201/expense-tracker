@@ -6,14 +6,17 @@ import { BudgetActions } from "../../../../store/budgetSlicer.js";
 export default function BudgetIncome() {
   const dispatch = useDispatch();
   const income = useSelector((state) => state.budget.income);
+  const { theme } = useSelector((state) => state.theme);
 
   function handleChangeIncome(value) {
     dispatch(BudgetActions.setIncome({ income: value }));
   }
 
   return (
-    <span className={styles["income"]}>
-      <label htmlFor={"income"} className={styles["income__label"]}>
+    <span
+      className={`wrapper ${theme === "dark" ? "dark-theme" : ""} ${styles["income"]}`}
+    >
+      <label htmlFor={"income"} className={"form__label"}>
         Income
       </label>
       <input

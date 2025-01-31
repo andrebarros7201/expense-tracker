@@ -5,10 +5,13 @@ import { useSelector } from "react-redux";
 
 export default function InvestmentPredictionTable() {
   const { prediction } = useSelector((state) => state.investment);
+  const { theme } = useSelector((state) => state.theme);
   let previousItem = null; // Initialize previous item as null
 
   return (
-    <section className={styles["table"]}>
+    <section
+      className={`wrapper ${theme === "dark" ? "dark-theme" : ""} ${styles["table"]}`}
+    >
       {prediction.length > 0 ? (
         prediction.map((item) => {
           const element = (

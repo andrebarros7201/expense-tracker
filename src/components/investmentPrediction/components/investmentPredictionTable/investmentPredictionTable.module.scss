@@ -5,17 +5,4 @@
   grid-area: table;
   height: 100%;
   overflow-y: auto;
-  background-color: white;
-  border-radius: 0.4rem;
-  box-shadow: colors.$box-shadow;
-  padding: 1rem;
-  gap: 1rem;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-
-  @include mixins.respond-to(md) {
-    height: auto;
-    max-height: 400px;
-  }
 }

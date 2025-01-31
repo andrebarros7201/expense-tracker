@@ -8,6 +8,7 @@ export default function InvestmentPredictionForm() {
   const dispatch = useDispatch();
   const { years, initialInvestment, monthlyContribution, yearlyGrowth } =
     useSelector((state) => state.investment);
+  const { theme } = useSelector((state) => state.theme);
   const [values, setValues] = useState({
     years: years || 0,
     initialInvestment: initialInvestment || 0,
@@ -32,9 +33,12 @@ export default function InvestmentPredictionForm() {
   };
 
   return (
-    <form className={styles["form"]} onSubmit={(e) => handleSubmitForm(e)}>
-      <span className={styles["form__field"]}>
-        <label htmlFor="years" className={styles["form__label"]}>
+    <form
+      className={`form ${theme === "dark" ? "dark-theme" : ""}`}
+      onSubmit={(e) => handleSubmitForm(e)}
+    >
+      <span className={"form__field"}>
+        <label htmlFor="years" className={"form__label"}>
           Years of Investment
         </label>
         <input
@@ -50,7 +54,7 @@ export default function InvestmentPredictionForm() {
         />
       </span>
       <span className={styles["form__field"]}>
-        <label htmlFor="initial-investment" className={styles["form__label"]}>
+        <label htmlFor="initial-investment" className={"form__label"}>
           Initial Investment
         </label>
         <input
@@ -67,8 +71,8 @@ export default function InvestmentPredictionForm() {
           }
         />
       </span>
-      <span className={styles["form__field"]}>
-        <label htmlFor="monthly-contribution" className={styles["form__label"]}>
+      <span className={"form__field"}>
+        <label htmlFor="monthly-contribution" className={"form__label"}>
           Monthly Contribution
         </label>
         <input
@@ -85,8 +89,8 @@ export default function InvestmentPredictionForm() {
           }
         />
       </span>
-      <span className={styles["form__field"]}>
-        <label htmlFor="investment-growth" className={styles["form__label"]}>
+      <span className={"form__field"}>
+        <label htmlFor="investment-growth" className={"form__label"}>
           Yearly Investment Growth
         </label>
         <input

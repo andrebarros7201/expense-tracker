@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import styles from "./BudgetAddItemForm.module.scss";
-import "../../../../styles/main.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { BudgetActions } from "../../../../store/budgetSlicer.js";
+
+import styles from "./BudgetAddItemForm.module.scss";
+import "../../../../styles/main.scss";
 
 export default function BudgetAddItemForm() {
   const dispatch = useDispatch();
   const { countID, categories, budget } = useSelector((state) => state.budget);
-
+  const { theme } = useSelector((state) => state.theme);
   const initialValues = {
     name: "",
     category: categories[0],
@@ -40,7 +41,10 @@ export default function BudgetAddItemForm() {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)} className={styles["form"]}>
+    <form
+      onSubmit={(e) => handleSubmit(e)}
+      className={`wrapper form ${theme === "dark" ? "dark-theme" : ""}`}
+    >
       <span className={styles["form__field"]}>
         <label htmlFor="name" className={styles["form__label"]}>
           Name
@@ -54,12 +58,12 @@ export default function BudgetAddItemForm() {
           required={true}
         />
       </span>
-      <span className={styles["form__field"]}>
+      <span className={"form__field"}>
         <label htmlFor="name" className={styles["form__label"]}>
           Category
         </label>
         <select
-          className={styles["form__select"]}
+          className={"form__select"}
           onChange={(e) => handleChange("category", e.target.value)}
           value={newItem.category}
         >
@@ -70,8 +74,8 @@ export default function BudgetAddItemForm() {
           ))}
         </select>
       </span>
-      <span className={styles["form__field"]}>
-        <label htmlFor="percentage" className={styles["form__label"]}>
+      <span className={"form__field"}>
+        <label htmlFor="percentage" className={"form__label"}>
           Percentage
         </label>
         <input

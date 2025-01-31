@@ -1,0 +1,66 @@
+@use "./colors";
+
+.form {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: colors.$box-shadow;
+  border-radius: 0.4rem;
+}
+
+.form__field {
+  width: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.form__label {
+  font-weight: bold;
+  width: 100%;
+}
+
+.form__select {
+  width: 100%;
+  border: 1px solid colors.$color-border-light;
+  padding: 0.35rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  font-size: 1rem;
+  color: colors.$color-text-primary;
+  background-color: colors.$color-neutral-light;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  appearance: none; // Remove default styling for consistent cross-browser appearance
+
+  &:focus {
+    border-color: colors.$color-primary; // Highlight border color on focus
+    box-shadow: 0 0 5px rgba(colors.$color-primary, 0.3); // Soft shadow on focus
+    outline: none; // Remove default outline for custom styling
+  }
+
+  &:hover {
+    border-color: colors.$color-border-dark; // Darker border on hover for better feedback
+  }
+}
+
+.form__option {
+  color: colors.$color-text-primary;
+  background-color: colors.$color-neutral-light;
+
+  &:hover {
+    background-color: darken(
+      colors.$color-neutral-light,
+      5%
+    ); // Slightly darker on hover for better feedback
+  }
+}
