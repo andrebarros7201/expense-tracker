@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const localState = localStorage.getItem("budget");
+const localState = JSON.parse(localStorage.getItem("budget")) || {};
+console.log(localState);
 const initialState = {
   countID: localState?.countID || 3,
   income: localState?.income || 500,
