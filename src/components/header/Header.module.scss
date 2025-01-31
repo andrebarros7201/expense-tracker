@@ -25,3 +25,14 @@
     transform: scale(1.05);
   }
 }
+
+.header__toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  & img {
+    height: 2rem;
+    width: 2rem;
+  }
+}
