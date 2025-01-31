@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import calculateInvestmentGrowth from "../utils/calculateInvestmentGrowth.js";
 
-const localState = localStorage.getItem("investment");
+const localState = JSON.parse(localStorage.getItem("investment")) || {};
 
 const initialState = {
   years: localState?.years || 0,
