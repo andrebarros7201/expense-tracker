@@ -12,7 +12,7 @@ export default function Footer() {
       <a href="https://www.linkedin.com/in/andr%C3%A9-barros-8698a1185/">
         <img src={linkedinLogo} alt="LinkedIn Logo" />
       </a>
-      <p>@{new Date().getFullYear()}</p>
+      <p>© {new Date().getFullYear()}</p>
     </div>
   );
 }
