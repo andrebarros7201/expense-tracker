@@ -45,8 +45,8 @@ export default function BudgetAddItemForm() {
       onSubmit={(e) => handleSubmit(e)}
       className={`wrapper form ${theme === "dark" ? "dark-theme" : ""}`}
     >
-      <span className={styles["form__field"]}>
-        <label htmlFor="name" className={styles["form__label"]}>
+      <span className={"form__field"}>
+        <label htmlFor="name" className={"form__label"}>
           Name
         </label>
         <input
@@ -59,7 +59,7 @@ export default function BudgetAddItemForm() {
         />
       </span>
       <span className={"form__field"}>
-        <label htmlFor="name" className={styles["form__label"]}>
+        <label htmlFor="name" className={"form__label"}>
           Category
         </label>
         <select
@@ -68,7 +68,7 @@ export default function BudgetAddItemForm() {
           value={newItem.category}
         >
           {categories.map((item, index) => (
-            <option className={styles["form__option"]} key={index} value={item}>
+            <option className={"form__option"} key={index} value={item}>
               {item}
             </option>
           ))}
