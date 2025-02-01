@@ -7,6 +7,6 @@
   overflow-y: auto;
 
   @include mixins.respond-to(md) {
-    height: 500px;
+    max-height: 500px;
   }
 }
