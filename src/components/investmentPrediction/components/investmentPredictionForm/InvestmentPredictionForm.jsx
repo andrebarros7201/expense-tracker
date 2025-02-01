@@ -46,7 +46,7 @@ export default function InvestmentPredictionForm() {
           type="number"
           min={0}
           required={true}
-          max={100}
+          max={50}
           value={values.years}
           onChange={(e) =>
             handlePredictionFormChange("years", parseInt(e.target.value))
