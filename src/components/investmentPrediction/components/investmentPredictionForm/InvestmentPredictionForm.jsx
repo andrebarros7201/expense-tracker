@@ -34,7 +34,7 @@ export default function InvestmentPredictionForm() {
 
   return (
     <form
-      className={`form ${theme === "dark" ? "dark-theme" : ""}`}
+      className={`form ${theme === "dark" ? "dark-theme" : ""} ${styles.form}`}
       onSubmit={(e) => handleSubmitForm(e)}
     >
       <span className={"form__field"}>
