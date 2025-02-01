@@ -13,6 +13,8 @@ function App() {
     } else {
       document.body.classList.remove("dark");
     }
+
+    localStorage.setItem("theme", JSON.stringify(theme));
   }, [theme]);
   return (
     <>
