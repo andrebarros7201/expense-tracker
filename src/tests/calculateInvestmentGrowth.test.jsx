@@ -1,17 +1,18 @@
 import { describe, expect, it } from "vitest";
-import { calculateInvestmentGrowth } from "../utils/calculateInvestmentGrowth.js";
+import calculateInvestmentGrowth from "../utils/calculateInvestmentGrowth.ts";
 
 describe("calculateInvestmentGrowth", () => {
   const initialInvestment = 1000;
   const monthlyContribution = 100;
   const yearlyGrowth = 5;
   const years = 2;
-  const result = calculateInvestmentGrowth({
+
+  const result = calculateInvestmentGrowth(
+    years,
     initialInvestment,
     monthlyContribution,
     yearlyGrowth,
-    years,
-  });
+  );
 
   it("array length is equal to years", () => {
     expect(result.length).toBe(years);
