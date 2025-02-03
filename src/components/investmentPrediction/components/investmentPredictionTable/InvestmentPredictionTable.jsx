@@ -13,17 +13,9 @@ export default function InvestmentPredictionTable() {
       className={`wrapper ${theme === "dark" ? "dark-theme" : ""} ${styles["table"]}`}
     >
       {prediction.length > 0 ? (
-        prediction.map((item) => {
-          const element = (
-            <TableItem
-              item={item}
-              previousItem={previousItem}
-              key={item.year}
-            />
-          );
-          previousItem = item;
-          return element;
-        })
+        prediction.map((item) => (
+          <TableItem item={item} previousItem={previousItem} key={item.year} />
+        ))
       ) : (
         <h3>Calculate Growth First</h3>
       )}

@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
-import calculateInvestmentGrowth from "../utils/calculateInvestmentGrowth.ts";
+import calculateInvestmentGrowth from "../utils/calculateInvestmentGrowth";
 
 describe("calculateInvestmentGrowth", () => {
-  const initialInvestment = 1000;
-  const monthlyContribution = 100;
-  const yearlyGrowth = 5;
-  const years = 2;
+  const initialInvestment: number = 1000;
+  const monthlyContribution: number = 100;
+  const yearlyGrowth: number = 5;
+  const years: number = 2;
 
   const result = calculateInvestmentGrowth(
     years,

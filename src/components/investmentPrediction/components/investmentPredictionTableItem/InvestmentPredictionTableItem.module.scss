@@ -15,6 +15,11 @@
 
 .table__item-difference {
   font-weight: bold;
+  display: flex;
+  flex-flow: column nowrap;
+  > p {
+    margin: 0;
+  }
 }
 
 .table__item-toggle {

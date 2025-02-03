@@ -24,6 +24,7 @@ function calculateInvestmentGrowth(
     const yearData = {
       year: new Date().getFullYear() + i,
       value: 0,
+      yearProfit: 0,
       months: [
         { month: "January", value: 0 },
         { month: "February", value: 0 },
@@ -47,6 +48,8 @@ function calculateInvestmentGrowth(
     }
 
     yearData.value = yearData.months[11].value;
+    yearData.yearProfit =
+      i === 0 ? 0 : yearData.value - investmentGrowth[i - 1].value;
     investmentGrowth.push(yearData);
   }
 

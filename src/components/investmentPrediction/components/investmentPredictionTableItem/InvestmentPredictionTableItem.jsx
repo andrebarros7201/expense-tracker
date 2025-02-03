@@ -2,7 +2,7 @@ import styles from "./InvestmentPredictionTableItem.module.scss";
 import { useState } from "react";
 import { PropTypes } from "prop-types";
 
-export default function TableItem({ item, previousItem }) {
+export default function TableItem({ item }) {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const toggleDetails = () => {
     setDetailsOpen(!detailsOpen);
@@ -13,15 +13,15 @@ export default function TableItem({ item, previousItem }) {
       <div className={styles["table__item-info"]}>
         <p className={styles["table__item-year"]}>Year: {item.year}</p>
         <p className={styles["table__item-difference"]}>
-          Final Value:{" "}
-          {String(item.value).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} € <br />
-          {previousItem
-            ? "(+" +
-              parseFloat(item.value - previousItem.value)
-                .toFixed(2)
-                .replace(/\B(?=(\d{3})+(?!\d))/g, " ") +
-              "€)"
-            : "(0€)"}
+          <p>{String(item.value).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €</p>
+          <p>
+            (+
+            {String(Number(item.yearProfit).toFixed(2)).replace(
+              /\B(?=(\d{3})+(?!\d))/g,
+              " ",
+            )}{" "}
+            €)
+          </p>
         </p>
         <button
           className={styles["table__item-toggle"]}
@@ -38,7 +38,8 @@ export default function TableItem({ item, previousItem }) {
                 {monthItem.month}:
               </p>
               <p className={styles["table__item-month-value"]}>
-                {monthItem.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €
+                {String(monthItem.value).replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+                €
               </p>
             </div>
           ))}
